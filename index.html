@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keto Guide - Alles über die Ketogene Ernährung</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2d5016;
+            --primary-light: #4a7c23;
+            --accent: #e8b931;
+            --bg: #f8faf5;
+            --card-bg: #ffffff;
+            --text: #1a1a1a;
+            --text-muted: #666;
+            --border: #e0e5d8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--primary);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 0;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-light);
+        }
+
+        /* Cards */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Makro Table */
+        .macro-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .macro-table th {
+            background: var(--primary);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+        }
+
+        .macro-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .macro-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .macro-table tr:hover {
+            background: var(--bg);
+        }
+
+        /* Food Lists */
+        .food-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .food-category {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+        }
+
+        .food-category h4 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .food-category ul {
+            list-style: none;
+        }
+
+        .food-category li {
+            padding: 0.4rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .food-category li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary-light);
+            font-weight: bold;
+        }
+
+        .food-category.avoid li::before {
+            content: "✗";
+            color: #c0392b;
+        }
+
+        /* Recipes */
+        .recipe-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .recipe-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .recipe-header {
+            background: linear-gradient(135deg, var(--primary-light), var(--primary));
+            color: white;
+            padding: 1.5rem;
+        }
+
+        .recipe-header h4 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .recipe-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        .recipe-content {
+            padding: 1.5rem;
+        }
+
+        .recipe-content h5 {
+            color: var(--primary);
+            margin: 1rem 0 0.5rem;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .recipe-content ul, .recipe-content ol {
+            padding-left: 1.2rem;
+        }
+
+        .recipe-content li {
+            margin: 0.4rem 0;
+        }
+
+        .macros-bar {
+            display: flex;
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 1rem;
+        }
+
+        .macro-fat { background: #e8b931; flex: 7; }
+        .macro-protein { background: #4a7c23; flex: 2; }
+        .macro-carbs { background: #c0392b; flex: 1; }
+
+        /* Tips Section */
+        .tip-box {
+            background: linear-gradient(135deg, #fff9e6, #fff3cd);
+            border-left: 4px solid var(--accent);
+            padding: 1.5rem;
+            border-radius: 0 12px 12px 0;
+            margin: 1rem 0;
+        }
+
+        .tip-box h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        /* FAQ */
+        .faq-item {
+            background: var(--card-bg);
+            border-radius: 12px;
+            margin: 1rem 0;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .faq-question:hover {
+            background: var(--bg);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--text-muted);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-stats {
+                gap: 1.5rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            section {
+                padding: 2rem 0;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            nav { display: none; }
+            .hero { padding-top: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#grundlagen">Grundlagen</a></li>
+            <li><a href="#makros">Makros</a></li>
+            <li><a href="#lebensmittel">Lebensmittel</a></li>
+            <li><a href="#rezepte">Rezepte</a></li>
+            <li><a href="#tipps">Tipps</a></li>
+            <li><a href="#faq">FAQ</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1>🥑 Der Komplette Keto Guide</h1>
+        <p>Alles was du über die ketogene Ernährung wissen musst – von den Grundlagen bis zu leckeren Rezepten</p>
+        <div class="hero-stats">
+            <div class="stat">
+                <div class="stat-number">70-80%</div>
+                <div class="stat-label">Fett</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">20-25%</div>
+                <div class="stat-label">Protein</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">5-10%</div>
+                <div class="stat-label">Kohlenhydrate</div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Grundlagen -->
+        <section id="grundlagen">
+            <div class="container">
+                <h2>Was ist die Ketogene Ernährung?</h2>
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card-icon">🔬</div>
+                        <h3>Die Wissenschaft</h3>
+                        <p>Die ketogene Diät ist eine <strong>kohlenhydratarme, fettreiche Ernährungsweise</strong>, die den Körper in einen Zustand der <strong>Ketose</strong> versetzt. In diesem Zustand verbrennt der Körper Fett anstelle von Kohlenhydraten als primäre Energiequelle.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">⚡</div>
+                        <h3>Ketonkörper</h3>
+                        <p>Die Leber produziert <strong>Ketonkörper</strong> (Acetoacetat, Beta-Hydroxybutyrat) aus Fett, die als alternative Energiequelle für Gehirn und Muskeln dienen.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">⏱️</div>
+                        <h3>Zeitrahmen</h3>
+                        <p>Es dauert etwa <strong>5-7 Tage</strong>, bis der Körper in die Ketose gelangt. Die volle Fettadaptation erfolgt nach <strong>2-3 Wochen</strong>.</p>
+                    </div>
+                </div>
+
+                <div class="card-grid" style="margin-top: 2rem;">
+                    <div class="card">
+                        <div class="card-icon">✅</div>
+                        <h3>Vorteile</h3>
+                        <ul style="margin-left: 1.2rem; margin-top: 1rem;">
+                            <li>Effektive Gewichtsabnahme</li>
+                            <li>Stabiler Blutzucker</li>
+                            <li>Weniger Hungergefühle</li>
+                            <li>Verbesserte geistige Klarheit</li>
+                            <li>Entzündungshemmende Wirkung</li>
+                            <li>Bessere Energie über den Tag</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">⚠️</div>
+                        <h3>Wichtige Hinweise</h3>
+                        <ul style="margin-left: 1.2rem; margin-top: 1rem;">
+                            <li>Konsultiere einen Arzt bei Vorerkrankungen</li>
+                            <li>Nicht für Stillende empfohlen</li>
+                            <li>Keto-Gripfe in der ersten Woche möglich</li>
+                            <li>Elektrolyte sind essenziell</li>
+                            <li>Langfristiges Commitment nötig</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Makros -->
+        <section id="makros" style="background: white;">
+            <div class="container">
+                <h2>Makronährstoff-Verteilung</h2>
+                <p style="text-align: center; color: var(--text-muted); max-width: 600px; margin: 0 auto 2rem;">
+                    Die korrekte Makroverteilung ist entscheidend für den Erfolg der ketogenen Ernährung.
+                </p>
+
+                <table class="macro-table">
+                    <thead>
+                        <tr>
+                            <th>Makronährstoff</th>
+                            <th>Anteil</th>
+                            <th>Bei 2.000 kcal/Tag</th>
+                            <th>kcal/g</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>🥑 Fette</strong></td>
+                            <td>70-80%</td>
+                            <td>155-167g (1.400-1.500 kcal)</td>
+                            <td>9 kcal/g</td>
+                        </tr>
+                        <tr>
+                            <td><strong>🥩 Proteine</strong></td>
+                            <td>20-25%</td>
+                            <td>100-125g (400-500 kcal)</td>
+                            <td>4 kcal/g</td>
+                        </tr>
+                        <tr>
+                            <td><strong>🥗 Kohlenhydrate (Netto)</strong></td>
+                            <td>5-10%</td>
+                            <td>20-50g (100-200 kcal)</td>
+                            <td>4 kcal/g</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 style="margin-top: 3rem; text-align: center;">Keto-Varianten</h3>
+                <div class="card-grid">
+                    <div class="card">
+                        <h4>Standard-Keto (SKD)</h4>
+                        <p>75% Fett / 20% Protein / 5% Kohlenhydrate</p>
+                        <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">Die klassische Variante für die meisten Menschen</p>
+                    </div>
+                    <div class="card">
+                        <h4>Eiweißreiches Keto</h4>
+                        <p>60% Fett / 35% Protein / 5% Kohlenhydrate</p>
+                        <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">Ideal für Sportler und Muskelaufbau</p>
+                    </div>
+                    <div class="card">
+                        <h4>Gezielte Keto (TKD)</h4>
+                        <p>Zusätzliche Kohlenhydrate vor/nach dem Training</p>
+                        <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">Für hochintensives Training</p>
+                    </div>
+                    <div class="card">
+                        <h4>Zyklische Keto (CKD)</h4>
+                        <p>Wechsel zwischen Keto- und Carb-Loading-Tagen</p>
+                        <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">Für erfahrene Anwender</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lebensmittel -->
+        <section id="lebensmittel">
+            <div class="container">
+                <h2>Lebensmittel-Guide</h2>
+
+                <h3 style="text-align: center; margin-top: 2rem;">✅ Empfohlene Lebensmittel</h3>
+                <div class="food-grid">
+                    <div class="food-category">
+                        <h4>🥑 Gesunde Fette</h4>
+                        <ul>
+                            <li>Olivenöl (extra vergine)</li>
+                            <li>Kokosöl & MCT-Öl</li>
+                            <li>Avocado & Avocadoöl</li>
+                            <li>Butter & Ghee</li>
+                            <li>Nüsse & Samen</li>
+                            <li>Fetty Fisch (Lachs, Makrele)</li>
+                        </ul>
+                    </div>
+                    <div class="food-category">
+                        <h4>🥩 Proteine</h4>
+                        <ul>
+                            <li>Fettes Fleisch (Rind, Lamm)</li>
+                            <li>Geflügel mit Haut</li>
+                            <li>Eier (vorzugsweise Bio)</li>
+                            <li>Fisch & Meeresfrüchte</li>
+                            <li>Käse (vollfett)</li>
+                            <li>Knochenbrühe</li>
+                        </ul>
+                    </div>
+                    <div class="food-category">
+                        <h4>🥬 Gemüse</h4>
+                        <ul>
+                            <li>Blattgemüse (Spinat, Salat)</li>
+                            <li>Brokkoli & Blumenkohl</li>
+                            <li>Zucchini & Gurken</li>
+                            <li>Spargel</li>
+                            <li>Pilze</li>
+                            <li>Avocado</li>
+                        </ul>
+                    </div>
+                    <div class="food-category">
+                        <h4>🫐 Obst (mäßig)</h4>
+                        <ul>
+                            <li>Beeren (Blaubeeren, Himbeeren)</li>
+                            <li>Erdbeeren</li>
+                            <li>Brombeeren</li>
+                            <li>Zitrone & Limette</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3 style="text-align: center; margin-top: 3rem;">❌ Vermeiden</h3>
+                <div class="food-grid">
+                    <div class="food-category avoid">
+                        <h4>🚫 Kohlenhydratreiche Lebensmittel</h4>
+                        <ul>
+                            <li>Getreide & Brot</li>
+                            <li>Nudeln & Reis</li>
+                            <li>Kartoffeln & Mais</li>
+                            <li>Hülsenfrüchte</li>
+                            <li>Zucker & Süßigkeiten</li>
+                            <li>Fruchtsäfte & Limonaden</li>
+                        </ul>
+                    </div>
+                    <div class="food-category avoid">
+                        <h4>🚫 Verarbeitete Fette</h4>
+                        <ul>
+                            <li>Transfette</li>
+                            <li>Verarbeitete Pflanzenöle</li>
+                            <li>Margarine</li>
+                            <li>Frittierte Lebensmittel</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rezepte -->
+        <section id="rezepte" style="background: white;">
+            <div class="container">
+                <h2>Keto Rezepte</h2>
+
+                <!-- Frühstück -->
+                <h3 style="margin-top: 3rem;">🌅 Frühstück</h3>
+                <div class="card-grid">
+                    <div class="recipe-card">
+                        <div class="recipe-header">
+                            <h4>Keto Pfannkuchen</h4>
+                            <div class="recipe-meta">
+                                <span>⏱️ 15 Min</span>
+                                <span>🍽️ 2 Portionen</span>
+                                <span>💚 3g KH</span>
+                            </div>
+                        </div>
+                        <div class="recipe-content">
+                            <h5>Zutaten</h5>
+                            <ul>
+                                <li>100g Mandelmehl</li>
+                                <li>4 Eier</li>
+                                <li>100ml Mandelmilch (ungesüßt)</li>
+                                <li>2 EL Butter (zum Braten)</li>
+                                <li>Prise Salz</li>
+                                <li>Optional: Zimt, Vanille</li>
+                            </ul>
+                            <h5>Zubereitung</h5>
+                            <ol>
+                                <li>Alle Zutaten vermischen</li>
+                                <li>Butter in der Pfanne erhitzen</li>
+                                <li>Teig portionsweise eingießen</li>
+                                <li>Bei mittlerer Hitze goldbraun braten</li>
+                                <li>Mit Beeren servieren</li>
+                            </ol>
+                            <div class="macros-bar">
+                                <div class="macro-fat"></div>
+                                <div class="macro-protein"></div>
+                                <div class="macro-carbs"></div>
+                            </div>
+                            <p style="font-size: 0.8rem; margin-top: 0.5rem; color: var(--text-muted);">Fett: 75% | Protein: 20% | KH: 5%</p>
+                        </div>
+                    </div>
+
+                    <div class="recipe-card">
+                        <div class="recipe-header">
+                            <h4>Omelett mit Spinat & Feta</h4>
+                            <div class="recipe-meta">
+                                <span>⏱️ 10 Min</span>
+                                <span>🍽️ 1 Portion</span>
+                                <span>💚 1,6g KH</span>
+                            </div>
+                        </div>
+                        <div class="recipe-content">
+                            <h5>Zutaten</h5>
+                            <ul>
+                                <li>4 Eier</li>
+                                <li>50g Sahne</li>
+                                <li>100g Spinat (frisch)</li>
+                                <li>50g Feta</li>
+                                <li>50g Champignons</li>
+                                <li>50g Cocktailtomaten</li>
+                                <li>Butter zum Braten</li>
+                            </ul>
+                            <h5>Zubereitung</h5>
+                            <ol>
+                                <li>Eier mit Sahne verquirlen</li>
+                                <li>Gemüse in Butter anbraten</li>
+                                <li>Eiermasse dazugeben</li>
+                                <li>Feta darüber bröseln</li>
+                                <li>Bei milder Hitze stocken lassen</li>
+                            </ol>
+                            <div class="macros-bar">
+                                <div class="macro-fat"></div>
+                                <div class="macro-protein"></div>
+                                <div class="macro-carbs"></div>
+                            </div>
+                            <p style="font-size: 0.8rem; margin-top: 0.5rem; color: var(--text-muted);">35g Fett | 16g Protein | 1,6g KH</p>
+                        </div>
+                    </div>
+
+                    <div class="recipe-card">
+                        <div class="recipe-header">
+                            <h4>Chia-Pudding</h4>
+                            <div class="recipe-meta">
+                                <span>⏱️ 5 Min + Über Nacht</span>
+                                <span>🍽️ 2 Portionen</span>
+                                <span>💚 4g KH</span>
+                            </div>
+                        </div>
+                        <div class="recipe-content">
+                            <h5>Zutaten</h5>
+                            <ul>
+                                <li>4 EL Chiasamen</li>
+                                <li>200ml Kokosmilch</li>
+                                <li>100ml Mandelmilch</li>
+                                <li>1 TL Vanilleextrakt</li>
+                                <li>Erythrit nach Geschmack</li>
+                                <li>Beeren zum Topping</li>
+                            </ul>
+                            <h5>Zubereitung</h5>
+                            <ol>
+                                <li>Alle Zutaten vermischen</li>
+                                <li>Mindestens 4 Stunden kalt stellen</li>
+                                <li>Gelegentlich umrühren</li>
+                                <li>Mit Beeren und Nüssen servieren</li>
+                            </ol>
+                            <div class="macros-bar">
+                                <div class="macro-fat"></div>
+                                <div class="macro-protein"></div>
+                                <div class="macro-carbs"></div>
+                            </div>
+                            <p style="font-size: 0.8rem; margin-top: 0.5rem; color: var(--text-muted);">Fett: 70% | Protein: 15% | KH: 15%</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mittagessen -->
+                <h3 style="margin-top: 3rem;">🍽️ Mittagessen</h3>
+                <div class="card-grid">
+                    <div class="recipe-card">
+                        <div class="recipe-header">
+                            <h4>Zucchini-Nudeln mit Pesto</h4>
+                            <div class="recipe-meta">
+                                <span>⏱️ 20 Min</span>
+                                <span>🍽️ 2 Portionen</span>
+                                <span>💚 6g KH</span>
+                            </div>
+                        </div>
+                        <div class="recipe-content">
+                            <h5>Zutaten</h5>
+                            <ul>
+                                <li>3 große Zucchini</li>
+                                <li>200g Hähnchenbrust</li>
+                                <li>4 EL Pesto (selbstgemacht)</li>
+                                <li>50g Parmesan</li>
+                                <li>2 EL Olivenöl</li>
+                                <li>Knoblauch, Salz, Pfeffer</li>
+                            </ul>
+                            <h5>Zubereitung</h5>
+                            <ol>
+                                <li>Zucchini mit Spiralschneider zu Nudeln schneiden</li>
+                                <li>Hähnchen würfeln und anbraten</li>
+                                <li>Zucchini-Nudeln kurz dünsten (nicht zu lange!)</li>
+                                <li>Pesto unterheben</li>
+                                <li>Mit Parmesan servieren</li>
+                            </ol>
+                            <div class="macros-bar">
+                                <div class="macro-fat"></div>
+                                <div class="macro-protein"></div>
+                                <div class="macro-carbs"></div>
+                            </div>
+                            <p style="font-size: 0.8rem; margin-top: 0.5rem; color: var(--text-muted);">Fett: 65% | Protein: 28% | KH: 7%</p>
+                        </div>
+                    </div>
+
+                    <div class="recipe-card">
+                        <div class="recipe-header">
+                            <h4>Blumenkohl-Hack-Auflauf</h4>
+                            <div class="recipe-meta">
+                                <span>⏱️ 45 Min</span>
+                                <span>🍽️ 4 Portionen</span>
+                                <span>💚 7g KH</span>
+                            </div>
+                        </div>
+                        <div class="recipe-content">
+                            <h5>Zutaten</h5>
+                            <ul>
+                                <li>1 Blumenkohl</li>
+                                <li>500g Hackfleisch</li>
+                                <li>200ml Sahne</li>
+                                <li>150g Käse (gerieben)</li>
+                                <li>1 Zwiebel</li>
+                                <li>Tomatenmark, Gewürze</li>
+                            </ul>
+                            <h5>Zubereitung</h5>
+                            <ol>
+                                <li>Blumenkohl in Röschen teilen, kochen</li>
+                                <li>Hackfleisch mit Zwiebeln anbraten</li>
+                                <li>Sahne und Käse vermischen</li>
+                                <li>Alles in Auflaufform schichten</li>
+                                <li>Bei 180°C 25 Minuten überbacken</li>
+                            </ol>
+                            <div class="macros-bar">
+                                <div class="macro-fat"></div>
+                                <div class="macro-protein"></div>
+                                <div class="macro-carbs"></div>
+                            </div>
+                            <p style="font-size: 0.8rem; margin-top: 0.5rem; color: var(--text-muted);">Fett: 70% | Protein: 23% | KH: 7%</p>
+                        </div>
+                    </div>
+
+                    <div class="recipe-card">
+                        <div class="recipe-header">
+                            <h4>Kokos-Krabbensuppe</h4>
+                            <div class="recipe-meta">
+                                <span>⏱️ 25 Min</span>
+                                <span>🍽️ 2 Portionen</span>
+                                <span>💚 3,8g KH</span>
+                            </div>
+                        </div>
+                        <div class="recipe-content">
+                            <h5>Zutaten</h5>
+                            <ul>
+                                <li>240g Krabben</li>
+                                <li>400ml Kokosmilch</li>
+                                <li>1 EL Currypaste</li>
+                                <li>1 TL Kurkuma</li>
+                                <li>1 TL Ingwer (frisch)</li>
+                                <li>Koriander zum Garnieren</li>
+                            </ul>
+                            <h5>Zubereitung</h5>
+                            <ol>
+                                <li>Kokosmilch erhitzen</li>
+                                <li>Currypaste und Gewürze einrühren</li>
+                                <li>10 Minuten köcheln lassen</li>
+                                <li>Krabben zugeben, erwärmen</li>
+                                <li>Mit Koriander servieren</li>
+                            </ol>
+                            <div class="macros-bar">
+                                <div class="macro-fat"></div>
+                                <div class="macro-protein"></div>
+                                <div class="macro-carbs"></div>
+                            </div>
+                            <p style="font-size: 0.8rem; margin-top: 0.5rem; color: var(--text-muted);">59g Fett | 26g Protein | 3,8g KH</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Abendessen -->
+                <h3 style="margin-top: 3rem;">🌙 Abendessen</h3>
+                <div class="card-grid">
+                    <div class="recipe-card">
+                        <div class="recipe-header">
+                            <h4>Lachs mit Ofen-Spargel</h4>
+                            <div class="recipe-meta">
+                                <span>⏱️ 30 Min</span>
+                                <span>🍽️ 2 Portionen</span>
+                                <span>💚 4g KH</span>
+                            </div>
+                        </div>
+                        <div class="recipe-content">
+                            <h5>Zutaten</h5>
+                            <ul>
+                                <li>2 Lachsfilets (à 150g)</li>
+                                <li>500g grüner Spargel</li>
+                                <li>4 EL Olivenöl</li>
+                                <li>1 Zitrone</li>
+                                <li>2 EL Butter</li>
+                                <li>Knoblauch, Dill</li>
+                            </ul>
+                            <h5>Zubereitung</h5>
+                            <ol>
+                                <li>Spargel auf Backblech legen</li>
+                                <li>Mit Öl, Salz, Pfeffer würzen</li>
+                                <li>Lachs dazugeben, Butter obenauf</li>
+                                <li>Bei 200°C 15-20 Minuten backen</li>
+                                <li>Mit Zitrone und Dill servieren</li>
+                            </ol>
+                            <div class="macros-bar">
+                                <div class="macro-fat"></div>
+                                <div class="macro-protein"></div>
+                                <div class="macro-carbs"></div>
+                            </div>
+                            <p style="font-size: 0.8rem; margin-top: 0.5rem; color: var(--text-muted);">Fett: 68% | Protein: 28% | KH: 4%</p>
+                        </div>
+                    </div>
+
+                    <div class="recipe-card">
+                        <div class="recipe-header">
+                            <h4>Hähnchen-Curry mit Blumenkohlreis</h4>
+                            <div class="recipe-meta">
+                                <span>⏱️ 35 Min</span>
+                                <span>🍽️ 3 Portionen</span>
+                                <span>💚 8g KH</span>
+                            </div>
+                        </div>
+                        <div class="recipe-content">
+                            <h5>Zutaten</h5>
+                            <ul>
+                                <li>500g Hähnchenbrust</li>
+                                <li>1 Blumenkohl (für "Reis")</li>
+                                <li>400ml Kokosmilch</li>
+                                <li>2 EL Currypaste</li>
+                                <li>1 Paprika</li>
+                                <li>1 Zwiebel</li>
+                            </ul>
+                            <h5>Zubereitung</h5>
+                            <ol>
+                                <li>Blumenkohl im Mixer zu "Reis" zerkleinern</li>
+                                <li>Hähnchen anbraten, Gemüse dazugeben</li>
+                                <li>Kokosmilch und Curry einrühren</li>
+                                <li>15 Minuten köcheln lassen</li>
+                                <li>Blumenkohlreis dämpfen, separat servieren</li>
+                            </ol>
+                            <div class="macros-bar">
+                                <div class="macro-fat"></div>
+                                <div class="macro-protein"></div>
+                                <div class="macro-carbs"></div>
+                            </div>
+                            <p style="font-size: 0.8rem; margin-top: 0.5rem; color: var(--text-muted);">Fett: 62% | Protein: 30% | KH: 8%</p>
+                        </div>
+                    </div>
+
+                    <div class="recipe-card">
+                        <div class="recipe-header">
+                            <h4>Gemüseauflauf mit Champignons</h4>
+                            <div class="recipe-meta">
+                                <span>⏱️ 40 Min</span>
+                                <span>🍽️ 2 Portionen</span>
+                                <span>💚 4,4g KH</span>
+                            </div>
+                        </div>
+                        <div class="recipe-content">
+                            <h5>Zutaten</h5>
+                            <ul>
+                                <li>200g Brokkoli</li>
+                                <li>200g Blumenkohl</li>
+                                <li>200g Champignons</li>
+                                <li>200ml Sahne</li>
+                                <li>100g Käse</li>
+                                <li>Muskat, Salz, Pfeffer</li>
+                            </ul>
+                            <h5>Zubereitung</h5>
+                            <ol>
+                                <li>Gemüse putzen, in Röschen teilen</li>
+                                <li>5 Minuten vorkochen</li>
+                                <li>In Auflaufform geben</li>
+                                <li>Sahne mit Gewürzen darüber gießen</li>
+                                <li>Mit Käse bedecken, bei 180°C backen</li>
+                            </ol>
+                            <div class="macros-bar">
+                                <div class="macro-fat"></div>
+                                <div class="macro-protein"></div>
+                                <div class="macro-carbs"></div>
+                            </div>
+                            <p style="font-size: 0.8rem; margin-top: 0.5rem; color: var(--text-muted);">43g Fett | 18g Protein | 4,4g KH</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nachtisch -->
+                <h3 style="margin-top: 3rem;">🍰 Nachtisch</h3>
+                <div class="card-grid">
+                    <div class="recipe-card">
+                        <div class="recipe-header">
+                            <h4>Keto Käsekuchen-Muffins</h4>
+                            <div class="recipe-meta">
+                                <span>⏱️ 30 Min</span>
+                                <span>🍽️ 12 Stück</span>
+                                <span>💚 1,3g KH</span>
+                            </div>
+                        </div>
+                        <div class="recipe-content">
+                            <h5>Zutaten</h5>
+                            <ul>
+                                <li>250g Frischkäse</li>
+                                <li>100g Crème fraîche</li>
+                                <li>3 Eier</li>
+                                <li>50g Erythrit</li>
+                                <li>1 TL Zimt</li>
+                                <li>1 TL Vanille</li>
+                            </ul>
+                            <h5>Zubereitung</h5>
+                            <ol>
+                                <li>Ofen auf 170°C vorheizen</li>
+                                <li>Alle Zutaten verrühren</li>
+                                <li>In Muffinform füllen</li>
+                                <li>20-25 Minuten backen</li>
+                                <li>Auskühlen lassen (wichtig!)</li>
+                            </ol>
+                            <div class="macros-bar">
+                                <div class="macro-fat"></div>
+                                <div class="macro-protein"></div>
+                                <div class="macro-carbs"></div>
+                            </div>
+                            <p style="font-size: 0.8rem; margin-top: 0.5rem; color: var(--text-muted);">128 kcal | 11g Fett | 4g Protein</p>
+                        </div>
+                    </div>
+
+                    <div class="recipe-card">
+                        <div class="recipe-header">
+                            <h4>Keto Schokoladen-Mousse</h4>
+                            <div class="recipe-meta">
+                                <span>⏱️ 15 Min + Kühlzeit</span>
+                                <span>🍽️ 4 Portionen</span>
+                                <span>💚 3g KH</span>
+                            </div>
+                        </div>
+                        <div class="recipe-content">
+                            <h5>Zutaten</h5>
+                            <ul>
+                                <li>200ml Sahne</li>
+                                <li>30g Kakaopulver (unzucker)</li>
+                                <li>50g Erythrit</li>
+                                <li>1 TL Vanilleextrakt</li>
+                                <li>Prise Salz</li>
+                            </ul>
+                            <h5>Zubereitung</h5>
+                            <ol>
+                                <li>Sahne mit Vanille steif schlagen</li>
+                                <li>Kakao und Erythrit vorsichtig unterheben</li>
+                                <li>In Gläser füllen</li>
+                                <li>Mindestens 2 Stunden kühlen</li>
+                                <li>Mit Kokosraspeln garnieren</li>
+                            </ol>
+                            <div class="macros-bar">
+                                <div class="macro-fat"></div>
+                                <div class="macro-protein"></div>
+                                <div class="macro-carbs"></div>
+                            </div>
+                            <p style="font-size: 0.8rem; margin-top: 0.5rem; color: var(--text-muted);">Fett: 85% | Protein: 8% | KH: 7%</p>
+                        </div>
+                    </div>
+
+                    <div class="recipe-card">
+                        <div class="recipe-header">
+                            <h4>Fettbombs (Erdnussbutter)</h4>
+                            <div class="recipe-meta">
+                                <span>⏱️ 20 Min + Kühlzeit</span>
+                                <span>🍽️ 12 Stück</span>
+                                <span>💚 2g KH</span>
+                            </div>
+                        </div>
+                        <div class="recipe-content">
+                            <h5>Zutaten</h5>
+                            <ul>
+                                <li>200g Erdnussbutter (ohne Zucker)</li>
+                                <li>100g Kokosöl</li>
+                                <li>30g Kakaopulver</li>
+                                <li>2 EL Erythrit</li>
+                                <li>1 TL Vanille</li>
+                            </ul>
+                            <h5>Zubereitung</h5>
+                            <ol>
+                                <li>Kokosöl leicht erwärmen</li>
+                                <li>Alle Zutaten vermischen</li>
+                                <li>In Silikonform füllen</li>
+                                <li>1 Stunde einfrieren</li>
+                                <li>Kühl lagern</li>
+                            </ol>
+                            <div class="macros-bar">
+                                <div class="macro-fat"></div>
+                                <div class="macro-protein"></div>
+                                <div class="macro-carbs"></div>
+                            </div>
+                            <p style="font-size: 0.8rem; margin-top: 0.5rem; color: var(--text-muted);">Fett: 88% | Protein: 8% | KH: 4%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tipps -->
+        <section id="tipps">
+            <div class="container">
+                <h2>Tipps & Tricks für Anfänger</h2>
+
+                <div class="tip-box">
+                    <h4>💧 Trinke genug Wasser</h4>
+                    <p>In der Ketose verliert der Körper mehr Wasser und Elektrolyte. Trinke mindestens 2-3 Liter Wasser täglich und ergänze Natrium, Kalium und Magnesium.</p>
+                </div>
+
+                <div class="tip-box">
+                    <h4>🧂 Die Keto-Grippe vermeiden</h4>
+                    <p>In den ersten Tagen können Müdigkeit, Kopfschmerzen und Reizbarkeit auftreten. Dies ist normal und vorübergehend. Mehr Salz, Wasser und Elektrolyte helfen!</p>
+                </div>
+
+                <div class="tip-box">
+                    <h4>📱 Tracking-Apps nutzen</h4>
+                    <p>Apps wie Cronometer, MyFitnessPal oder Carb Manager helfen dir, deine Makros im Blick zu behalten – besonders am Anfang wichtig.</p>
+                </div>
+
+                <div class="tip-box">
+                    <h4>🥗 Gemüse zählt</h4>
+                    <p>Achte auf Nettokohlenhydrate (Gesamt-KH minus Ballaststoffe). Blattgemüse, Brokkoli und Blumenkohl sind deine besten Freunde.</p>
+                </div>
+
+                <div class="tip-box">
+                    <h4>🍳 Meal Prep ist Key</h4>
+                    <p>Bereite Mahlzeiten am Wochenende vor. Keto unterwegs kann schwierig sein – mit vorbereiteten Snacks und Mahlzeiten bleibst du im Plan.</p>
+                </div>
+
+                <h3 style="margin-top: 3rem; text-align: center;">Empfohlene Nahrungsergänzungen</h3>
+                <div class="card-grid">
+                    <div class="card">
+                        <h4>⚡ Elektrolyte</h4>
+                        <p>Natrium, Kalium und Magnesium sind essenziell, um der Keto-Grippe vorzubeugen und Muskelkrämpfe zu vermeiden.</p>
+                    </div>
+                    <div class="card">
+                        <h4>🐟 Omega-3</h4>
+                        <p>Fischöl- oder Krillöl-Kapseln unterstützen das Herz-Kreislauf-System und reduzieren Entzündungen.</p>
+                    </div>
+                    <div class="card">
+                        <h4>☀️ Vitamin D</h4>
+                        <p>Besonders in den Wintermonaten wichtig für Immunsystem und allgemeines Wohlbefinden.</p>
+                    </div>
+                    <div class="card">
+                        <h4>🥥 MCT-Öl</h4>
+                        <p>Mittelkettige Triglyceride werden schnell in Ketone umgewandelt – ideal für einen Energieschub.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" style="background: white;">
+            <div class="container">
+                <h2>Häufig gestellte Fragen</h2>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'">
+                        <span>Wie lange dauert es, bis ich in Ketose bin?</span>
+                        <span>▼</span>
+                    </div>
+                    <div class="faq-answer" style="display: none;">
+                        <p>Die meisten Menschen erreichen die Ketose nach 5-7 Tagen strikter kohlenhydratarmer Ernährung (unter 20g Nettokohlenhydrate pro Tag). Die volle Fettadaptation dauert jedoch 2-3 Wochen. Du kannst Ketone im Blut (ideal: 1,5-3,0 mmol/L), im Urin oder im Atem messen.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'">
+                        <span>Kann ich Keto auch als Vegetarier/Veganer machen?</span>
+                        <span>▼</span>
+                    </div>
+                    <div class="faq-answer" style="display: none;">
+                        <p>Vegetarisches Keto ist durchaus möglich mit Eiern, Käse, Quark, Nüssen und gesunden Fetten. Vegan-Keto ist herausfordernder, aber machbar mit Avocados, Kokosprodukten, Nüssen, Samen und pflanzlichen Proteinquellen. Eine sorgfältige Planung ist in beiden Fällen wichtig.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'">
+                        <span>Darf ich Alkohol trinken?</span>
+                        <span>▼</span>
+                    </div>
+                    <div class="faq-answer" style="display: none;">
+                        <p>Reiner Schnaps (Wodka, Gin, Whisky) und trockener Wein sind kohlenhydratarm und in Maßen möglich. Bier und süße Cocktails sollten vermieden werden. Beachte: Alkohol wird vom Körper priorisiert verstoffwechselt und kann die Ketose vorübergehend unterbrechen.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'">
+                        <span>Was ist die Keto-Grippe?</span>
+                        <span>▼</span>
+                    </div>
+                    <div class="faq-answer" style="display: none;">
+                        <p>Die "Keto-Grippe" ist eine vorübergehende Sammlung von Symptomen in der ersten Woche: Müdigkeit, Kopfschmerzen, Reizbarkeit, Übelkeit. Sie entsteht durch den Verlust von Wasser und Elektrolyten. Mehr Salz, Wasser und Magnesium helfen, sie zu lindern oder zu vermeiden.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'">
+                        <span>Kann ich mit Keto Muskeln aufbauen?</span>
+                        <span>▼</span>
+                    </div>
+                    <div class="faq-answer" style="display: none;">
+                        <p>Ja, Muskelaufbau ist auch mit Keto möglich. Viele Sportler bevorzugen dabei eiweißreiches Keto (35% Protein) oder gezielte Keto (TKD) mit zusätzlichen Kohlenhydraten um das Training. Die Proteinaufnahme sollte bei 1,6-2,2g pro kg Körpergewicht liegen.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'">
+                        <span>Welche Süßstoffe sind erlaubt?</span>
+                        <span>▼</span>
+                    </div>
+                    <div class="faq-answer" style="display: none;">
+                        <p>Keto-freundliche Süßstoffe sind: Erythrit, Stevia, Monk Fruit (Mönchsfrucht), Xylitol (maßvoll) und Allulose. Vermeiden solltest du: Zucker, Honig, Ahornsirup, Agavendicksaft, Dattelsirup und künstliche Süßstoffe wie Aspartam (kann Insulin ausschütten).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Keto Guide | Erstellt mit aktuellen Informationen zur ketogenen Ernährung</p>
+        <p style="margin-top: 0.5rem; font-size: 0.85rem;">Hinweis: Diese Informationen ersetzen keine medizinische Beratung. Konsultiere bei gesundheitlichen Fragen einen Arzt.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
