@@ -1,98 +1,204 @@
-// Main JavaScript for Keto Website
+// Apple-Style JavaScript for Keto Website
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile menu toggle
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const navMenu = document.querySelector('.nav-menu');
+    'use strict';
 
-    if (mobileMenuBtn && navMenu) {
-        mobileMenuBtn.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
-        });
+    // Elements
+    const header = document.getElementById('header');
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navMenu = document.getElementById('navMenu');
+    const backToTopBtn = document.getElementById('backToTop');
+    const faqItems = document.querySelectorAll('.faq-item');
+    const scrollElements = document.querySelectorAll('.scroll-animate');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    // Header scroll effect
+    function handleHeaderScroll() {
+        if (window.scrollY > 50) {
+            header.classList.add('header-scrolled');
+        } else {
+            header.classList.remove('header-scrolled');
+        }
     }
 
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+    // Mobile menu toggle
+    function toggleMobileMenu() {
+        mobileMenuBtn.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        document.body.classList.toggle('menu-open');
+    }
 
+    // Close mobile menu
+    function closeMobileMenu() {
+        mobileMenuBtn.classList.remove('active');
+        navMenu.classList.remove('active');
+        document.body.classList.remove('menu-open');
+    }
+
+    // Smooth scroll for anchor links
+    function handleSmoothScroll(e) {
+        const href = this.getAttribute('href');
+        if (href.startsWith('#')) {
+            e.preventDefault();
+            const target = document.querySelector(href);
             if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
+                const headerHeight = header.offsetHeight;
+                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
+
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
                 });
 
-                // Close mobile menu if open
-                if (navMenu) {
-                    navMenu.classList.remove('active');
-                }
+                closeMobileMenu();
             }
-        });
-    });
+        }
+    }
 
-    // Add active class to current nav link based on scroll position
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
-
-    function updateNavLinks() {
-        let current = '';
+    // Active nav link based on scroll
+    function updateActiveNavLink() {
+        const sections = document.querySelectorAll('section[id]');
+        const scrollPos = window.scrollY + header.offsetHeight + 100;
 
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute('id');
 
-            if (pageYOffset >= sectionTop - 200) {
-                current = section.getAttribute('id');
-            }
-        });
-
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').substring(1) === current) {
-                link.classList.add('active');
+            if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + sectionId) {
+                        link.classList.add('active');
+                    }
+                });
             }
         });
     }
 
-    window.addEventListener('scroll', updateNavLinks);
-    updateNavLinks(); // Initial call on load
+    // FAQ Accordion
+    function toggleFaq() {
+        const item = this.closest('.faq-item');
+        const isActive = item.classList.contains('active');
 
-    // FAQ accordion functionality
-    const faqQuestions = document.querySelectorAll('.faq-question');
-
-    faqQuestions.forEach(question => {
-        question.addEventListener('click', function() {
-            const faqItem = this.parentElement;
-            faqItem.classList.toggle('active');
-
-            const answer = faqItem.querySelector('.faq-answer');
-            if (answer.style.display === 'block') {
-                answer.style.display = 'none';
-            } else {
-                answer.style.display = 'block';
+        // Close all other items
+        faqItems.forEach(otherItem => {
+            if (otherItem !== item) {
+                otherItem.classList.remove('active');
             }
         });
-    });
+
+        // Toggle current item
+        item.classList.toggle('active');
+    }
 
     // Back to top button
-    const backToTopBtn = document.createElement('button');
-    backToTopBtn.innerHTML = '↑';
-    backToTopBtn.className = 'back-to-top';
-    backToTopBtn.title = 'Zurück nach oben';
-    document.body.appendChild(backToTopBtn);
-
-    window.addEventListener('scroll', function() {
-        if (window.pageYOffset > 300) {
-            backToTopBtn.style.display = 'flex';
+    function handleBackToTop() {
+        if (window.scrollY > 500) {
+            backToTopBtn.classList.add('visible');
         } else {
-            backToTopBtn.style.display = 'none';
+            backToTopBtn.classList.remove('visible');
         }
-    });
+    }
 
-    backToTopBtn.addEventListener('click', function() {
+    function scrollToTop() {
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
         });
+    }
+
+    // Intersection Observer for scroll animations
+    function initScrollAnimations() {
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        scrollElements.forEach(element => {
+            observer.observe(element);
+        });
+    }
+
+    // Parallax effect for hero
+    function handleParallax() {
+        const hero = document.querySelector('.hero');
+        if (hero && !window.matchMedia('(pointer: coarse)').matches) {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * 0.3;
+            hero.style.backgroundPositionY = rate + 'px';
+        }
+    }
+
+    // Event Listeners
+    window.addEventListener('scroll', function() {
+        handleHeaderScroll();
+        handleBackToTop();
+        updateActiveNavLink();
+        handleParallax();
+    }, { passive: true });
+
+    if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', handleSmoothScroll);
     });
+
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        if (question) {
+            question.addEventListener('click', toggleFaq);
+        }
+    });
+
+    if (backToTopBtn) {
+        backToTopBtn.addEventListener('click', scrollToTop);
+    }
+
+    // Close mobile menu when clicking on a link
+    navLinks.forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (navMenu && navMenu.classList.contains('active')) {
+            if (!navMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                closeMobileMenu();
+            }
+        }
+    });
+
+    // Keyboard accessibility for FAQ
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        if (question) {
+            question.setAttribute('tabindex', '0');
+            question.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    toggleFaq.call(this);
+                }
+            });
+        }
+    });
+
+    // Initialize
+    initScrollAnimations();
+    handleHeaderScroll();
+    handleBackToTop();
+
+    // Preload animation for page load
+    document.body.classList.add('loaded');
 });

@@ -1,0 +1,173 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+## Project Overview
+
+This is **KetoGuide**, a static HTML website about the ketogenic diet (ketogene Ernährung) in German. It provides guides, recipes, health information, and educational content.
+
+## Architecture
+
+This is a **static HTML website** with no build process, no package manager, and no framework.
+
+### Directory Structure
+
+```
+/
+├── index.html              # Homepage (German) - Apple-style design
+├── assets/
+│   ├── css/
+│   │   └── base.css        # All styles - Apple-inspired design system
+│   └── js/
+│       └── main.js         # Mobile menu, smooth scroll, FAQ accordion, back-to-top, scroll animations
+└── pages/
+    ├── guides/             # How-to guides (starten.html, tracking.html, mealprep.html, sport.html)
+    ├── recipes/            # Recipe categories (fruehstueck.html, mittagessen.html, desserts.html, vegetarisch.html, snacks.html, abendessen.html)
+    ├── health/             # Health topics (gewicht.html, gehirn.html, herz.html, diabetes.html, entzuendung.html, hormone.html, schlaf.html)
+    ├── supplements/        # Supplement guides (mct-oil.html, elektrolyte.html)
+    ├── lifestyle/          # Lifestyle content (reisen.html)
+    ├── topics/             # Various topics (alkohol.html, kaffee.html, suesstoffer.html, darm.html, etc.)
+    └── ketopedia/          # Educational articles (001-was-ist-keto.html, 002-keto-flu.html)
+```
+
+### Design System - Apple Style
+
+The site uses an **Apple-inspired design** defined in `assets/css/base.css`:
+
+- **CSS Variables** in `:root` for colors, spacing, shadows, and typography
+- **Color scheme**: Clean whites (`--apple-white: #ffffff`), soft grays (`--apple-gray-100: #f5f5f7`), blue accent (`--apple-blue: #0071e3`)
+- **Typography**: SF Pro Display/Text fonts via system fonts (no external font loading)
+- **Components**:
+  - Cards (`.card`, `.recipe-card`)
+  - Buttons (`.btn-primary`, `.btn-secondary`, `.btn-outline`)
+  - Bento Grid (`.bento-grid`, `.bento-item`)
+  - Recipe cards with meta info
+- **Grid system**: `.grid-2`, `.grid-3`, `.grid-4` using CSS Grid
+- **Responsive**: Mobile breakpoints at 1024px, 768px, and 480px
+
+### Page Template Pattern
+
+All pages follow this structure:
+
+1. **Header**: Fixed navigation with glassmorphism effect (`.header` with `backdrop-filter`)
+2. **Hero section**: `.page-header` with large typography, centered text
+3. **Content sections**: `.content-section` with `.container` or `.container-narrow`
+4. **Cards**: `.card` or `.recipe-card` with hover effects
+5. **Footer**: `.footer` with navigation links
+
+**Important**: Pages in subdirectories reference assets with `../../` paths (e.g., `../../assets/css/base.css`).
+
+### Navigation Structure
+
+All pages have consistent navigation:
+- Logo links to `index.html`
+- Nav links: Warum Keto, Rezepte, Guides, Gesundheit, FAQ
+- Active state indicated with `.active` class
+- Mobile menu with hamburger icon
+
+### JavaScript Functionality
+
+`assets/js/main.js` provides:
+
+- Mobile menu toggle (`.mobile-menu-btn` + `.nav-menu`)
+- Smooth scrolling for anchor links (`a[href^="#"]`)
+- Active nav link highlighting based on scroll position
+- FAQ accordion (`.faq-question` click toggles `.faq-answer`)
+- Dynamic back-to-top button (`.back-to-top`)
+- Scroll-triggered animations (IntersectionObserver for `.scroll-animate`)
+- Header scroll effect (`.header-scrolled`)
+
+## Development Workflow
+
+### No Build Process
+
+This is a static site - no npm, no build step, no compilation. Edit HTML/CSS/JS files directly.
+
+### Local Development
+
+Serve the site locally with any static file server:
+
+```bash
+# Python 3
+python3 -m http.server 8000
+
+# Node.js (if npx available)
+npx serve .
+
+# PHP
+php -S localhost:8000
+```
+
+Then open `http://localhost:8000` in a browser.
+
+### Adding New Pages
+
+1. Create HTML file in appropriate `/pages/` subdirectory
+2. Copy header/nav structure from existing page (use `../../` for assets)
+3. Use `.page-header` for page title section
+4. Use `.content-section` with `.container-narrow` for content
+5. Link from index.html or relevant section pages
+6. Add footer with navigation links
+
+### Content Guidelines
+
+- **Language**: German (de)
+- **Content focus**: Evidence-based keto information, recipes, health benefits
+- **Tone**: Informative, encouraging, scientifically grounded
+- **Medical disclaimer**: Include disclaimer that content is informational, not medical advice
+
+## Key Files
+
+| File | Purpose |
+|------|---------|
+| `index.html` | Homepage with bento grid layout |
+| `assets/css/base.css` | Complete Apple-style design system |
+| `assets/js/main.js` | All interactive functionality |
+| `pages/guides/starten.html` | Primary beginner guide |
+| `pages/recipes/*.html` | Recipe category pages with recipe cards |
+| `pages/health/*.html` | Health benefit articles |
+| `pages/supplements/*.html` | Supplement guides |
+| `pages/topics/*.html` | Special topics (alkohol, kaffee, etc.) |
+| `pages/ketopedia/*.html` | Educational articles |
+
+## Design Patterns
+
+### Recipe Card
+```html
+<div class="recipe-card">
+    <div class="recipe-image">🍳</div>
+    <div class="recipe-content">
+        <h3>Recipe Name</h3>
+        <div class="recipe-meta">
+            <span>⏱️ 15 Min</span>
+            <span>🔥 450 kcal</span>
+            <span>🥑 2g Netto-KH</span>
+        </div>
+        <p>Description...</p>
+    </div>
+</div>
+```
+
+### Bento Grid Item
+```html
+<div class="bento-item">
+    <div class="bento-content">
+        <div class="bento-icon">🔥</div>
+        <h3>Title</h3>
+        <p>Description...</p>
+    </div>
+</div>
+```
+
+### FAQ Item
+```html
+<div class="faq-item">
+    <div class="faq-question">
+        <h3>Question?</h3>
+        <span class="faq-toggle">+</span>
+    </div>
+    <div class="faq-answer">
+        <p>Answer...</p>
+    </div>
+</div>
+```

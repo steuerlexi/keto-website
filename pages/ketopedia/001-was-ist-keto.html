@@ -3,25 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Was ist ketogene Ernährung? - Grundlagen einfach erklärt</title>
-    <meta name="description" content="Die ketogene Ernährung einfach erklärt: Was Ketose ist, wie sie funktioniert und welche Grundlagen du wissen musst.">
+    <title>Was ist Keto? - Grundlagen einfach erklärt</title>
+    <meta name="description" content="Die ketogene Ernährung einfach erklärt: Was Ketose ist und wie sie funktioniert.">
     <link rel="stylesheet" href="../../assets/css/base.css">
-    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600;700&family=SF+Pro+Text:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
+    <header class="header" id="header">
         <div class="container nav-container">
-            <a href="../../../index.html" class="logo">KetoGuide</a>
-            <nav class="nav-menu">
-                <a href="../../../index.html#grundlagen" class="nav-link">Grundlagen</a>
-                <a href="../../../index.html#lebensmittel" class="nav-link">Lebensmittel</a>
-                <a href="../../../index.html#rezepte" class="nav-link">Rezepte</a>
-                <a href="../../../index.html#leitfaden" class="nav-link">Leitfaden</a>
-                <a href="../../../index.html#gesundheit" class="nav-link">Gesundheit</a>
-                <a href="../../../index.html#faq" class="nav-link">FAQ</a>
+            <a href="../../index.html" class="logo">KetoGuide</a>
+            <nav class="nav-menu" id="navMenu">
+                <a href="../../index.html#gruende" class="nav-link">Warum Keto</a>
+                <a href="../../index.html#rezepte" class="nav-link">Rezepte</a>
+                <a href="../../index.html#guides" class="nav-link">Guides</a>
+                <a href="../../index.html#gesundheit" class="nav-link">Gesundheit</a>
+                <a href="../../index.html#faq" class="nav-link">FAQ</a>
             </nav>
-            <button class="mobile-menu-btn" aria-label="Menü öffnen">
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menü">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -29,79 +26,67 @@
         </div>
     </header>
 
-    <!-- Page Header -->
-    <section class="hero" style="background: var(--bg-secondary);">
-        <div class="container hero-content">
-            <h1>Was ist ketogene Ernährung?</h1>
-            <p>Die einfach erklärte Grundlagen der ketogenen Ernährung für Einsteiger</p>
-        </div>
-    </section>
-
-    <!-- Content -->
-    <section class="section">
+    <section class="page-header">
         <div class="container">
-            <h2>Die Grundprinzipien</h2>
-            <p>Die ketogene Ernährung ist eine kohlenhydratarme, fettreiche Ernährungsweise, die den Körper in einen metabolischen Zustand namens Ketose versetzt.</p>
-
-            <div class="card">
-                <div class="card-header">
-                    <h3>🔑 Die drei Grundprinzipien</h3>
-                </div>
-                <div class="card-body">
-                    <ol>
-                        <li><strong>Sehr geringe Kohlenhydratzufuhr:</strong> Typischerweise unter 20-50g Netto-Kohlenhydrate pro Tag</li>
-                        <li><strong>Hohe Fettzufuhr:</strong> Etwa 70-80% der täglichen Kalorien aus Fett</li>
-                        <li><strong>Mäßige Proteinzufuhr:</strong> Etwa 20-25% der täglichen Kalorien aus Protein</li>
-                    </ol>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <h3>🔬 Was ist Ketose?</h3>
-                </div>
-                <div class="card-body">
-                    <p>Ketose ist ein metabolischer Zustand, in dem der Körper verstärkt Fettsäuren zur Energiegewinnung verwendet und Ketonkörper als alternativen Brennstoff produziert.</p>
-                    <p><strong>Die drei Haupt-Ketonkörper sind:</strong></p>
-                    <ul>
-                        <li>Beta-Hydroxybutyrat (BHB) - der wichtigste und am meisten vorkommende</li>
-                        <li>Acetoacetat (AcAc)</li>
-                        <li>Aceton - das einfachste und am flüchtigsten</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <h3>⏱️ Wie lange dauert die Umstellung?</h3>
-                </div>
-                <div class="card-body">
-                    <p>Die Zeit bis zur Ketose variiert von Person zu Person, folgt aber allgemein diesem Muster:</p>
-                    <ul>
-                        <li><strong>0-24 Stunden:</strong> Glykogenspeicher beginnen sich zu leeren</li>
-                        <li><strong>2-4 Tage:</strong> Erste messbare Ketonkörper im Blut oder Urin</li>
-                        <li><strong>3-7 Tage:</strong> Leichte bis mittlere Ketose (0,5-3,0 mmol/L BHB)</li>
-                        <li><strong>2-4 Wochen:</strong> Vollständige Fettadaptation - effiziente Nutzung von Fett und Ketonen</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section
-
-    <!-- Back to main -->
-    <section class="section bg-light">
-        <div class="container text-center">
-            <a href="../../../index.html" class="btn btn-outline">Zurück zur Startseite</a>
+            <h1 class="animate-fade-in-up">Was ist Keto?</h1>
+            <p class="animate-fade-in-up delay-1">Die Grundlagen einfach erklärt.</p>
         </div>
     </section>
 
-    <!-- Footer -->
+    <section class="content-section">
+        <div class="container container-narrow">
+            <h2>Die Ketose verstehen</h2>
+            <p>Die ketogene Ernährung ist eine kohlenhydratarme, fettreiche Ernährungsweise, die deinen Stoffwechsel umprogrammiert.</p>
+
+            <h3>Wie funktioniert es?</h3>
+            <ul>
+                <li>Weniger als 20-50g Kohlenhydrate pro Tag</li>
+                <li>Der Körper verliert seine Glukose-Quelle</li>
+                <li>Die Leber produziert Ketonkörper aus Fett</li>
+                <li>Gehirn und Muskeln nutzen Ketone als Energie</li>
+            </ul>
+
+            <div style="background: var(--apple-gray-100); padding: 32px; border-radius: var(--radius-lg); margin: 40px 0;">
+                <h3 style="margin-top: 0;">📊 Makronährstoffe</h3>
+                <p><strong>Fett:</strong> 70-80%<br>
+                <strong>Protein:</strong> 20-25%<br>
+                <strong>Kohlenhydrate:</strong> 5-10%</p>
+            </div>
+
+            <h2>Die Vorteile</h2>
+            <ul>
+                <li>Nachhaltige Fettverbrennung</li>
+                <li>Stabile Energie den ganzen Tag</li>
+                <li>Klare Konzentration</li>
+                <li>Weniger Hungergefühle</li>
+            </ul>
+
+            <div style="display: flex; gap: 16px; margin-top: 60px; flex-wrap: wrap;">
+                <a href="002-keto-flu.html" class="btn btn-primary">Weiter: Die Keto-Grippe →</a>
+                <a href="../../index.html" class="btn btn-outline">Zurück zur Startseite</a>
+            </div>
+        </div>
+    </section>
+
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 KetoGuide. Alle Rechte vorbehalten.</p>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo">KetoGuide</span>
+                </div>
+                <nav class="footer-nav">
+                    <a href="../../index.html" class="footer-link">Startseite</a>
+                    <a href="../../index.html#rezepte" class="footer-link">Rezepte</a>
+                    <a href="../../index.html#guides" class="footer-link">Guides</a>
+                </nav>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 KetoGuide. Alle Rechte vorbehalten.</p>
+                </div>
+            </div>
         </div>
     </footer>
 
-    <script src="../../../assets/js/main.js"></script>
+    <button class="back-to-top" id="backToTop">↑</button>
+    <script src="../../assets/js/main.js"></script>
 </body>
 </html>

@@ -3,26 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Keto Guide - Der umfassende Ratgeber zur ketogenen Ernährung</title>
-    <meta name="description" content="Erfahre alles über die ketogene Ernährung: Grundlagen, Rezepte, Wissenschaft und praktische Tipps für Anfänger und Fortgeschrittene.">
+    <title>Keto Guide - Ketogene Ernährung neu gedacht</title>
+    <meta name="description" content="Entdecke die ketogene Ernährung neu. Umfassende Guides, leckere Rezepte und wissenschaftlich fundierte Gesundheitstipps.">
     <link rel="stylesheet" href="assets/css/base.css">
-    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600;700&family=SF+Pro+Text:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header -->
-    <header class="header">
+    <header class="header" id="header">
         <div class="container nav-container">
-            <a href="#" class="logo">KetoGuide</a>
-            <nav class="nav-menu">
-                <a href="#grundlagen" class="nav-link active">Grundlagen</a>
-                <a href="#lebensmittel" class="nav-link">Lebensmittel</a>
+            <a href="index.html" class="logo">KetoGuide</a>
+            <nav class="nav-menu" id="navMenu">
+                <a href="#gruende" class="nav-link">Warum Keto</a>
                 <a href="#rezepte" class="nav-link">Rezepte</a>
-                <a href="#leitfaden" class="nav-link">Leitfaden</a>
+                <a href="#guides" class="nav-link">Guides</a>
                 <a href="#gesundheit" class="nav-link">Gesundheit</a>
                 <a href="#faq" class="nav-link">FAQ</a>
-                <a href="pages/guides/starten.html" class="btn btn-outline btn-sm">Für Anfänger</a>
             </nav>
-            <button class="mobile-menu-btn" aria-label="Menü öffnen">
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menü">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -33,357 +30,406 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container hero-content">
-            <h1>Die ketogene Ernährung</h1>
-            <p>Entdecke die Wissenschaft, die Vorteile und die praktische Anwendung der keto Diät für dauerhafte Gesundheit und Wohlbefinden.</p>
-            <div class="hero-buttons">
-                <a href="pages/guides/starten.html" class="btn btn-primary">Loslegen</a>
-                <a href="#rezepte" class="btn btn-outline">Rezepte entdecken</a>
+            <h1 class="animate-fade-in-up">Keto Guide.</h1>
+            <p class="hero-subtitle animate-fade-in-up delay-1">Ketogene Ernährung neu gedacht.<br>Dein umfassender Wegweiser zu einem gesünderen Leben.</p>
+            <div class="hero-cta animate-fade-in-up delay-2">
+                <a href="pages/guides/starten.html" class="btn btn-primary btn-large">Loslegen</a>
+                <a href="#rezepte" class="btn btn-secondary btn-large">Rezepte entdecken</a>
             </div>
         </div>
     </section>
 
-    <!-- Statistics -->
-    <section class="section bg-light">
+    <!-- Stats Section -->
+    <section class="section" style="padding-top: 40px;">
         <div class="container">
-            <div class="grid-4 text-center">
-                <div class="stat-card">
+            <div class="stats-row scroll-animate">
+                <div class="stat-item">
                     <div class="stat-number">70-80%</div>
-                    <div class="stat-label">Fettanteil</div>
+                    <div class="stat-label">Gesunde Fette</div>
                 </div>
-                <div class="stat-card">
+                <div class="stat-item">
                     <div class="stat-number">20-25%</div>
-                    <div class="stat-label">Protein</div>
+                    <div class="stat-label">Qualitatives Protein</div>
                 </div>
-                <div class="stat-card">
+                <div class="stat-item">
                     <div class="stat-number">5-10%</div>
-                    <div class="stat-label">Kohlenhydrate</div>
+                    <div class="stat-label">Wenige Kohlenhydrate</div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number">2-3 Wochen</div>
-                    <div class="stat-label">Bis zur Fettadaptation</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Grundlagen Section -->
-    <section id="grundlagen" class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Was ist die ketogene Ernährung?</h2>
-                <p>Die ketogene Diät ist eine kohlenhydratarme, fettreiche Ernährungsweise, die den Körper in einen metabolischen Zustand namens Ketose versetzt.</p>
-            </div>
-
-            <div class="grid-3">
-                <div class="card fade-in">
-                    <div class="card-header">
-                        <h3>🔬 Die Wissenschaft</h3>
-                    </div>
-                    <div class="card-body">
-                        <p>In Ketose verbrennt der Körper Fett statt Glukose als primäre Energiequelle und produziert Ketonkörper als alternativen Brennstoff für Gehirn und Muskeln.</p>
-                    </div>
-                </div>
-
-                <div class="card fade-in fade-in-delay-1">
-                    <div class="card-header">
-                        <h3>⚡ Energie umschalten</h3>
-                    </div>
-                    <div class="card-body">
-                        <p>Die Leber verwandelt Fettsäuren in Ketonkörper (Beta-Hydroxybutyrat, Acetoacetat), die das Gehirn effizient nutzen kann.</p>
-                    </div>
-                </div>
-
-                <div class="card fade-in fade-in-delay-2">
-                    <div class="card-header">
-                        <h3>⏱️ Zeit bis zur Ketose</h3>
-                    </div>
-                    <div class="card-body">
-                        <p>Es dauert typischerweise 2-7 Tage strikter Kohlenhydratreduktion (<20g Netto-KH/Tag), bis der Körper in Ketose gelangt.</p>
-                    </div>
+                <div class="stat-item">
+                    <div class="stat-number">2-4</div>
+                    <div class="stat-label">Wochen bis zur Ketose</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Lebensmittel Section -->
-    <section id="lebensmittel" class="section bg-light">
-        <div class="container">
-            <div class="section-title">
-                <h2>Lebensmittel-Guide</h2>
-                <p>Erfahre, welche Lebensmittel du genießen solltest und welche du vermeiden solltest, um erfolgreich in Ketose zu bleiben.</p>
+    <!-- Bento Grid - Main Content -->
+    <section id="gruende" class="section">
+        <div class="container-wide" style="padding: 0 40px;">
+            <div class="section-headline scroll-animate">
+                <h2>Warum Keto?</h2>
+                <p>Die ketogene Ernährung verändert die Art, wie dein Körper Energie gewinnt – mit nachweisbaren Vorteilen.</p>
             </div>
 
-            <div class="grid-2">
-                <div class="card fade-in">
-                    <div class="card-header">
-                        <h3>✅ Empfohlene Lebensmittel</h3>
-                    </div>
-                    <div class="card-body">
-                        <ul>
-                            <li><strong>Gesunde Fette:</strong> Avocado, Olivenöl, Kokosöl, Butter, Ghee</li>
-                            <li><strong>Proteine:</strong> Fleisch, Fisch, Eier, Vollfettkäse</li>
-                            <li><strong>Gemüse:</strong> Blattgemüse, Brokkoli, Blumenkohl, Zucchini, Asparag</li>
-                            <li><strong>Beeren (mäßig):</strong> Erdbeeren, Himbeeren, Brombeeren, Heidelbeeren</li>
-                            <li><strong>Nüsse & Samen:</strong> Mandeln, Walnüsse, Chiasamen, Leinsamen (in Maßen)</li>
-                        </ul>
+            <div class="bento-grid bento-grid-2">
+                <div class="bento-item bento-item-large scroll-animate">
+                    <div class="bento-content">
+                        <div>
+                            <div class="bento-icon">🔥</div>
+                            <h3>Fettverbrennung aktiviert</h3>
+                            <p>Dein Körper lernt, Fett als primäre Energiequelle zu nutzen. Das bedeutet nachhaltige Energie ohne Zucker-Crashs.</p>
+                        </div>
+                        <a href="pages/health/gewicht.html" class="btn btn-secondary">Mehr erfahren</a>
                     </div>
                 </div>
 
-                <div class="card fade-in fade-in-delay-1">
-                    <div class="card-header">
-                        <h3>❌ Zu vermeiden</h3>
+                <div class="bento-item scroll-animate delay-1">
+                    <div class="bento-content">
+                        <div class="bento-icon">🧠</div>
+                        <h3>Klare Konzentration</h3>
+                        <p>Ketonkörper versorgen dein Gehirn effizienter mit Energie.</p>
                     </div>
-                    <div class="card-body">
-                        <ul>
-                            <li><strong>Getreide & Stärke:</strong> Brot, Pasta, Reis, Getreide, Müslis</li>
-                            <li><strong>Zucker & Süßigkeiten:</strong> Tafelzucker, Honig, Ahornsirup, Süßigkeiten</li>
-                            <li><strong>Stärkehaltiges Gemüse:</strong> Kartoffeln, Mais, Erbsen</li>
-                            <li><strong>Die meisten Früchte:</strong> Bananen, Äpfel, Orangen, Trauben (außer Beeren in Maßen)</li>
-                            <li><strong>Verarbeitete Lebensmittel:</strong> Chips, Crackers, Fertiggerichte</li>
-                        </ul>
+                </div>
+
+                <div class="bento-item scroll-animate delay-2">
+                    <div class="bento-content">
+                        <div class="bento-icon">⚡</div>
+                        <h3>Konstante Energie</h3>
+                        <p>Keine hungerinduzierten Energietiefs mehr.</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Rezepte Section -->
-    <section id="rezepte" class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Leckere Keto Rezepte</h2>
-                <p>Entdecke einfache und köstliche Rezepte für jedes Mahlzeit des Tages - alle kohlenhydratarm und nährstoffreich.</p>
-            </div>
-
-            <div class="grid-3">
-                <a href="pages/recipes/fruehstueck.html" class="card fade-in">
-                    <div class="card-header">
-                        <h3>🥣 Frühstück</h3>
-                        <p>Energiespendende Morgenmahlzeiten</p>
+            <div class="bento-grid bento-grid-3" style="margin-top: 20px;">
+                <a href="pages/health/herz.html" class="bento-item link-card scroll-animate delay-1">
+                    <div class="bento-content">
+                        <div class="bento-icon">❤️</div>
+                        <h3>Herzgesundheit</h3>
+                        <p>Verbesserte Marker für Herz-Kreislauf</p>
                     </div>
                 </a>
 
-                <a href="pages/recipes/mittagessen.html" class="card fade-in fade-in-delay-1">
-                    <div class="card-header">
-                        <h3>🍽️ Mittagessen</h3>
-                        <p>Sättigende Gerichte für den Tag</p>
+                <a href="pages/health/entzündung.html" class="bento-item link-card scroll-animate delay-2">
+                    <div class="bento-content">
+                        <div class="bento-icon">🛡️</div>
+                        <h3>Weniger Entzündungen</h3>
+                        <p>Systemische Entzündungen reduzieren sich</p>
                     </div>
                 </a>
 
-                <a href="pages/recipes/abendessen.html" class="card fade-in fade-in-delay-2">
-                    <div class="card-header">
-                        <h3>🌙 Abendessen</h3>
-                        <p>Leichte, nahrhafte Abendmahlzeiten</p>
-                    </div>
-                </a>
-
-                <a href="pages/recipes/desserts.html" class="card fade-in fade-in-delay-3">
-                    <div class="card-header">
-                        <h3>🍰 Desserts</h3>
-                        <p>Naschereien ohne Reue</p>
-                    </div>
-                </a>
-
-                <a href="pages/recipes/snacks.html" class="card fade-in fade-in-delay-4">
-                    <div class="card-header">
-                        <h3>⚡ Snacks</h3>
-                        <p>Für zwischendurch und unterwegs</p>
-                    </div>
-                </a>
-
-                <a href="pages/recipes/vegetarisch.html" class="card fade-in fade-in-delay-5">
-                    <div class="card-header">
-                        <h3>🌱 Vegetarisch</h3>
-                        <p>Fleischlose Keto-Optionen</p>
+                <a href="pages/health/schlaf.html" class="bento-item link-card scroll-animate delay-3">
+                    <div class="bento-content">
+                        <div class="bento-icon">😴</div>
+                        <h3>Besserer Schlaf</h3>
+                        <p>Stabile Blutzuckerwerte fördern Erholung</p>
                     </div>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Leitfaden Section -->
-    <section id="leitfaden" class="section bg-light">
+    <!-- Recipes Section -->
+    <section id="rezepte" class="section" style="background: var(--apple-gray-100);">
         <div class="container">
-            <div class="section-title">
-                <h2>Praktischer Leitfaden</h2>
-                <p>Schritt-für-Schritt-Anleitungen für deinen erfolgreichen Start und deine langfristige Umsetzung der ketogenen Ernährung.</p>
+            <div class="section-headline scroll-animate">
+                <h2>Leckere Rezepte.</h2>
+                <p>Köstliche Mahlzeiten, die dich satt machen und in Ketose halten.</p>
             </div>
 
-            <div class="grid-2">
-                <div class="card fade-in">
-                    <div class="card-header">
-                        <h3>🚀 Für Anfänger</h3>
+            <div class="bento-grid bento-grid-3">
+                <a href="pages/recipes/fruehstueck.html" class="bento-item link-card scroll-animate" style="background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);">
+                    <div class="bento-content">
+                        <div class="bento-icon">🍳</div>
+                        <h3>Frühstück</h3>
+                        <p>Starte den Tag energiegeladen</p>
                     </div>
-                    <div class="card-body">
-                        <p>Von den ersten Schritten über die Keto-Grippe bis hin zu langfristigem Erfolg - dein kompletter Einsteiger-Guide.</p>
-                        <a href="pages/guides/starten.html" class="btn btn-outline">Zum Leitfaden</a>
-                    </div>
-                </div>
+                </a>
 
-                <div class="card fade-in fade-in-delay-1">
-                    <div class="card-header">
-                        <h3>📊 Tracking & Messung</h3>
+                <a href="pages/recipes/mittagessen.html" class="bento-item link-card scroll-animate delay-1" style="background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);">
+                    <div class="bento-content">
+                        <div class="bento-icon">🥗</div>
+                        <h3>Mittagessen</h3>
+                        <p>Sättigende Hauptgerichte</p>
                     </div>
-                    <div class="card-body">
-                        <p>Lerne, wie du deine Ketose misst, Makros verfolgst und deinen Fortschritt effektiv überwachst.</p>
-                        <a href="pages/guides/tracking.html" class="btn btn-outline">Zum Leitfaden</a>
-                    </div>
-                </div>
+                </a>
 
-                <div class="card fade-in fade-in-delay-2">
-                    <div class="card-header">
-                        <h3>🍽️ Meal Prep & Planung</h3>
+                <a href="pages/recipes/desserts.html" class="bento-item link-card scroll-animate delay-2" style="background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%);">
+                    <div class="bento-content">
+                        <div class="bento-icon">🍰</div>
+                        <h3>Desserts</h3>
+                        <p>Süße Momente ohne Zucker</p>
                     </div>
-                    <div class="card-body">
-                        <p>Effiziente Strategien für die Vorausplanung und Vorbereitung deiner Mahlzeiten, um im Alltag erfolgreich zu bleiben.</p>
-                        <a href="pages/guides/mealprep.html" class="btn btn-outline">Zum Leitfaden</a>
-                    </div>
-                </div>
+                </a>
 
-                <div class="card fade-in fade-in-delay-3">
-                    <div class="card-header">
-                        <h3>💪 Sport & Bewegung</h3>
+                <a href="pages/recipes/vegetarisch.html" class="bento-item link-card scroll-animate delay-1" style="background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%);">
+                    <div class="bento-content">
+                        <div class="bento-icon">🌱</div>
+                        <h3>Vegetarisch</h3>
+                        <p>Pflanzliche Keto-Optionen</p>
                     </div>
-                    <div class="card-body">
-                        <p>Wie du deine sportliche Performance optimierst und Muskeln aufbaust, während du ketogen lebst.</p>
-                        <a href="pages/guides/sport.html" class="btn btn-outline">Zum Leitfaden</a>
+                </a>
+
+                <a href="pages/recipes/snacks.html" class="bento-item link-card scroll-animate delay-2" style="background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);">
+                    <div class="bento-content">
+                        <div class="bento-icon">🥜</div>
+                        <h3>Snacks</h3>
+                        <p>Für unterwegs und zwischendurch</p>
                     </div>
-                </div>
+                </a>
+
+                <a href="pages/recipes/abendessen.html" class="bento-item link-card scroll-animate delay-3" style="background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);">
+                    <div class="bento-content">
+                        <div class="bento-icon">🍽️</div>
+                        <h3>Abendessen</h3>
+                        <p>Leichte, nahrhafte Gerichte</p>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Gesundheit Section -->
-    <section id="gesundheit" class="section">
+    <!-- Guides Section -->
+    <section id="guides" class="section">
         <div class="container">
-            <div class="section-title">
-                <h2>Gesundheit & Wissenschaft</h2>
-                <p>Die neuesten Erkenntnisse darüber, wie die ketogene Ernährung deinen Körper, Geist und deine langfristige Gesundheit beeinflusst.</p>
+            <div class="section-headline scroll-animate">
+                <h2>Dein Wegweiser.</h2>
+                <p>Schritt-für-Schritt zum Erfolg mit Keto.</p>
             </div>
 
-            <div class="grid-3">
-                <div class="card fade-in">
-                    <div class="card-header">
-                        <h3>⚖️ Gewicht & Stoffwechsel</h3>
+            <div class="bento-grid bento-grid-2">
+                <a href="pages/guides/starten.html" class="bento-item link-card scroll-animate" style="background: var(--apple-black); color: white;">
+                    <div class="bento-content">
+                        <div>
+                            <div class="bento-icon" style="font-size: 64px;">🚀</div>
+                            <h3 style="color: white; font-size: 32px;">Für Anfänger</h3>
+                            <p style="color: var(--apple-gray-300);">Der perfekte Einstieg in die ketogene Ernährung. Alles was du wissen musst.</p>
+                        </div>
+                        <span class="btn btn-primary" style="background: white; color: black;">Jetzt starten</span>
                     </div>
-                    <div class="card-body">
-                        <p>Wie Keto beim nachhaltigen Abnehmen hilft, den Blutzucker stabilisiert und die Insulinempfindlichkeit verbessert.</p>
-                        <a href="pages/health/gewichtsverlust.html" class="btn btn-outline">Mehr erfahren</a>
-                    </div>
-                </div>
+                </a>
 
-                <div class="card fade-in fade-in-delay-1">
-                    <div class="card-header">
-                        <h3>🧠 Gehirn & Geist</h3>
+                <a href="pages/guides/tracking.html" class="bento-item link-card scroll-animate delay-1">
+                    <div class="bento-content">
+                        <div class="bento-icon">📊</div>
+                        <h3>Tracking & Messung</h3>
+                        <p>So misst du deine Ketose und verfolgst deinen Fortschritt.</p>
                     </div>
-                    <div class="card-body">
-                        <p>Die positiven Effekte von Ketonen auf kognitive Funktion, mentale Klarheit und neurologische Gesundheit.</p>
-                        <a href="pages/health/gehirn.html" class="btn btn-outline">Mehr erfahren</a>
-                    </div>
-                </div>
+                </a>
 
-                <div class="card fade-in fade-in-delay-2">
-                    <div class="card-header">
-                        <h3>❤️ Herz & Kreislauf</h3>
+                <a href="pages/guides/mealprep.html" class="bento-item link-card scroll-animate delay-2">
+                    <div class="bento-content">
+                        <div class="bento-icon">🍱</div>
+                        <h3>Meal Prep</h3>
+                        <p>Effiziente Vorbereitung für den Alltag.</p>
                     </div>
-                    <div class="card-body">
-                        <p>Auswirkungen auf Cholesterin, Blutdruck und Entzündungsmarker - was die Wissenschaft wirklich sagt.</p>
-                        <a href="pages/health/herz.html" class="btn btn-outline">Mehr erfahren</a>
-                    </div>
-                </div>
+                </a>
 
-                <div class="card fade-in fade-in-delay-3">
-                    <div class="card-header">
-                        <h3>🔥 Entzündung & Immunsystem</h3>
+                <a href="pages/guides/sport.html" class="bento-item link-card scroll-animate delay-3">
+                    <div class="bento-content">
+                        <div class="bento-icon">💪</div>
+                        <h3>Sport & Training</h3>
+                        <p>Leistungsfähigkeit auf Keto optimieren.</p>
                     </div>
-                    <div class="card-body">
-                        <p>Wie ketogene Ernährung systemische Entzündungen reduziert und das Immunsystem stärkt.</p>
-                        <a href="pages/health/entzündung.html" class="btn btn-outline">Mehr erfahren</a>
-                    </div>
-                </div>
+                </a>
+            </div>
+        </div>
+    </section>
 
-                <div class="card fade-in fade-in-delay-4">
-                    <div class="card-header">
-                        <h3>⚖️ Hormone & Stoffwechsel</h3>
-                    </div>
-                    <div class="card-body">
-                        <p>Einfluss auf Schilddrüse, Geschlechtshormone, Stresshormone und den gesamten hormonellen Haushalt.</p>
-                        <a href="pages/health/hormone.html" class="btn btn-outline">Mehr erfahren</a>
-                    </div>
-                </div>
+    <!-- Health Section -->
+    <section id="gesundheit" class="section" style="background: linear-gradient(180deg, var(--apple-gray-100) 0%, var(--apple-white) 100%);">
+        <div class="container">
+            <div class="section-headline scroll-animate">
+                <h2>Wissenschaft & Gesundheit.</h2>
+                <p>Was die Forschung über Keto sagt.</p>
+            </div>
 
-                <div class="card fade-in fade-in-delay-5">
-                    <div class="card-header">
-                        <h3>🦴 Knochen & Muskeln</h3>
+            <div class="grid grid-3">
+                <a href="pages/health/gehirn.html" class="card link-card scroll-animate">
+                    <div class="card-body" style="text-align: center;">
+                        <div style="font-size: 48px; margin-bottom: 16px;">🧠</div>
+                        <h3>Gehirn & Kognition</h3>
+                        <p>Klares Denken, bessere Fokussierung und neuroprotektive Effekte.</p>
                     </div>
+                </a>
+
+                <a href="pages/health/herz.html" class="card link-card scroll-animate delay-1">
+                    <div class="card-body" style="text-align: center;">
+                        <div style="font-size: 48px; margin-bottom: 16px;">❤️</div>
+                        <h3>Herz-Kreislauf</h3>
+                        <p>Auswirkungen auf Cholesterin, Blutdruck und Herzgesundheit.</p>
+                    </div>
+                </a>
+
+                <a href="pages/health/diabetes.html" class="card link-card scroll-animate delay-2">
+                    <div class="card-body" style="text-align: center;">
+                        <div style="font-size: 48px; margin-bottom: 16px;">📉</div>
+                        <h3>Blutzucker & Diabetes</h3>
+                        <p>Stabile Blutzuckerwerte und verbesserte Insulinsensitivität.</p>
+                    </div>
+                </a>
+
+                <a href="pages/health/entzündung.html" class="card link-card scroll-animate delay-1">
+                    <div class="card-body" style="text-align: center;">
+                        <div style="font-size: 48px; margin-bottom: 16px;">🔥</div>
+                        <h3>Entzündungen</h3>
+                        <p>Reduktion systemischer Entzündungsmarker.</p>
+                    </div>
+                </a>
+
+                <a href="pages/health/hormone.html" class="card link-card scroll-animate delay-2">
+                    <div class="card-body" style="text-align: center;">
+                        <div style="font-size: 48px; margin-bottom: 16px;">⚖️</div>
+                        <h3>Hormonelle Balance</h3>
+                        <p>Einfluss auf Schilddrüse, Geschlechtshormone und Stoffwechsel.</p>
+                    </div>
+                </a>
+
+                <a href="pages/health/schlaf.html" class="card link-card scroll-animate delay-3">
+                    <div class="card-body" style="text-align: center;">
+                        <div style="font-size: 48px; margin-bottom: 16px;">😴</div>
+                        <h3>Schlafqualität</h3>
+                        <p>Besserer Schlaf durch stabile Energielevels.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Topics Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-headline scroll-animate">
+                <h2>Spezialthemen.</h2>
+                <p>Tiefgehende Guides zu wichtigen Keto-Themen.</p>
+            </div>
+
+            <div class="bento-grid bento-grid-4">
+                <a href="pages/topics/alkohol.html" class="bento-item link-card scroll-animate">
+                    <div class="bento-content" style="padding: 24px;">
+                        <div class="bento-icon" style="font-size: 36px;">🍷</div>
+                        <h3 style="font-size: 21px;">Alkohol & Keto</h3>
+                    </div>
+                </a>
+
+                <a href="pages/topics/kaffee.html" class="bento-item link-card scroll-animate delay-1">
+                    <div class="bento-content" style="padding: 24px;">
+                        <div class="bento-icon" style="font-size: 36px;">☕</div>
+                        <h3 style="font-size: 21px;">Kaffee & Keto</h3>
+                    </div>
+                </a>
+
+                <a href="pages/topics/suesstoffer.html" class="bento-item link-card scroll-animate delay-2">
+                    <div class="bento-content" style="padding: 24px;">
+                        <div class="bento-icon" style="font-size: 36px;">🍬</div>
+                        <h3 style="font-size: 21px;">Süßstoffe</h3>
+                    </div>
+                </a>
+
+                <a href="pages/topics/darm.html" class="bento-item link-card scroll-animate delay-3">
+                    <div class="bento-content" style="padding: 24px;">
+                        <div class="bento-icon" style="font-size: 36px;">🦠</div>
+                        <h3 style="font-size: 21px;">Darmgesundheit</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ketopedia Section -->
+    <section class="section" style="background: var(--apple-gray-100);">
+        <div class="container">
+            <div class="section-headline scroll-animate">
+                <h2>Ketopedia.</h2>
+                <p>Dein Nachschlagewerk für alle Keto-Begriffe.</p>
+            </div>
+
+            <div class="grid grid-2">
+                <a href="pages/ketopedia/001-was-ist-keto.html" class="card link-card scroll-animate">
                     <div class="card-body">
-                        <p>Langzeitwirkungen auf Knochendichte, Muskelerhalt und allgemeine körperliche Leistungsfähigkeit.</p>
-                        <a href="pages/health/knochen.html" class="btn btn-outline">Mehr erfahren</a>
+                        <h3>Was ist Keto?</h3>
+                        <p>Die Grundlagen der ketogenen Ernährung verständlich erklärt.</p>
+                        <span style="color: var(--apple-blue);">Mehr erfahren</span>
                     </div>
-                </div>
+                </a>
+
+                <a href="pages/ketopedia/002-keto-flu.html" class="card link-card scroll-animate delay-1">
+                    <div class="card-body">
+                        <h3>Die Keto-Grippe</h3>
+                        <p>Was du über die Anfangsphase wissen musst.</p>
+                        <span style="color: var(--apple-blue);">Mehr erfahren</span>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
 
     <!-- FAQ Section -->
-    <section id="faq" class="section bg-light">
-        <div class="container">
-            <div class="section-title">
-                <h2>Häufig gestellte Fragen</h2>
-                <p>Antworten auf die wichtigsten Fragen rund um die ketogene Ernährung - von Anfängern bis zu erfahrenen Anwendern.</p>
+    <section id="faq" class="section">
+        <div class="container" style="max-width: 800px;">
+            <div class="section-headline scroll-animate">
+                <h2>Häufige Fragen.</h2>
             </div>
 
-            <div class="faq-accordion">
-                <div class="faq-item fade-in">
+            <div class="faq-container">
+                <div class="faq-item scroll-animate">
                     <div class="faq-question">
                         <h3>Wie lange dauert es, bis ich in Ketose bin?</h3>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Die meisten Menschen erreichen eine leichte Ketose nach 2-4 Tagen strikter Kohlenhydratreduktion (<20g Netto-KH/Tag). Für eine optimale ketogene State mit höheren Ketonkörperspiegeln (0,5-3,0 mmol/L) benötigen viele 5-7 Tage. Die volle metabolische Anpassung an die Fettverbrennung kann jedoch 2-4 Wochen dauern.</p>
+                        <p>Die meisten Menschen erreichen eine leichte Ketose nach 2-4 Tagen strikter Kohlenhydratreduktion (&lt;20g Netto-KH/Tag). Für eine optimale ketogene State mit höheren Ketonkörperspiegeln (0,5-3,0 mmol/L) benötigen viele 5-7 Tage.</p>
                     </div>
                 </div>
 
-                <div class="faq-item fade-in fade-in-delay-1">
+                <div class="faq-item scroll-animate delay-1">
                     <div class="faq-question">
-                        <h3>Was ist die Keto-Grippe und wie kann ich sie vermeiden?</h3>
+                        <h3>Was ist die Keto-Grippe?</h3>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Die Keto-Grippe beschreibt symptomatische Beschwerden wie Kopfschmerzen, Müdigkeit, Reizbarkeit und Übelkeit in den ersten Tagen der Umstellung. Sie entsteht durch Elektrolytverlust und kann durch ausreichende Salz-, Kalium- und Magnesiumzufuhr sowie viel Wasser verhindert oder deutlich reduziert werden.</p>
+                        <p>Die Keto-Grippe beschreibt symptomatische Beschwerden wie Kopfschmerzen, Müdigkeit und Reizbarkeit in den ersten Tagen. Sie entsteht durch Elektrolytverlust und kann durch ausreichende Salz-, Kalium- und Magnesiumzufuhr verhindert werden.</p>
                     </div>
                 </div>
 
-                <div class="faq-item fade-in fade-in-delay-2">
+                <div class="faq-item scroll-animate delay-2">
                     <div class="faq-question">
-                        <h3>Kann ich Alkohol trinken, während ich ketogen esse?</h3>
+                        <h3>Kann ich Alkohol trinken?</h3>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Reine Spirituosen wie Wodka, Gin, Whisky und Tequila enthalten null Kohlenhydrate und sind in Maßen verträglich. Trockener Wein (rot oder weiß) enthält etwa 2-4g KH pro Glas. Bier, süße Cocktails und Liköre sollten aufgrund ihres hohen Zuckergehalts vermieden werden. Wichtig: Alkohol wird vor Fett metabolisiert und kann die Ketose vorübergehend unterbrechen.</p>
+                        <p>Reine Spirituosen wie Wodka, Gin, Whisky und Tequila enthalten null Kohlenhydrate. Trockener Wein enthält etwa 2-4g KH pro Glas. Bier und süße Cocktails sollten vermieden werden.</p>
                     </div>
                 </div>
 
-                <div class="faq-item fade-in fade-in-delay-3">
+                <div class="faq-item scroll-animate delay-3">
                     <div class="faq-question">
-                        <h3>Wie viel Protein sollte ich auf einer ketogenen Diät essen?</h3>
+                        <h3>Wie viel Protein sollte ich essen?</h3>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Die optimale Proteinzufuhr liegt zwischen 1,2-2,0 Gramm pro Kilogramm Körpergewicht, abhängig von Aktivitätslevel und Zielen. Für Muskelerhalt beim Abnehmen empfiehlt sich 1,6-2,2g/kg. Zu viel Protein kann theoretisch die Ketose durch Gluconeogenese beeinflussen, praktisch ist dies jedoch selten ein Problem bei ausreichend niedrigem KH-Verbrauch.</p>
+                        <p>Die optimale Proteinzufuhr liegt zwischen 1,2-2,0 Gramm pro Kilogramm Körpergewicht, abhängig von Aktivitätslevel und Zielen. Für Muskelerhalt beim Abnehmen empfiehlt sich 1,6-2,2g/kg.</p>
                     </div>
                 </div>
 
-                <div class="faq-item fade-in fade-in-delay-4">
+                <div class="faq-item scroll-animate delay-4">
                     <div class="faq-question">
-                        <h3>Ist die ketogene Ernährung langfristig gesund?</h3>
+                        <h3>Ist Keto langfristig gesund?</h3>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Langzeitstudien zeigen positive Effekte bei metabolischem Syndrom, Typ-2-Diabetes und neurologischen Erkrankungen. Wichtig ist die Lebensmittelqualität - emphasis auf vollwertige, nährstoffreiche Lebensmittel statt verarbeiteter Keto-Produkte. Regelmäßige Gesundheitschecks und individuelle Anpassung sind essenziell für langfristigen Erfolg.</p>
+                        <p>Langzeitstudien zeigen positive Effekte bei metabolischem Syndrom und Typ-2-Diabetes. Wichtig ist die Lebensmittelqualität – Fokus auf vollwertige, nährstoffreiche Lebensmittel statt verarbeiteter Produkte.</p>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section" style="background: var(--apple-black); color: white; text-align: center;">
+        <div class="container">
+            <h2 style="color: white; font-size: 56px; margin-bottom: 0.5em;">Bereit für den Start?</h2>
+            <p style="color: var(--apple-gray-300); font-size: 21px; margin-bottom: 2em;">Beginne deine Keto-Reise mit unserem umfassenden Einsteiger-Guide.</p>
+            <a href="pages/guides/starten.html" class="btn btn-primary btn-large" style="background: white; color: black;">Jetzt loslegen</a>
         </div>
     </section>
 
@@ -392,24 +438,26 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <a href="#" class="logo">KetoGuide</a>
-                    <p>Dein umfassender Ratgeber zur ketogenen Ernährung</p>
+                    <span class="logo">KetoGuide</span>
                 </div>
 
-                <div class="footer-links">
-                    <a href="#" class="footer-link">Impressum</a>
-                    <a href="#" class="footer-link">Datenschutz</a>
-                    <a href="#" class="footer-link">Kontakt</a>
-                    <a href="#" class="footer-link">Über uns</a>
-                </div>
+                <nav class="footer-nav">
+                    <a href="pages/guides/starten.html" class="footer-link">Anfangen</a>
+                    <a href="pages/recipes/fruehstueck.html" class="footer-link">Rezepte</a>
+                    <a href="pages/health/gewicht.html" class="footer-link">Gesundheit</a>
+                    <a href="pages/supplements/elektrolyte.html" class="footer-link">Supplements</a>
+                    <a href="pages/lifestyle/reisen.html" class="footer-link">Lifestyle</a>
+                </nav>
 
                 <div class="footer-bottom">
                     <p>&copy; 2025 KetoGuide. Alle Rechte vorbehalten.</p>
-                    <p>Hinweis: Diese Website dient ausschließlich Informationszwecken und ersetzt keine medizinische Beratung.</p>
+                    <p>Diese Website dient ausschließlich Informationszwecken und ersetzt keine medizinische Beratung.</p>
                 </div>
             </div>
         </div>
     </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Nach oben">↑</button>
 
     <script src="assets/js/main.js"></script>
 </body>

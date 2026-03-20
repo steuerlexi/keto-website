@@ -3,25 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Keto & Diabetes - Blutzuckerkontrolle durch ketogene Ernährung</title>
-    <meta name="description" content="Wie die ketogene Ernährung bei Typ-1 und Typ-2 Diabetes helfen kann - wissenschaftliche Grundlagen, praktische Anwendung und Sicherheit.">
+    <title>Keto & Diabetes - Blutzucker unter Kontrolle</title>
+    <meta name="description" content="Keto bei Diabetes und Insulinresistenz.">
     <link rel="stylesheet" href="../../assets/css/base.css">
-    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600;700&family=SF+Pro+Text:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
+    <header class="header" id="header">
         <div class="container nav-container">
             <a href="../../index.html" class="logo">KetoGuide</a>
-            <nav class="nav-menu">
-                <a href="../../index.html#grundlagen" class="nav-link">Grundlagen</a>
-                <a href="../../index.html#lebensmittel" class="nav-link">Lebensmittel</a>
+            <nav class="nav-menu" id="navMenu">
+                <a href="../../index.html#gruende" class="nav-link">Warum Keto</a>
                 <a href="../../index.html#rezepte" class="nav-link">Rezepte</a>
-                <a href="../../index.html#leitfaden" class="nav-link">Leitfaden</a>
+                <a href="../../index.html#guides" class="nav-link">Guides</a>
                 <a href="../../index.html#gesundheit" class="nav-link active">Gesundheit</a>
                 <a href="../../index.html#faq" class="nav-link">FAQ</a>
             </nav>
-            <button class="mobile-menu-btn" aria-label="Menü öffnen">
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menü">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -29,179 +26,88 @@
         </div>
     </header>
 
-    <!-- Page Header -->
-    <section class="hero" style="background: var(--bg-secondary);">
-        <div class="container hero-content">
-            <h1>Keto & Diabetes</h1>
-            <p>Wie ketogene Ernährung helfen kann, Blutzucker zu stabilisieren und Insulinempfindlichkeit zu verbessern</p>
+    <section class="page-header">
+        <div class="container">
+            <h1 class="animate-fade-in-up">Diabetes.</h1>
+            <p class="animate-fade-in-up delay-1">Blutzuckerkontrolle durch ketogene Ernährung.</p>
         </div>
     </section>
 
-    <!-- Typ-2 Diabetes -->
-    <section class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Typ-2 Diabetes & Insulinresistenz</h2>
+    <section class="content-section">
+        <div class="container container-narrow">
+            <h2>Typ-2-Diabetes umkehren?</h2>
+            <p>Studien zeigen, dass Keto bei Typ-2-Diabetes zu einer drastischen Reduktion des HbA1c-Werts führen kann – in manchen Fällen sogar zu einer Remission.</p>
+
+            <h3>Mechanismus</h3>
+            <ul>
+                <li>Keine Kohlenhydrate = kein Blutzuckeranstieg</li>
+                <li>Verbesserte Insulinsensitivität</li>
+                <li>Reduktion der Bauchfettmasse</li>
+            </ul>
+
+            <div style="background: var(--apple-gray-100); padding: 32px; border-radius: var(--radius-lg); margin: 40px 0;">
+                <h3 style="margin-top: 0;">⚠️ Wichtig</h3>
+                <p>Bei Diabetes solltest du mit deinem Arzt zusammenarbeiten. Die Medikation muss oft angepasst werden.</p>
             </div>
 
-            <div class="card-grid">
-                <div class="card fade-in">
-                    <div class="card-header">
-                        <h3>📊 Wissenschaftliche Grundlagen</h3>
-                    </div>
-                    <div class="card-body">
-                        <p>Die ketogene Ernährung adressiert die Ursache des Typ-2 Diabetes: Insulinresistenz und chronisch erhöhter Blutzucker.</p>
-                        <p><strong>Wirkungsmechanismen:</strong></p>
-                        <ul>
-                            <li>Drastische Reduktion der Blutzuckerschwankungen durch minimale Kohlenhydratzufuhr</li>
-                            <li>Verbesserte Insulinempfindlichkeit der Zellen durch geringere Insulinbelastung</li>
-                            <li>Gewichtsverlust reduziert entzündliches Fettgewebe, das Insulinresistenz verursacht</li>
-                            <li>Ketone selbst können signalmolekulare Wirkungen haben, die den Stoffwechsel verbessern</li>
-                            <li>Reduktion von Triglyceriden und Erhöhung von HDL-Cholesterin</li>
-                        </ul>
-                    </div>
-                </div>
+            <h2>Virta Health Studie</h2>
+            <p>In der größten Keto-Diabetes-Studie erreichten 60% der Teilnehmer nach einem Jahr eine Diabetes-Remission oder drastische Verbesserung.</p>
 
-                <div class="card fade-in fade-in-delay-1">
-                    <div class="card-header">
-                        <h3>📈 Klinische Evidenz</h3>
-                    </div>
-                    <div class="card-body">
-                        <p>Numerous studies show significant improvements in diabetic markers with ketogenic diets.</p>
-                        <p><strong>Typische Ergebnisse nach 3-6 Monaten:</strong></p>
-                        <ul>
-                            <li>HbA1c Reduktion um 0,5-2,0 Prozentpunkte</li>
-                            <li>Viele Patienten erreichen Werte unter 6,5% (Remission Schwelle)</li>
-                            <li>Reduzierung oder Absetzen von Diabetes-Medikamenten möglich (unter ärztlicher Aufsicht)</li>
-                            <li>Signifikante Gewichtsreduktion, besonders viszerales Fett</li>
-                            <li>Verbesserte Lipidprofile: niedrigere Triglyceride, höheres HDL</li>
-                            <li>Reduzierter Blutdruck bei vielen Patienten</li>
-                        </ul>
-                    </div>
-                </div>
+            <div style="display: flex; gap: 16px; margin-top: 60px; flex-wrap: wrap;">
+                <a href="entzuendung.html" class="btn btn-primary">Weiter: Entzündungen →</a>
+                <a href="../../index.html#gesundheit" class="btn btn-outline">Alle Themen</a>
             </div>
-        </div>
-    </section
-
-    <!-- Typ-1 Diabetes -->
-    <section class="section bg-light">
-        <div class="container">
-            <div class="section-title">
-                <h2>Typ-1 Diabetes & Ketogene Ernährung</h2>
-            </div>
-
-            <div class="card">
-                <div class="card-body">
-                    <p>Typ-1 Diabetes stellt besondere Herausforderungen dar, da der Körper kein Insulin produziert und daher externe Zufuhr lebensnotwendig ist.</p>
-
-                    <div class="card-header">
-                        <h3>⚠️ Wichtige Sicherheitsüberlegungen</h3>
-                    </div>
-                    <div class="card-body">
-                        <p>Bei Typ-1 Diabetes ist ärztliche Überwachung absolut essentiell - niemals ohne professionelle Begleitung umstellen!</p>
-                        <p><strong>Risiken die beachtet werden müssen:</strong></p>
-                        <ul>
-                            <li>Ketoazidose: gefährliche Übersäuerung bei gleichzeitigem Insulinmangel und hohen Ketonwerten</li>
-                            <li>Unterzuckerung bei zu strikter Kohlenhydratreduktion ohne entsprechende Insulinanpassung</li>
-                            <li>Elektrolytstörungen durch veränderte Nierenfunktion bei Blutzuckerschwankungen</li>
-                        </ul>
-                        <p><strong>Mögliche Vorteile bei sorgfältiger Anwendung:</strong></p>
-                        <ul>
-                            <li>Stabilere Blutzuckerwerte mit weniger Extreme</li>
-                            <li>Geringere Schwankungen bedeuten weniger Belastung für Gefäße und Nerven</li>
-                            <li>Reduzierter Gesamtinsulinbedarf möglich durch verbesserte Effizienz</li>
-                            <li>Weniger Essattacken und Heißhunger durch stabilere Blutzuckerwerte</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="card-header">
-                    <h3>📋 Praktische Richtlinien für Typ-1</h3>
-                </div>
-                <div class="card-body">
-                    <p>Wenn du Typ-1 Diabetes hast und über eine ketogene Ernährung nachdenkst, beachte unbedingt:</p>
-                    <ol>
-                        <li>Arzt und Diabetesberater unbedingt einbeziehen - niemals allein entscheiden</li>
-                        <li>Sehr häufiges Blutzuckermessen, besonders in der Umstellungsphase</li>
-                        <li>Schrittweise Reduktion der Kohlenhydrate über Wochen, nicht Tage</li>
-                        <li>Gleichzeitige Anpassung der Insulin dosis unter professioneller Aufsicht</li>
-                        <li>Ketonmessung ergänzend zum Blutzucker - Zielbereich 0,5-3,0 mmol/L, niemals über 5,0 ohne ärztliche Absprache</li>
-                        <li>Auf Elektrolyte achten und bei Bedarf supplementieren</li>
-                        <li>Notfallplan für Unterzuckerung jederzeit bereithalten (Glukose-Tabletten oder Gel)</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-    </section
-
-    <!-- Praktische Anwendung -->
-    <section class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Praktische Anwendung für Diabetiker</h2>
-            </div>
-
-            <div class="card-grid">
-                <div class="card fade-in">
-                    <div class="card-header">
-                        <h3>🥗 Lebensmittelauswahl</h3>
-                    </div>
-                    <div class="card-body">
-                        <p>Die richtige Lebensmittelauswahl ist entscheidend für erfolgreiche Blutzuckerkontrolle.</p>
-                        <p><strong>Optimale Lebensmittel:</strong></p>
-                        <ul>
-                            <li>Fettreiche Fischsorten: Lachs, Makrele, Hering, Sardinen</li>
-                            <li>Hochwertiges Fleisch: Weide-Rind, freie Haltung Poulet, Eier vom Freilandhof</li>
-                            <li>Gesunde Fette: Avocado, Olivenöl, Kokosöl, Butter vom Weiderind</li>
-                            <li>Niedrigkarbides Gemüse: Blattgemüse, Brokkoli, Blumenkohl, Zucchini, Spargel, Pilze</li>
-                            <li>In Maßen: Beeren, Nüsse, Samen (auf Gesamt-KH achten)</li>
-                        </ul>
-                        <p><strong>Zu vermeiden oder stark einschränken:</strong></p>
-                        <ul>
-                            <li>Alle Getreide und Getreideprodukte (Weizen, Reis, Hafer, Mais, usw.)</li>
-                            <li>Stärkehaltiges Gemüse: Kartoffeln, Süßkartoffeln, Mais, Erbsen</li>
-                            <li>Die meisten Früchte außer Beeren in sehr kleinen Mengen</li>
-                            <li>Zucker in allen Formen: Tafelzucker, Honig, Agavendicksaft, Ahornsirup, usw.</li>
-                            <li>Verarbeitete Lebensmittel mit verstecktem Zucker und Stärke</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="card fade-in fade-in-delay-1">
-                    <div class="card-header">
-                        <h3>💊 Medikamentenmanagement</h3>
-                    </div>
-                    <div class="card-body">
-                        <p>Die Medikamentenanpassung ist einer der wichtigsten Aspekte bei diabetischen Patienten.</p>
-                        <p><strong>Wichtige Prinzipien:</strong></p>
-                        <ul>
-                            <li>NIEMALS Medikamente eigenmächtig absetzen oder ändern</li>
-                            <li>Regelmäßige Kontrollen beim Arzt oder Diabetesspezialisten</li>
-                            <li>Oft reduzierten Bedarf an: Insulin, Metformin, Sulfonylharnstoffen, GLP-1 Agonisten</li>
-                            <li>Auf mögliche Unterzuckerung achten, besonders in den ersten Tagen und Wochen</li>
-                            <li>Glukosewerte sollten im Zielbereich liegen, nicht zu niedrig (<70 mg/dL) um Hypoglykämie zu vermeiden</li>
-                            <li>Langzeitmedikamente dürfen nur unter ärztlicher Aufsicht angepasst werden</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section
-
-    <!-- Back to Health -->
-    <section class="section bg-light">
-        <div class="container text-center">
-            <a href="../../index.html#gesundheit" class="btn btn-outline">Zurück zur Gesundheitsübersicht</a>
         </div>
     </section>
 
-    <!-- Footer -->
+    <section style="background: var(--apple-gray-100); padding: 80px 0;">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 40px;">Weitere Themen</h2>
+            <div class="grid grid-3">
+                <a href="gewicht.html" class="card link-card">
+                    <div class="card-body" style="text-align: center;">
+                        <div style="font-size: 48px; margin-bottom: 16px;">⚖️</div>
+                        <h3>Gewicht</h3>
+                        <p>Abnehmen</p>
+                    </div>
+                </a>
+                <a href="herz.html" class="card link-card">
+                    <div class="card-body" style="text-align: center;">
+                        <div style="font-size: 48px; margin-bottom: 16px;">❤️</div>
+                        <h3>Herz</h3>
+                        <p>Kreislauf</p>
+                    </div>
+                </a>
+                <a href="gehirn.html" class="card link-card">
+                    <div class="card-body" style="text-align: center;">
+                        <div style="font-size: 48px; margin-bottom: 16px;">🧠</div>
+                        <h3>Gehirn</h3>
+                        <p>Kognition</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 KetoGuide. Alle Rechte vorbehalten.</p>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo">KetoGuide</span>
+                </div>
+                <nav class="footer-nav">
+                    <a href="../../index.html" class="footer-link">Startseite</a>
+                    <a href="../../index.html#rezepte" class="footer-link">Rezepte</a>
+                    <a href="../../index.html#guides" class="footer-link">Guides</a>
+                </nav>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 KetoGuide. Alle Rechte vorbehalten.</p>
+                </div>
+            </div>
         </div>
     </footer>
 
+    <button class="back-to-top" id="backToTop">↑</button>
     <script src="../../assets/js/main.js"></script>
 </body>
 </html>
