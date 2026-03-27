@@ -21,12 +21,14 @@ This is a **static HTML website** with no build process, no package manager, and
 │   └── js/
 │       └── main.js         # Mobile menu, smooth scroll, FAQ accordion, back-to-top, scroll animations
 └── pages/
-    ├── guides/             # How-to guides (starten.html, tracking.html, mealprep.html, sport.html)
-    ├── recipes/            # Recipe categories (fruehstueck.html, mittagessen.html, desserts.html, vegetarisch.html, snacks.html, abendessen.html)
+    ├── guides/             # How-to guides (starten.html, tracking.html, sport.html)
+    ├── recipes/            # Recipe categories and individual recipes
+    │   ├── *.html          # Category pages (fruehstueck.html, mittagessen.html, desserts.html, vegetarisch.html, snacks.html, abendessen.html, brot-gebaeck.html, feiertage.html, getraenke.html, mealprep.html)
+    │   └── details/        # Individual recipe pages (avocado-ei-teller.html, keto-cheesecake.html, zoodle-lachs.html)
     ├── health/             # Health topics (gewicht.html, gehirn.html, herz.html, diabetes.html, entzuendung.html, hormone.html, schlaf.html)
     ├── supplements/        # Supplement guides (mct-oil.html, elektrolyte.html)
     ├── lifestyle/          # Lifestyle content (reisen.html)
-    ├── topics/             # Various topics (alkohol.html, kaffee.html, suesstoffer.html, darm.html, etc.)
+    ├── topics/             # Various topics (alkohol.html, kaffee.html, suesstoffer.html, darm.html, alter.html, athletic-performance.html, psychische-gesundheit.html, schilddruese.html, sporternaehrung.html)
     └── ketopedia/          # Educational articles (001-was-ist-keto.html, 002-keto-flu.html)
 ```
 
@@ -55,7 +57,7 @@ All pages follow this structure:
 4. **Cards**: `.card` or `.recipe-card` with hover effects
 5. **Footer**: `.footer` with navigation links
 
-**Important**: Pages in subdirectories reference assets with `../../` paths (e.g., `../../assets/css/base.css`).
+**Important**: Pages in subdirectories reference assets with `../../` paths (e.g., `../../assets/css/base.css`). Recipe detail pages in `pages/recipes/details/` use `../../../assets/css/base.css`.
 
 ### Navigation Structure
 
@@ -102,12 +104,18 @@ Then open `http://localhost:8000` in a browser.
 
 ### Adding New Pages
 
+**For category pages** (e.g., `/pages/recipes/fruehstueck.html`):
 1. Create HTML file in appropriate `/pages/` subdirectory
 2. Copy header/nav structure from existing page (use `../../` for assets)
 3. Use `.page-header` for page title section
 4. Use `.content-section` with `.container-narrow` for content
 5. Link from index.html or relevant section pages
 6. Add footer with navigation links
+
+**For recipe detail pages** (in `/pages/recipes/details/`):
+1. Use `../../../` for asset paths (three levels deep)
+2. Include custom styles for `.recipe-detail`, `.recipe-section`, `.ingredients-list`, and `.instructions-list`
+3. Link back to appropriate category page
 
 ### Content Guidelines
 
@@ -125,6 +133,7 @@ Then open `http://localhost:8000` in a browser.
 | `assets/js/main.js` | All interactive functionality |
 | `pages/guides/starten.html` | Primary beginner guide |
 | `pages/recipes/*.html` | Recipe category pages with recipe cards |
+| `pages/recipes/details/*.html` | Individual recipe detail pages |
 | `pages/health/*.html` | Health benefit articles |
 | `pages/supplements/*.html` | Supplement guides |
 | `pages/topics/*.html` | Special topics (alkohol, kaffee, etc.) |
@@ -171,3 +180,11 @@ Then open `http://localhost:8000` in a browser.
     </div>
 </div>
 ```
+
+### Recipe Detail Page Structure
+Recipe detail pages in `pages/recipes/details/` include inline styles for:
+- `.recipe-detail` - container with max-width 800px
+- `.recipe-section` - content sections with h3 headings
+- `.ingredients-list` - checklist-style ingredient items
+- `.instructions-list` - numbered step-by-step instructions
+- `.recipe-meta-bar` - nutrition info bar at top

@@ -13,11 +13,86 @@
         <div class="container nav-container">
             <a href="index.html" class="logo">KetoGuide</a>
             <nav class="nav-menu" id="navMenu">
-                <a href="#gruende" class="nav-link">Warum Keto</a>
-                <a href="#rezepte" class="nav-link">Rezepte</a>
-                <a href="#guides" class="nav-link">Guides</a>
-                <a href="#gesundheit" class="nav-link">Gesundheit</a>
-                <a href="#faq" class="nav-link">FAQ</a>
+                <div class="nav-item">
+                    <a href="#gruende" class="nav-link">Warum Keto</a>
+                </div>
+                <div class="nav-item nav-item-dropdown">
+                    <a href="#rezepte" class="nav-link">Rezepte ▾</a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-header">Kategorien</div>
+                        <a href="pages/recipes/fruehstueck.html" class="dropdown-item">
+                            <span class="dropdown-item-icon">🍳</span> Frühstück
+                        </a>
+                        <a href="pages/recipes/mittagessen.html" class="dropdown-item">
+                            <span class="dropdown-item-icon">🥗</span> Mittagessen
+                        </a>
+                        <a href="pages/recipes/abendessen.html" class="dropdown-item">
+                            <span class="dropdown-item-icon">🍽️</span> Abendessen
+                        </a>
+                        <a href="pages/recipes/snacks.html" class="dropdown-item">
+                            <span class="dropdown-item-icon">🥜</span> Snacks
+                        </a>
+                        <a href="pages/recipes/desserts.html" class="dropdown-item">
+                            <span class="dropdown-item-icon">🍰</span> Desserts
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="pages/recipes/brot-gebaeck.html" class="dropdown-item">
+                            <span class="dropdown-item-icon">🥖</span> Brot & Gebäck
+                        </a>
+                        <a href="pages/recipes/getraenke.html" class="dropdown-item">
+                            <span class="dropdown-item-icon">🥤</span> Getränke
+                        </a>
+                        <a href="pages/recipes/vegetarisch.html" class="dropdown-item">
+                            <span class="dropdown-item-icon">🌱</span> Vegetarisch
+                        </a>
+                    </div>
+                </div>
+                <div class="nav-item nav-item-dropdown">
+                    <a href="#guides" class="nav-link">Guides ▾</a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-header">Anleitungen</div>
+                        <a href="pages/guides/starten.html" class="dropdown-item">
+                            <span class="dropdown-item-icon">🚀</span> Einstieg
+                        </a>
+                        <a href="pages/guides/tracking.html" class="dropdown-item">
+                            <span class="dropdown-item-icon">📊</span> Makros tracken
+                        </a>
+                        <a href="pages/guides/mealprep.html" class="dropdown-item">
+                            <span class="dropdown-item-icon">🍱</span> Meal Prep
+                        </a>
+                        <a href="pages/guides/sport.html" class="dropdown-item">
+                            <span class="dropdown-item-icon">💪</span> Sport & Keto
+                        </a>
+                    </div>
+                </div>
+                <div class="nav-item nav-item-dropdown">
+                    <a href="#gesundheit" class="nav-link">Gesundheit ▾</a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-header">Themen</div>
+                        <a href="pages/health/gewicht.html" class="dropdown-item">
+                            <span class="dropdown-item-icon">⚖️</span> Gewichtsmanagement
+                        </a>
+                        <a href="pages/health/gehirn.html" class="dropdown-item">
+                            <span class="dropdown-item-icon">🧠</span> Mentale Klarheit
+                        </a>
+                        <a href="pages/health/herz.html" class="dropdown-item">
+                            <span class="dropdown-item-icon">❤️</span> Herzgesundheit
+                        </a>
+                        <a href="pages/health/diabetes.html" class="dropdown-item">
+                            <span class="dropdown-item-icon">🩺</span> Diabetes & Keto
+                        </a>
+                        <a href="pages/health/entzuendung.html" class="dropdown-item">
+                            <span class="dropdown-item-icon">🛡️</span> Entzündungen
+                        </a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="#faq" class="nav-link">FAQ</a>
+                </div>
+                <div class="nav-search">
+                    <span class="nav-search-icon">🔍</span>
+                    <input type="text" class="nav-search-input" placeholder="Suchen...">
+                </div>
             </nav>
             <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menü">
                 <span></span>
@@ -56,8 +131,8 @@
                     <div class="stat-label">Wenige Kohlenhydrate</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">2-4</div>
-                    <div class="stat-label">Wochen bis zur Ketose</div>
+                    <div class="stat-number">120+</div>
+                    <div class="stat-label">Rezepte verfügbar</div>
                 </div>
             </div>
         </div>
@@ -132,8 +207,8 @@
     <section id="rezepte" class="section" style="background: var(--apple-gray-100);">
         <div class="container">
             <div class="section-headline scroll-animate">
-                <h2>Leckere Rezepte.</h2>
-                <p>Köstliche Mahlzeiten, die dich satt machen und in Ketose halten.</p>
+                <h2>120+ Keto Rezepte.</h2>
+                <p>Über 120 köstliche Mahlzeiten in 10 Kategorien – alle zuckerfrei und kohlenhydratarm.</p>
             </div>
 
             <div class="bento-grid bento-grid-3">
@@ -141,7 +216,7 @@
                     <div class="bento-content">
                         <div class="bento-icon">🍳</div>
                         <h3>Frühstück</h3>
-                        <p>Starte den Tag energiegeladen</p>
+                        <p>12 Rezepte für den perfekten Start</p>
                     </div>
                 </a>
 
@@ -149,7 +224,7 @@
                     <div class="bento-content">
                         <div class="bento-icon">🥗</div>
                         <h3>Mittagessen</h3>
-                        <p>Sättigende Hauptgerichte</p>
+                        <p>12 sättigende Hauptgerichte</p>
                     </div>
                 </a>
 
@@ -157,7 +232,7 @@
                     <div class="bento-content">
                         <div class="bento-icon">🍰</div>
                         <h3>Desserts</h3>
-                        <p>Süße Momente ohne Zucker</p>
+                        <p>12 süße Versuchungen ohne Zucker</p>
                     </div>
                 </a>
 
@@ -165,7 +240,7 @@
                     <div class="bento-content">
                         <div class="bento-icon">🌱</div>
                         <h3>Vegetarisch</h3>
-                        <p>Pflanzliche Keto-Optionen</p>
+                        <p>12 pflanzliche Keto-Rezepte</p>
                     </div>
                 </a>
 
@@ -173,7 +248,7 @@
                     <div class="bento-content">
                         <div class="bento-icon">🥜</div>
                         <h3>Snacks</h3>
-                        <p>Für unterwegs und zwischendurch</p>
+                        <p>12 Ideen für zwischendurch</p>
                     </div>
                 </a>
 
@@ -181,7 +256,41 @@
                     <div class="bento-content">
                         <div class="bento-icon">🍽️</div>
                         <h3>Abendessen</h3>
-                        <p>Leichte, nahrhafte Gerichte</p>
+                        <p>12 leichte Abendgerichte</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="bento-grid bento-grid-4" style="margin-top: 20px;">
+                <a href="pages/recipes/brot-gebaeck.html" class="bento-item link-card scroll-animate" style="background: linear-gradient(135deg, #efebe9 0%, #d7ccc8 100%);">
+                    <div class="bento-content" style="padding: 24px;">
+                        <div class="bento-icon" style="font-size: 36px;">🥖</div>
+                        <h3 style="font-size: 21px;">Brot & Gebäck</h3>
+                        <p style="font-size: 14px;">12 Low-Carb Alternativen</p>
+                    </div>
+                </a>
+
+                <a href="pages/recipes/getraenke.html" class="bento-item link-card scroll-animate delay-1" style="background: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 100%);">
+                    <div class="bento-content" style="padding: 24px;">
+                        <div class="bento-icon" style="font-size: 36px;">🥤</div>
+                        <h3 style="font-size: 21px;">Getränke</h3>
+                        <p style="font-size: 14px;">12 Shakes & Smoothies</p>
+                    </div>
+                </a>
+
+                <a href="pages/recipes/mealprep.html" class="bento-item link-card scroll-animate delay-2" style="background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);">
+                    <div class="bento-content" style="padding: 24px;">
+                        <div class="bento-icon" style="font-size: 36px;">🍱</div>
+                        <h3 style="font-size: 21px;">Meal-Prep</h3>
+                        <p style="font-size: 14px;">12 Vorbereitungsrezepte</p>
+                    </div>
+                </a>
+
+                <a href="pages/recipes/feiertage.html" class="bento-item link-card scroll-animate delay-3" style="background: linear-gradient(135deg, #fbe9e7 0%, #ffccbc 100%);">
+                    <div class="bento-content" style="padding: 24px;">
+                        <div class="bento-icon" style="font-size: 36px;">🎄</div>
+                        <h3 style="font-size: 21px;">Feiertage</h3>
+                        <p style="font-size: 14px;">12 festliche Gerichte</p>
                     </div>
                 </a>
             </div>

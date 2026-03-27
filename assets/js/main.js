@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const faqItems = document.querySelectorAll('.faq-item');
     const scrollElements = document.querySelectorAll('.scroll-animate');
     const navLinks = document.querySelectorAll('.nav-link');
+    const dropdownItems = document.querySelectorAll('.nav-item-dropdown');
 
     // Header scroll effect
     function handleHeaderScroll() {
@@ -32,6 +33,60 @@ document.addEventListener('DOMContentLoaded', function() {
         mobileMenuBtn.classList.remove('active');
         navMenu.classList.remove('active');
         document.body.classList.remove('menu-open');
+        // Also close any open dropdowns
+        dropdownItems.forEach(item => {
+            item.classList.remove('dropdown-open');
+        });
+    }
+
+    // Dropdown menu toggle for mobile
+    function initDropdowns() {
+        // Check if it's a touch device
+        const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
+
+        dropdownItems.forEach(item => {
+            const link = item.querySelector('.nav-link');
+
+            if (isTouchDevice) {
+                // On touch devices, toggle dropdown on click
+                link.addEventListener('click', function(e) {
+                    // Only if mobile menu is active or screen is small
+                    if (window.innerWidth <= 1024 || navMenu.classList.contains('active')) {
+                        e.preventDefault();
+                        e.stopPropagation();
+
+                        // Close other open dropdowns
+                        dropdownItems.forEach(otherItem => {
+                            if (otherItem !== item) {
+                                otherItem.classList.remove('dropdown-open');
+                            }
+                        });
+
+                        // Toggle current dropdown
+                        item.classList.toggle('dropdown-open');
+                    }
+                });
+            }
+        });
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.nav-item-dropdown')) {
+                dropdownItems.forEach(item => {
+                    item.classList.remove('dropdown-open');
+                });
+            }
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 1024) {
+                // Close all dropdowns when returning to desktop
+                dropdownItems.forEach(item => {
+                    item.classList.remove('dropdown-open');
+                });
+            }
+        });
     }
 
     // Smooth scroll for anchor links
@@ -196,6 +251,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize
     initScrollAnimations();
+    initDropdowns();
     handleHeaderScroll();
     handleBackToTop();
 
