@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wirsing-Rouladen - Keto Abendessen Rezept</title>
+    <meta name="description" content="Wirsing-Rouladen gefüllt mit Hackfleisch und Käse. Ein herzhaftes Keto-Abendessen mit nur 5g Netto-Kohlenhydraten.">
+    <link rel="stylesheet" href="../../../assets/css/base.css">
+    <style>
+        .recipe-detail {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .recipe-section {
+            margin-bottom: 40px;
+        }
+        .recipe-section h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+        .ingredients-list {
+            list-style: none;
+            padding: 0;
+        }
+        .ingredients-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--apple-gray-200);
+            display: flex;
+            align-items: center;
+        }
+        .ingredients-list li::before {
+            content: "✓";
+            color: var(--apple-green);
+            font-weight: bold;
+            margin-right: 12px;
+        }
+        .instructions-list {
+            counter-reset: step;
+            list-style: none;
+            padding: 0;
+        }
+        .instructions-list li {
+            counter-increment: step;
+            padding: 20px 0 20px 60px;
+            position: relative;
+            border-bottom: 1px solid var(--apple-gray-200);
+        }
+        .instructions-list li::before {
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 20px;
+            width: 40px;
+            height: 40px;
+            background: var(--apple-blue);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+        .nutrition-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .nutrition-table td {
+            padding: 16px;
+            border-bottom: 1px solid var(--apple-gray-200);
+        }
+        .nutrition-table td:last-child {
+            text-align: right;
+            font-weight: 600;
+        }
+        .recipe-meta-large {
+            display: flex;
+            gap: 40px;
+            margin: 30px 0;
+            padding: 24px;
+            background: var(--apple-gray-100);
+            border-radius: var(--radius-lg);
+        }
+        .meta-item {
+            text-align: center;
+        }
+        .meta-value {
+            font-size: 32px;
+            font-weight: 600;
+            color: var(--apple-blue);
+        }
+        .meta-label {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="container nav-container">
+            <a href="../../../index.html" class="logo">KetoGuide</a>
+            <nav class="nav-menu" id="navMenu">
+                <a href="../../../index.html#gruende" class="nav-link">Warum Keto</a>
+                <a href="../../../index.html#rezepte" class="nav-link active">Rezepte</a>
+                <a href="../../../index.html#guides" class="nav-link">Guides</a>
+                <a href="../../../index.html#gesundheit" class="nav-link">Gesundheit</a>
+                <a href="../../../index.html#faq" class="nav-link">FAQ</a>
+            </nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menü">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1 class="animate-fade-in-up">Wirsing-Rouladen.</h1>
+            <p class="animate-fade-in-up delay-1">Herzhafte Kohlrouladen mit Hackfleisch und würzigem Käse.</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container recipe-detail">
+
+            <div class="recipe-meta-large scroll-animate">
+                <div class="meta-item">
+                    <div class="meta-value">⏱️ 50</div>
+                    <div class="meta-label">Minuten</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-value">🔥 540</div>
+                    <div class="meta-label">kcal</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-value">🥑 5g</div>
+                    <div class="meta-label">Netto-KH</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-value">🥩 38g</div>
+                    <div class="meta-label">Protein</div>
+                </div>
+            </div>
+
+            <div class="recipe-section scroll-animate">
+                <h3>Zutaten (für 2-3 Personen)</h3>
+                <ul class="ingredients-list">
+                    <li>1 kleiner Wirsing (ca. 800g)</li>
+                    <li>400g gemischtes Hackfleisch (Rind/Schwein)</li>
+                    <li>150g Mozzarella (gerieben)</li>
+                    <li>50g Parmesan (gerieben)</li>
+                    <li>1 kleine Zwiebel (fein gehackt)</li>
+                    <li>2 Knoblauchzehen (gepresst)</li>
+                    <li>1 Ei</li>
+                    <li>400ml Rinderbrühe</li>
+                    <li>100g passierte Tomaten</li>
+                    <li>2 EL Olivenöl</li>
+                    <li>1 TL getrockneter Oregano</li>
+                    <li>1 TL getrockneter Basilikum</li>
+                    <li>1/2 TL gemahlener Kümmel</li>
+                    <li>Salz und Pfeffer</li>
+                    <li>Frische Petersilie zum Garnieren</li>
+                </ul>
+            </div>
+
+            <div class="recipe-section scroll-animate">
+                <h3>Zubereitung</h3>
+                <ol class="instructions-list">
+                    <li>Entferne die äußeren welken Blätter vom Wirsing. Schneide den Strunk vorsichtig heraus, ohne die Blätter zu beschädigen.</li>
+                    <li>Bringe einen großen Topf mit gesalzenem Wasser zum Kochen. Blanchiere die Wirsingblätter 2-3 Minuten, bis sie weich und biegsam sind. Nimm sie heraus und lege sie auf ein Küchenhandtuch, damit sie abkühlen und abtropfen.</li>
+                    <li>Bereite die Füllung zu: Vermische Hackfleisch, Zwiebel, Knoblauch, Ei, 100g Mozzarella, 30g Parmesan, Oregano, Basilikum, Kümmel, Salz und Pfeffer in einer Schüssel. Knete gut durch.</li>
+                    <li>Forme aus der Hackfischmasse 6-8 gleich große Rollen.</li>
+                    <li>Lege ein großes Wirsingblatt auf die Arbeitsfläche (oder zwei kleine überlappend). Platziere eine Hackrolle auf dem unteren Drittel und rolle das Blatt fest um das Fleisch. Fälsche die Seiten nach innen ein wie bei einer traditionellen Roulade. Wiederhole mit allen Blättern.</li>
+                    <li>Erhitze Olivenöl in einer großen ofenfesten Pfanne oder einem Bräter bei mittlerer Hitze. Brate die Rouladen von allen Seiten an, bis sie goldbraun sind (ca. 2-3 Minuten pro Seite).</li>
+                    <li>Gieße die Rinderbrühe und passierte Tomaten um die Rouladen. Bringe die Flüssigkeit zum Köcheln.</li>
+                    <li>Decke den Bräter zu und lasse die Rouladen bei mittlerer Hitze 25-30 Minuten schmoren, bis das Fleisch durchgegart ist.</li>
+                    <li>Hebe den Deckel, streue den restlichen Mozzarella und Parmesan über die Rouladen und gratiniere sie unter dem Grill 3-5 Minuten, bis der Käse goldbraun ist.</li>
+                    <li>Serviere die Rouladen mit der Sauce und garniere mit frischer Petersilie.</li>
+                </ol>
+            </div>
+
+            <div class="recipe-section scroll-animate">
+                <h3>Nährwerte pro Portion (bei 2 Portionen)</h3>
+                <table class="nutrition-table">
+                    <tr>
+                        <td>Kalorien</td>
+                        <td>680 kcal</td>
+                    </tr>
+                    <tr>
+                        <td>Fett</td>
+                        <td>48g</td>
+                    </tr>
+                    <tr>
+                        <td>Protein</td>
+                        <td>48g</td>
+                    </tr>
+                    <tr>
+                        <td>Kohlenhydrate (gesamt)</td>
+                        <td>12g</td>
+                    </tr>
+                    <tr>
+                        <td>Ballaststoffe</td>
+                        <td>7g</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Netto-Kohlenhydrate</strong></td>
+                        <td><strong>5g</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Calcium</td>
+                        <td>450mg</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="recipe-section scroll-animate">
+                <h3>Tipps & Variationen</h3>
+                <ul style="list-style: disc; padding-left: 20px;">
+                    <li><strong>Wirsing vorbereiten:</strong> Die Blätter können am Vortag blanchiert und im Kühlschrank gelagert werden.</li>
+                    <li><strong>Alternative Beilage:</strong> Serviere mit einem einfachen Gurkensalat oder gedünstetem Spinat.</li>
+                    <li><strong>Mehr Würze:</strong> Füge 1 TL Paprikapulver (edelsüß oder scharf) zur Füllung hinzu.</li>
+                    <li><strong>Low-Fat-Version:</strong> Verwende mageres Hackfleisch und reduziere den Käse auf 100g.</li>
+                    <li><strong>Meal Prep:</strong> Die Rouladen schmecken am nächsten Tag noch besser und halten sich 3 Tage im Kühlschrank.</li>
+                </ul>
+            </div>
+
+            <div style="background: var(--apple-gray-100); padding: 32px; border-radius: var(--radius-lg); margin-top: 60px;">
+                <h3>💡 Wirsing auf Keto</h3>
+                <p>Wirsing ist eine hervorragende Kohlalternative auf Keto: Er hat weniger Kohlenhydrate als Weißkohl, ist reich an Vitamin C und K, und seine Blätter sind ideal zum Füllen. Die Kombination aus Hackfleisch und Käse liefert Protein und gesättigte Fette, während der Wirsing die Rouladen zusammenhält und zusätzliche Nährstoffe beisteuert.</p>
+            </div>
+
+            <div style="margin-top: 40px; text-align: center;">
+                <a href="../abendessen.html" class="btn btn-secondary">← Zurück zu allen Abendessenrezepten</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo">KetoGuide</span>
+                </div>
+                <nav class="footer-nav">
+                    <a href="../../../index.html" class="footer-link">Startseite</a>
+                    <a href="../../../index.html#guides" class="footer-link">Guides</a>
+                    <a href="../../../index.html#gesundheit" class="footer-link">Gesundheit</a>
+                </nav>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 KetoGuide. Alle Rechte vorbehalten.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop">↑</button>
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

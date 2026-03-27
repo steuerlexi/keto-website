@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frikadellen mit Gemüse - Keto Mittagessen</title>
+    <meta name="description" content="Saftige Frikadellen aus Rinderhack mit buttrigem Brokkoli. Klassisch, sättigend und kohlenhydratarm.">
+    <link rel="stylesheet" href="../../../assets/css/base.css">
+    <style>
+        .recipe-detail {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .recipe-section {
+            margin-bottom: 40px;
+        }
+        .recipe-section h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+        .ingredients-list {
+            list-style: none;
+            padding: 0;
+        }
+        .ingredients-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--apple-gray-200);
+            display: flex;
+            align-items: center;
+        }
+        .ingredients-list li::before {
+            content: "✓";
+            color: var(--apple-green);
+            font-weight: bold;
+            margin-right: 12px;
+        }
+        .instructions-list {
+            counter-reset: step;
+            list-style: none;
+            padding: 0;
+        }
+        .instructions-list li {
+            counter-increment: step;
+            padding: 20px 0 20px 60px;
+            position: relative;
+            border-bottom: 1px solid var(--apple-gray-200);
+        }
+        .instructions-list li::before {
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 20px;
+            width: 40px;
+            height: 40px;
+            background: var(--apple-blue);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+        .nutrition-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .nutrition-table td {
+            padding: 16px;
+            border-bottom: 1px solid var(--apple-gray-200);
+        }
+        .nutrition-table td:last-child {
+            text-align: right;
+            font-weight: 600;
+        }
+        .recipe-meta-large {
+            display: flex;
+            gap: 40px;
+            margin: 30px 0;
+            padding: 24px;
+            background: var(--apple-gray-100);
+            border-radius: var(--radius-lg);
+        }
+        .meta-item {
+            text-align: center;
+        }
+        .meta-value {
+            font-size: 32px;
+            font-weight: 600;
+            color: var(--apple-blue);
+        }
+        .meta-label {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="container nav-container">
+            <a href="../../../index.html" class="logo">KetoGuide</a>
+            <nav class="nav-menu" id="navMenu">
+                <a href="../../../index.html#gruende" class="nav-link">Warum Keto</a>
+                <a href="../../../index.html#rezepte" class="nav-link active">Rezepte</a>
+                <a href="../../../index.html#guides" class="nav-link">Guides</a>
+                <a href="../../../index.html#gesundheit" class="nav-link">Gesundheit</a>
+                <a href="../../../index.html#faq" class="nav-link">FAQ</a>
+            </nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menü">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1 class="animate-fade-in-up">Frikadellen mit Gemüse.</h1>
+            <p class="animate-fade-in-up delay-1">Klassisch, saftig und sättigend.</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container recipe-detail">
+
+            <div class="recipe-meta-large scroll-animate">
+                <div class="meta-item">
+                    <div class="meta-value">⏱️ 25</div>
+                    <div class="meta-label">Minuten</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-value">🔥 580</div>
+                    <div class="meta-label">kcal</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-value">🥑 5g</div>
+                    <div class="meta-label">Netto-KH</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-value">⭐ 4.7</div>
+                    <div class="meta-label">Bewertung</div>
+                </div>
+            </div>
+
+            <div class="recipe-section scroll-animate">
+                <h3>Zutaten (für 1 Portion)</h3>
+                <ul class="ingredients-list">
+                    <li>200g Rinderhack (fettarm oder gemischt)</li>
+                    <li>1 Ei</li>
+                    <li>2 EL Mandelmehl (als Bindemittel)</li>
+                    <li>1 TL Senf</li>
+                    <li>1/2 Zwiebel (fein gewürfelt)</li>
+                    <li>200g Brokkoli (Röschen)</li>
+                    <li>30g Butter</li>
+                    <li>Salz, Pfeffer, Paprikapulver nach Geschmack</li>
+                </ul>
+            </div>
+
+            <div class="recipe-section scroll-animate">
+                <h3>Zubereitung</h3>
+                <ol class="instructions-list">
+                    <li>Rinderhack, Ei, Mandelmehl, Senf und gewürfelte Zwiebel in einer Schüssel vermengen.</li>
+                    <li>Mit Salz, Pfeffer und Paprika kräftig würzen und gut durchkneten.</li>
+                    <li>Aus der Masse zwei gleich große Frikadellen formen und leicht flach drücken.</li>
+                    <li>Butter in einer Pfanne erhitzen und die Frikadellen bei mittlerer Hitze 4-5 Minuten pro Seite braten.</li>
+                    <li>Brokkoli in einem Topf mit wenig Wasser 5-6 Minuten dämpfen, bis er bissfest ist.</li>
+                    <li>Brokkoli abgießen und mit einem Klecks Butter und etwas Salz vermengen.</li>
+                    <li>Frikadellen mit dem buttrigen Brokkoli anrichten und servieren.</li>
+                </ol>
+            </div>
+
+            <div class="recipe-section scroll-animate">
+                <h3>Nährwerte pro Portion</h3>
+                <table class="nutrition-table">
+                    <tr>
+                        <td>Kalorien</td>
+                        <td>580 kcal</td>
+                    </tr>
+                    <tr>
+                        <td>Fett</td>
+                        <td>42g</td>
+                    </tr>
+                    <tr>
+                        <td>Protein</td>
+                        <td>38g</td>
+                    </tr>
+                    <tr>
+                        <td>Kohlenhydrate (gesamt)</td>
+                        <td>9g</td>
+                    </tr>
+                    <tr>
+                        <td>Ballaststoffe</td>
+                        <td>4g</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Netto-Kohlenhydrate</strong></td>
+                        <td><strong>5g</strong></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="recipe-section scroll-animate">
+                <h3>Tipps & Variationen</h3>
+                <ul style="list-style: disc; padding-left: 20px;">
+                    <li>Mit Käse: 30g geriebenen Käse in die Frikadellenmasse kneten</li>
+                    <li>Alternative: Blumenkohl statt Brokkoli verwenden</li>
+                    <li>Sauce: Zum Servieren mit einer Keto-BBQ-Sauce beträufeln</li>
+                    <li>Meal-Prep: Frikadellen am Vortag formen und kühl lagern</li>
+                </ul>
+            </div>
+
+            <div style="background: var(--apple-gray-100); padding: 32px; border-radius: var(--radius-lg); margin-top: 60px;">
+                <h3>Warum dieses Rezept funktioniert</h3>
+                <p>Die Kombination aus hochwertigem Rinderhack und Ei liefert alle essenziellen Aminosäuren für Muskelaufbau. Das Mandelmehl ersetzt Semmelbrösel kohlenhydratarm. Brokkoli ist eines der nährstoffreichsten Gemüse und liefert mehr als 100% des Tagesbedarfs an Vitamin C. Ein klassisches Gericht, das auch Kinder lieben.</p>
+            </div>
+
+            <div style="margin-top: 40px; text-align: center;">
+                <a href="../mittagessen.html" class="btn btn-secondary">← Zurück zu allen Mittagessen-Rezepten</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo">KetoGuide</span>
+                </div>
+                <nav class="footer-nav">
+                    <a href="../../../index.html" class="footer-link">Startseite</a>
+                    <a href="../../../index.html#guides" class="footer-link">Guides</a>
+                    <a href="../../../index.html#gesundheit" class="footer-link">Gesundheit</a>
+                </nav>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 KetoGuide. Alle Rechte vorbehalten.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop">↑</button>
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gefüllte Champignons - Keto Frühstück</title>
+    <meta name="description" content="Saftige Champignons gefüllt mit Ei, Käse und Kräutern. Ein elegantes Low-Carb Frühstück voller Geschmack.">
+    <link rel="stylesheet" href="../../../assets/css/base.css">
+    <style>
+        .recipe-detail {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .recipe-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .recipe-header h1 {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .recipe-meta-bar {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+            margin-bottom: 32px;
+            padding: 20px;
+            background: var(--apple-gray-100);
+            border-radius: var(--radius-md);
+        }
+
+        .recipe-meta-item {
+            text-align: center;
+        }
+
+        .recipe-meta-item .label {
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .recipe-meta-item .value {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .recipe-section {
+            margin-bottom: 48px;
+        }
+
+        .recipe-section h2 {
+            font-size: 32px;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--apple-gray-200);
+        }
+
+        .recipe-section h3 {
+            font-size: 24px;
+            margin: 32px 0 16px;
+        }
+
+        .ingredients-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .ingredients-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--apple-gray-200);
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+        }
+
+        .ingredients-list li::before {
+            content: "☐";
+            color: var(--apple-blue);
+            font-size: 18px;
+        }
+
+        .amount {
+            font-weight: 600;
+            color: var(--text-primary);
+            min-width: 80px;
+        }
+
+        .instructions-list {
+            list-style: none;
+            counter-reset: step;
+            padding: 0;
+        }
+
+        .instructions-list li {
+            padding: 20px 0 20px 60px;
+            position: relative;
+            border-bottom: 1px solid var(--apple-gray-200);
+        }
+
+        .instructions-list li::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 20px;
+            width: 40px;
+            height: 40px;
+            background: var(--apple-blue);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .nutrition-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 24px;
+        }
+
+        .nutrition-table th,
+        .nutrition-table td {
+            padding: 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--apple-gray-200);
+        }
+
+        .nutrition-table th {
+            background: var(--apple-gray-100);
+            font-weight: 600;
+        }
+
+        .tip-box {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-left: 4px solid var(--apple-green);
+            padding: 24px;
+            border-radius: var(--radius-md);
+            margin: 32px 0;
+        }
+
+        .tip-box h4 {
+            color: #2e7d32;
+            margin-bottom: 12px;
+            font-size: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--apple-blue);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 24px;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .recipe-header h1 {
+                font-size: 36px;
+            }
+
+            .recipe-meta-bar {
+                gap: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="container nav-container">
+            <a href="../../../index.html" class="logo">KetoGuide</a>
+            <nav class="nav-menu" id="navMenu">
+                <div class="nav-item">
+                    <a href="../../../index.html#gruende" class="nav-link">Warum Keto</a>
+                </div>
+                <div class="nav-item nav-item-dropdown">
+                    <a href="../fruehstueck.html" class="nav-link active">Rezepte ▾</a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-header">Kategorien</div>
+                        <a href="../fruehstueck.html" class="dropdown-item">
+                            <span class="dropdown-item-icon">🍳</span> Frühstück
+                        </a>
+                        <a href="../mittagessen.html" class="dropdown-item">
+                            <span class="dropdown-item-icon">🥗</span> Mittagessen
+                        </a>
+                        <a href="../abendessen.html" class="dropdown-item">
+                            <span class="dropdown-item-icon">🍽️</span> Abendessen
+                        </a>
+                        <a href="../snacks.html" class="dropdown-item">
+                            <span class="dropdown-item-icon">🥜</span> Snacks
+                        </a>
+                        <a href="../desserts.html" class="dropdown-item">
+                            <span class="dropdown-item-icon">🍰</span> Desserts
+                        </a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="../../../index.html#guides" class="nav-link">Guides</a>
+                </div>
+                <div class="nav-item">
+                    <a href="../../../index.html#faq" class="nav-link">FAQ</a>
+                </div>
+            </nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menü">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="recipe-detail" style="padding-top: 120px;">
+        <a href="../fruehstueck.html" class="back-link">← Zurück zu Frühstück</a>
+
+        <div class="recipe-header">
+            <h1>Gefüllte Champignons</h1>
+            <p>Saftige Champignonköpfe gefüllt mit cremigem Ei, Käse und frischen Kräutern – ein elegantes Frühstück</p>
+
+            <div class="recipe-meta-bar">
+                <div class="recipe-meta-item">
+                    <div class="label">Zubereitung</div>
+                    <div class="value">25 Min</div>
+                </div>
+                <div class="recipe-meta-item">
+                    <div class="label">Kalorien</div>
+                    <div class="value">290 kcal</div>
+                </div>
+                <div class="recipe-meta-item">
+                    <div class="label">Netto-KH</div>
+                    <div class="value">3g</div>
+                </div>
+                <div class="recipe-meta-item">
+                    <div class="label">Portionen</div>
+                    <div class="value">4 Portionen</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="recipe-section">
+            <h2>Zutaten</h2>
+            <ul class="ingredients-list">
+                <li><span class="amount">8</span> große Champignons (ca. 300g)</li>
+                <li><span class="amount">4</span> Eier (Größe M)</li>
+                <li><span class="amount">80g</span> Frischkäse</li>
+                <li><span class="amount">60g</span> Gouda, gerieben</li>
+                <li><span class="amount">2 EL</span> Sahne</li>
+                <li><span class="amount">1</span> Schalotte, fein gehackt</li>
+                <li><span class="amount">1</span> Knoblauchzehe, gepresst</li>
+                <li><span class="amount">2 EL</span> Butter</li>
+                <li><span class="amount">1 EL</span> frische Petersilie, gehackt</li>
+                <li><span class="amount">1 TL</span> frischer Thymian, gehackt</li>
+                <li><span class="amount">1/2 TL</span> Salz</li>
+                <li><span class="amount">1/4 TL</span> Pfeffer</li>
+                <li><span class="amount">1 Prise</span> Muskatnuss</li>
+            </ul>
+        </div>
+
+        <div class="recipe-section">
+            <h2>Zubereitung</h2>
+            <ol class="instructions-list">
+                <li>Den Ofen auf 200°C (Umluft) vorheizen. Ein Backblech mit Backpapier auslegen.</li>
+                <li>Die Champignons mit einem feuchten Tuch säubern und die Stiele vorsichtig herausdrehen.</li>
+                <li>Die Champignonstiele fein hacken und beiseite stellen.</li>
+                <li>1 EL Butter in einer Pfanne erhitzen. Schalotte und Knoblauch 2 Minuten anschwitzen.</li>
+                <li>Die gehackten Champignonstiele hinzufügen und 4-5 Minuten braten, bis die Feuchtigkeit verdunstet ist.</li>
+                <li>Die Pfanne vom Herd nehmen. Frischkäse, Sahne, Petersilie, Thymian, Salz, Pfeffer und Muskat unterrühren.</li>
+                <li>Die Eier in eine Schüssel schlagen, verquirlen und zur Käsemasse geben. Gut vermischen.</li>
+                <li>Die Champignonhüte mit der restlichen Butter einpinseln und mit der Öffnung nach oben auf das Backblech setzen.</li>
+                <li>Die Ei-Käse-Masse vorsichtig in die Champignons füllen.</li>
+                <li>Mit dem geriebenen Gouda bestreuen.</li>
+                <li>Etwa 15-18 Minuten backen, bis die Füllung gestockt und goldbraun ist.</li>
+                <li>Mit frischen Kräutern garnieren und warm servieren.</li>
+            </ol>
+        </div>
+
+        <div class="tip-box">
+            <h4>💡 Variations-Tipp</h4>
+            <p>Für extra Geschmack kannst du kleine Speckwürfel zu der Füllung geben. Auch Ziegenkäse statt Gouda passt hervorragend und verleiht eine würzige Note.</p>
+        </div>
+
+        <div class="recipe-section">
+            <h2>Nährwerte pro Portion (2 Champignons)</h2>
+            <table class="nutrition-table">
+                <tr>
+                    <th>Nährstoff</th>
+                    <th>Menge</th>
+                </tr>
+                <tr>
+                    <td>Kalorien</td>
+                    <td>290 kcal</td>
+                </tr>
+                <tr>
+                    <td>Protein</td>
+                    <td>18g</td>
+                </tr>
+                <tr>
+                    <td>Fett</td>
+                    <td>23g</td>
+                </tr>
+                <tr>
+                    <td>Kohlenhydrate (gesamt)</td>
+                    <td>5g</td>
+                </tr>
+                <tr>
+                    <td>Ballaststoffe</td>
+                    <td>2g</td>
+                </tr>
+                <tr>
+                    <td><strong>Netto-Kohlenhydrate</strong></td>
+                    <td><strong>3g</strong></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo">KetoGuide</span>
+                </div>
+                <nav class="footer-nav">
+                    <a href="../../../index.html" class="footer-link">Startseite</a>
+                    <a href="../../../index.html#guides" class="footer-link">Guides</a>
+                    <a href="../../../index.html#gesundheit" class="footer-link">Gesundheit</a>
+                </nav>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 KetoGuide. Alle Rechte vorbehalten.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop">↑</button>
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

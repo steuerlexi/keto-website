@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avocado-Schoko-Mousse - Keto Dessert</title>
+    <meta name="description" content="Cremige Schokoladenmousse aus Avocado und Kakao. Vegan möglich und überraschend lecker.">
+    <link rel="stylesheet" href="../../../assets/css/base.css">
+    <style>
+        .recipe-detail { max-width: 800px; margin: 0 auto; }
+        .recipe-section { margin-bottom: 40px; }
+        .recipe-section h3 { font-size: 28px; margin-bottom: 20px; color: var(--text-primary); }
+        .ingredients-list { list-style: none; padding: 0; }
+        .ingredients-list li { padding: 12px 0; border-bottom: 1px solid var(--apple-gray-200); display: flex; align-items: center; }
+        .ingredients-list li::before { content: "✓"; color: var(--apple-green); font-weight: bold; margin-right: 12px; }
+        .instructions-list { counter-reset: step; list-style: none; padding: 0; }
+        .instructions-list li { counter-increment: step; padding: 20px 0 20px 60px; position: relative; border-bottom: 1px solid var(--apple-gray-200); }
+        .instructions-list li::before { content: counter(step); position: absolute; left: 0; top: 20px; width: 40px; height: 40px; background: var(--apple-blue); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; }
+        .nutrition-table { width: 100%; border-collapse: collapse; }
+        .nutrition-table td { padding: 16px; border-bottom: 1px solid var(--apple-gray-200); }
+        .nutrition-table td:last-child { text-align: right; font-weight: 600; }
+        .recipe-meta-large { display: flex; gap: 40px; margin: 30px 0; padding: 24px; background: var(--apple-gray-100); border-radius: var(--radius-lg); }
+        .meta-item { text-align: center; }
+        .meta-value { font-size: 32px; font-weight: 600; color: var(--apple-blue); }
+        .meta-label { font-size: 14px; color: var(--text-secondary); }
+    </style>
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="container nav-container">
+            <a href="../../../index.html" class="logo">KetoGuide</a>
+            <nav class="nav-menu" id="navMenu">
+                <a href="../../../index.html#gruende" class="nav-link">Warum Keto</a>
+                <a href="../../../index.html#rezepte" class="nav-link active">Rezepte</a>
+                <a href="../../../index.html#guides" class="nav-link">Guides</a>
+                <a href="../../../index.html#gesundheit" class="nav-link">Gesundheit</a>
+                <a href="../../../index.html#faq" class="nav-link">FAQ</a>
+            </nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menü"><span></span><span></span><span></span></button>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1 class="animate-fade-in-up">Avocado-Schoko-Mousse.</h1>
+            <p class="animate-fade-in-up delay-1">Cremig, schokoladig – niemand errät das Geheimnis.</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container recipe-detail">
+            <div class="recipe-meta-large scroll-animate">
+                <div class="meta-item"><div class="meta-value">⏱️ 10</div><div class="meta-label">Minuten</div></div>
+                <div class="meta-item"><div class="meta-value">🔥 195</div><div class="meta-label">kcal</div></div>
+                <div class="meta-item"><div class="meta-value">🥑 3g</div><div class="meta-label">Netto-KH</div></div>
+                <div class="meta-item"><div class="meta-value">🌱 4</div><div class="meta-label">Portionen</div></div>
+            </div>
+
+            <div class="recipe-section scroll-animate">
+                <h3>Zutaten</h3>
+                <ul class="ingredients-list">
+                    <li>2 reife Avocados (ca. 400g Fruchtfleisch)</li>
+                    <li>40g Kakaopulver (unbehandelt)</li>
+                    <li>80ml Kokosmilch (Vollfett)</li>
+                    <li>60g Erythrit (oder 1 TL Stevia-Extrakt)</li>
+                    <li>1 TL Vanilleextrakt</li>
+                    <li>1 Prise Salz</li>
+                    <li>Optional: 1 EL MCT-Öl</li>
+                    <li>Zum Garnieren: Kokosraspel oder Beeren</li>
+                </ul>
+            </div>
+
+            <div class="recipe-section scroll-animate">
+                <h3>Zubereitung</h3>
+                <ol class="instructions-list">
+                    <li>Die Avocados halbieren, entkernen und das Fruchtfleisch mit einem Löffel herauskratzen.</li>
+                    <li>Alle Zutaten (Avocado, Kakaopulver, Kokosmilch, Erythrit, Vanille, Salz) in einen leistungsstarken Mixer oder eine Küchenmaschine geben.</li>
+                    <li>2-3 Minuten mixen, bis eine völlig glatte, cremige Masse entsteht. Zwischendurch die Seiten des Mixers schaben.</li>
+                    <li>Kurz probieren und bei Bedarf mehr Süßungsmittel nach Geschmack zugeben.</li>
+                    <li>Die Mousse in 4 Dessertgläser oder Schälchen füllen.</li>
+                    <li>Mindestens 30 Minuten im Kühlschrank kühlen – je länger, desto fester wird die Konsistenz.</li>
+                    <li>Vor dem Servieren mit Kokosraspeln, frischen Beeren oder einer Minzeblatt garnieren.</li>
+                </ol>
+            </div>
+
+            <div class="recipe-section scroll-animate">
+                <h3>Nährwerte pro Portion</h3>
+                <table class="nutrition-table">
+                    <tr><td>Kalorien</td><td>195 kcal</td></tr>
+                    <tr><td>Fett</td><td>17g</td></tr>
+                    <tr><td>Protein</td><td>3g</td></tr>
+                    <tr><td>Kohlenhydrate (gesamt)</td><td>11g</td></tr>
+                    <tr><td>Ballaststoffe</td><td>7g</td></tr>
+                    <tr><td><strong>Netto-KH</strong></td><td><strong>3g</strong></td></tr>
+                </table>
+            </div>
+
+            <div class="recipe-section scroll-animate">
+                <h3>Warum dieses Rezept funktioniert</h3>
+                <p>Die Avocado verleiht der Mousse eine unglaublich cremige Textur ohne Milchprodukte. Kombiniert mit reichhaltigem Kakaopulver entsteht ein Dessert, das niemanden an Avocado denken lässt. Die gesunden Fette der Avocado machen dich lange satt.</p>
+            </div>
+
+            <div style="background: var(--apple-gray-100); padding: 32px; border-radius: var(--radius-lg); margin-top: 60px;">
+                <h3>💡 Variationen & Tipps</h3>
+                <p><strong>Vegan:</strong> Das Rezept ist bereits vegan! Stelle sicher, dass dein Zuckerersatz pflanzlich ist.</p>
+                <p><strong>Extra schokoladig:</strong> Füge 20g geschmolzene zuckerfreie Schokolade hinzu.</p>
+                <p><strong>Nussig:</strong> Röste 30g Haselnüsse und mixe sie unter.</p>
+                <p><strong>Aufbewahrung:</strong> Im Kühlschrank hält sich die Mousse 2 Tage. Die Avocado oxidiert nicht durch den Kakao.</p>
+            </div>
+
+            <div style="margin-top: 40px; text-align: center;">
+                <a href="../desserts.html" class="btn btn-secondary">← Zurück zu allen Desserts</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo"><span class="logo">KetoGuide</span></div>
+                <nav class="footer-nav">
+                    <a href="../../../index.html" class="footer-link">Startseite</a>
+                    <a href="../../../index.html#guides" class="footer-link">Guides</a>
+                </nav>
+                <div class="footer-bottom"><p>&copy; 2025 KetoGuide</p></div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop">↑</button>
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avocado-Smoothie - Keto Getränk</title>
+    <meta name="description" content="Cremiger Avocado-Smoothie mit Spinat und Kokosmilch. Ein nährstoffreiches Keto-Frühstück voller gesunder Fette.">
+    <link rel="stylesheet" href="../../../assets/css/base.css">
+    <style>
+        .recipe-detail { max-width: 800px; margin: 0 auto; }
+        .recipe-section { margin-bottom: 40px; }
+        .recipe-section h3 { font-size: 28px; margin-bottom: 20px; color: var(--text-primary); }
+        .ingredients-list { list-style: none; padding: 0; }
+        .ingredients-list li { padding: 12px 0; border-bottom: 1px solid var(--apple-gray-200); display: flex; align-items: center; }
+        .ingredients-list li::before { content: "✓"; color: var(--apple-green); font-weight: bold; margin-right: 12px; }
+        .instructions-list { counter-reset: step; list-style: none; padding: 0; }
+        .instructions-list li { counter-increment: step; padding: 20px 0 20px 60px; position: relative; border-bottom: 1px solid var(--apple-gray-200); }
+        .instructions-list li::before { content: counter(step); position: absolute; left: 0; top: 20px; width: 40px; height: 40px; background: var(--apple-blue); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; }
+        .nutrition-table { width: 100%; border-collapse: collapse; }
+        .nutrition-table td { padding: 16px; border-bottom: 1px solid var(--apple-gray-200); }
+        .nutrition-table td:last-child { text-align: right; font-weight: 600; }
+        .recipe-meta-large { display: flex; gap: 40px; margin: 30px 0; padding: 24px; background: var(--apple-gray-100); border-radius: var(--radius-lg); }
+        .meta-item { text-align: center; }
+        .meta-value { font-size: 32px; font-weight: 600; color: var(--apple-blue); }
+        .meta-label { font-size: 14px; color: var(--text-secondary); }
+    </style>
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="container nav-container">
+            <a href="../../../index.html" class="logo">KetoGuide</a>
+            <nav class="nav-menu" id="navMenu">
+                <a href="../../../index.html#gruende" class="nav-link">Warum Keto</a>
+                <a href="../../../index.html#rezepte" class="nav-link active">Rezepte</a>
+                <a href="../../../index.html#guides" class="nav-link">Guides</a>
+                <a href="../../../index.html#gesundheit" class="nav-link">Gesundheit</a>
+                <a href="../../../index.html#faq" class="nav-link">FAQ</a>
+            </nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menü"><span></span><span></span><span></span></button>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1 class="animate-fade-in-up">Avocado-Smoothie.</h1>
+            <p class="animate-fade-in-up delay-1">Grüne Power voller Nährstoffe.</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container recipe-detail">
+            <div class="recipe-meta-large scroll-animate">
+                <div class="meta-item"><div class="meta-value">⏱️ 5</div><div class="meta-label">Minuten</div></div>
+                <div class="meta-item"><div class="meta-value">🔥 380</div><div class="meta-label">kcal</div></div>
+                <div class="meta-item"><div class="meta-value">🥑 4g</div><div class="meta-label">Netto-KH</div></div>
+                <div class="meta-item"><div class="meta-value">⭐ 4.8</div><div class="meta-label">Bewertung</div></div>
+            </div>
+
+            <div class="recipe-section scroll-animate">
+                <h3>Zutaten (1 Portion)</h3>
+                <ul class="ingredients-list">
+                    <li>1/2 reife Avocado</li>
+                    <li>30g Babyspinat</li>
+                    <li>200ml Kokosmilch</li>
+                    <li>1 TL Zitronensaft</li>
+                    <li>1 TL Chiasamen</li>
+                    <li>Stevia oder Erythrit nach Geschmack</li>
+                    <li>Eiswürfel nach Belieben</li>
+                </ul>
+            </div>
+
+            <div class="recipe-section scroll-animate">
+                <h3>Zubereitung</h3>
+                <ol class="instructions-list">
+                    <li>Avocado halbieren, entkernen und das Fruchtfleisch herauslöffeln.</li>
+                    <li>Spinat waschen und trocken schleudern.</li>
+                    <li>Alle Zutaten in einen leistungsstarken Mixer geben.</li>
+                    <li>1-2 Minuten mixen, bis eine samtige Konsistenz entsteht.</li>
+                    <li>Sofort servieren, da der Smoothie sonst braun wird.</li>
+                </ol>
+            </div>
+
+            <div class="recipe-section scroll-animate">
+                <h3>Nährwerte pro Portion</h3>
+                <table class="nutrition-table">
+                    <tr><td>Kalorien</td><td>380 kcal</td></tr>
+                    <tr><td>Fett</td><td>34g</td></tr>
+                    <tr><td>Protein</td><td>5g</td></tr>
+                    <tr><td>Kohlenhydrate</td><td><strong>4g</strong></td></tr>
+                </table>
+            </div>
+
+            <div class="recipe-section scroll-animate">
+                <h3>Tipps & Variationen</h3>
+                <ul style="list-style: disc; padding-left: 20px;">
+                    <li>MCT-Öl: 1 TL für extra Energie</li>
+                    <li>Minze: Frische Minzblätter für Erfrischung</li>
+                    <li>Gurke: 1/4 Gurke für extra Flüssigkeit</li>
+                    <li>Protein: 1 EL Kollagenpulver ergänzen</li>
+                </ul>
+            </div>
+
+            <div style="background: var(--apple-gray-100); padding: 32px; border-radius: var(--radius-lg); margin-top: 60px;">
+                <h3>💡 Warum dieses Rezept funktioniert</h3>
+                <p>Avocado liefert einfach ungesättigte Fette und Kalium. Spinat bringt Eisen und Magnesium. Die Kombination sättigt extrem gut und versorgt den Körper mit essenziellen Nährstoffen. Der Smoothie eignet sich ideal als Frühstücksersatz.</p>
+            </div>
+
+            <div style="margin-top: 40px; text-align: center;">
+                <a href="../getraenke.html" class="btn btn-secondary">← Zurück zu allen Getränken</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo"><span class="logo">KetoGuide</span></div>
+                <nav class="footer-nav">
+                    <a href="../../../index.html" class="footer-link">Startseite</a>
+                    <a href="../../../index.html#guides" class="footer-link">Guides</a>
+                    <a href="../../../index.html#gesundheit" class="footer-link">Gesundheit</a>
+                </nav>
+                <div class="footer-bottom"><p>&copy; 2025 KetoGuide. Alle Rechte vorbehalten.</p></div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop">↑</button>
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Käse-Fondue - Keto Rezept</title>
+    <meta name="description" content="Schweizer Klassiker mit Gruyère und Weißwein - perfekt zum Dippen von Gemüse statt Brot.">
+    <link rel="stylesheet" href="../../../assets/css/base.css">
+    <style>
+        .recipe-detail { max-width: 800px; margin: 0 auto; }
+        .recipe-section { margin-bottom: 40px; }
+        .recipe-section h3 { font-size: 28px; margin-bottom: 20px; color: var(--text-primary); }
+        .ingredients-list { list-style: none; padding: 0; }
+        .ingredients-list li { padding: 12px 0; border-bottom: 1px solid var(--apple-gray-200); display: flex; align-items: center; }
+        .ingredients-list li::before { content: "✓"; color: var(--apple-green); font-weight: bold; margin-right: 12px; }
+        .instructions-list { counter-reset: step; list-style: none; padding: 0; }
+        .instructions-list li { counter-increment: step; padding: 20px 0 20px 60px; position: relative; border-bottom: 1px solid var(--apple-gray-200); }
+        .instructions-list li::before { content: counter(step); position: absolute; left: 0; top: 20px; width: 40px; height: 40px; background: var(--apple-blue); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; }
+        .nutrition-table { width: 100%; border-collapse: collapse; }
+        .nutrition-table td { padding: 16px; border-bottom: 1px solid var(--apple-gray-200); }
+        .nutrition-table td:last-child { text-align: right; font-weight: 600; }
+        .recipe-meta-large { display: flex; gap: 40px; margin: 30px 0; padding: 24px; background: var(--apple-gray-100); border-radius: var(--radius-lg); }
+        .meta-item { text-align: center; }
+        .meta-value { font-size: 32px; font-weight: 600; color: var(--apple-blue); }
+        .meta-label { font-size: 14px; color: var(--text-secondary); }
+    </style>
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="container nav-container">
+            <a href="../../../index.html" class="logo">KetoGuide</a>
+            <nav class="nav-menu" id="navMenu">
+                <a href="../../../index.html#gruende" class="nav-link">Warum Keto</a>
+                <a href="../../../index.html#rezepte" class="nav-link active">Rezepte</a>
+                <a href="../../../index.html#guides" class="nav-link">Guides</a>
+                <a href="../../../index.html#gesundheit" class="nav-link">Gesundheit</a>
+                <a href="../../../index.html#faq" class="nav-link">FAQ</a>
+            </nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menü"><span></span><span></span><span></span></button>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1 class="animate-fade-in-up">Käse-Fondue.</h1>
+            <p class="animate-fade-in-up delay-1">Schweizer Tradition trifft auf Keto - mit Gemüse statt Brot.</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container recipe-detail">
+            <div class="recipe-meta-large scroll-animate">
+                <div class="meta-item"><div class="meta-value">⏱️ 25</div><div class="meta-label">Minuten</div></div>
+                <div class="meta-item"><div class="meta-value">🔥 480</div><div class="meta-label">kcal</div></div>
+                <div class="meta-item"><div class="meta-value">🥑 3g</div><div class="meta-label">Netto-KH</div></div>
+                <div class="meta-item"><div class="meta-value">⭐ 4.9</div><div class="meta-label">Bewertung</div></div>
+            </div>
+
+            <div class="recipe-section scroll-animate">
+                <h3>Zutaten (für 4 Personen)</h3>
+                <ul class="ingredients-list">
+                    <li>400g Gruyère (gerieben)</li>
+                    <li>200g Emmentaler (gerieben)</li>
+                    <li>300ml trockener Weißwein</li>
+                    <li>1 Knoblauchzehe (gehalvt)</li>
+                    <li>1 EL Maisstärke (mit Wasser verrührt)</li>
+                    <li>2 EL Kirschwasser (optional)</li>
+                    <li>1 TL Zitronensaft</li>
+                    <li>Muskat und Pfeffer</li>
+                    <li>Frisch gemahlener Muskat</li>
+                </ul>
+                <h4>Zum Dippen (Keto-freundlich):</h4>
+                <ul class="ingredients-list">
+                    <li>Blumenkohlröschen (vorgegart)</li>
+                    <li>Zucchini-Stifte</li>
+                    <li>Paprika-Streifen</li>
+                    <li>Keto-Brotwürfel</li>
+                    <li>Gewürzgurken</li>
+                </ul>
+            </div>
+
+            <div class="recipe-section scroll-animate">
+                <h3>Zubereitung</h3>
+                <ol class="instructions-list">
+                    <li>Das Caquelon (Fondue-Topf) mit der halbierten Knoblauchzehe einreiben.</li>
+                    <li>Weißwein auf mittlerer Hitze erwärmen, aber nicht kochen lassen.</li>
+                    <li>Beide Käsesorten nach und nach unter ständigem Rühren zugeben, bis eine homogene Masse entsteht.</li>
+                    <li>Die Maisstärke-Lösung einrühren, um das Fondue zu binden.</li>
+                    <li>Mit Zitronensaft, Muskat und Pfeffer abschmecken. Kirschwasser hinzugeben.</li>
+                    <li>Das Caquelon auf den Rechaud stellen und bei kleiner Flamme warm halten.</li>
+                    <li>Gemüse vorbereiten und ins kesse Fondue tauchen!</li>
+                </ol>
+            </div>
+
+            <div class="recipe-section scroll-animate">
+                <h3>Nährwerte pro Portion (Fondue allein)</h3>
+                <table class="nutrition-table">
+                    <tr><td>Kalorien</td><td>480 kcal</td></tr>
+                    <tr><td>Fett</td><td>38g</td></tr>
+                    <tr><td>Protein</td><td>28g</td></tr>
+                    <tr><td>Kohlenhydrate (gesamt)</td><td>3g</td></tr>
+                    <tr><td>Ballaststoffe</td><td>0g</td></tr>
+                    <tr><td><strong>Netto-Kohlenhydrate</strong></td><td><strong>3g</strong></td></tr>
+                </table>
+            </div>
+
+            <div class="recipe-section scroll-animate">
+                <h3>Tipps & Variationen</h3>
+                <ul style="list-style: disc; padding-left: 20px;">
+                    <li>Käse nicht kochen lassen, sonst wird er fadenziehend</li>
+                    <li>Bei Überschuss: Käse auf Keto-Brot streichen und überbacken</li>
+                    <li>Mit Schinken-Würfeln variieren</li>
+                    <li>Truffelöl am Ende für Luxus-Note</li>
+                </ul>
+            </div>
+
+            <div style="background: var(--apple-gray-100); padding: 32px; border-radius: var(--radius-lg); margin-top: 60px;">
+                <h3>Warum dieses Rezept funktioniert</h3>
+                <p>Käse-Fondue ist bereits von Natur aus Keto-freundlich - reich an Fett und Protein, arm an Kohlenhydraten. Der Weißwein verleiht die charakteristische Schärfe, während der Emmentaler für die cremige Konsistenz sorgt. Statt Brot wird Gemüse gedippt, was die Kohlenhydrate minimiert.</p>
+            </div>
+
+            <div style="margin-top: 40px; text-align: center;">
+                <a href="../vegetarisch.html" class="btn btn-secondary">← Zurück zu allen vegetarischen Rezepten</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo"><span class="logo">KetoGuide</span></div>
+                <nav class="footer-nav">
+                    <a href="../../../index.html" class="footer-link">Startseite</a>
+                    <a href="../../../index.html#guides" class="footer-link">Guides</a>
+                    <a href="../../../index.html#gesundheit" class="footer-link">Gesundheit</a>
+                </nav>
+                <div class="footer-bottom"><p>&copy; 2025 KetoGuide. Alle Rechte vorbehalten.</p></div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop">↑</button>
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

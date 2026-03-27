@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanille-Eis - Keto Dessert</title>
+    <meta name="description" content="Cremiges Vanille-Eis aus Sahne, Eigelb und echter Vanille. Das perfekte zuckerfreie Sommerdessert.">
+    <link rel="stylesheet" href="../../../assets/css/base.css">
+    <style>
+        .recipe-detail { max-width: 800px; margin: 0 auto; }
+        .recipe-section { margin-bottom: 40px; }
+        .recipe-section h3 { font-size: 28px; margin-bottom: 20px; color: var(--text-primary); }
+        .ingredients-list { list-style: none; padding: 0; }
+        .ingredients-list li { padding: 12px 0; border-bottom: 1px solid var(--apple-gray-200); display: flex; align-items: center; }
+        .ingredients-list li::before { content: "✓"; color: var(--apple-green); font-weight: bold; margin-right: 12px; }
+        .instructions-list { counter-reset: step; list-style: none; padding: 0; }
+        .instructions-list li { counter-increment: step; padding: 20px 0 20px 60px; position: relative; border-bottom: 1px solid var(--apple-gray-200); }
+        .instructions-list li::before { content: counter(step); position: absolute; left: 0; top: 20px; width: 40px; height: 40px; background: var(--apple-blue); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; }
+        .nutrition-table { width: 100%; border-collapse: collapse; }
+        .nutrition-table td { padding: 16px; border-bottom: 1px solid var(--apple-gray-200); }
+        .nutrition-table td:last-child { text-align: right; font-weight: 600; }
+        .recipe-meta-large { display: flex; gap: 40px; margin: 30px 0; padding: 24px; background: var(--apple-gray-100); border-radius: var(--radius-lg); }
+        .meta-item { text-align: center; }
+        .meta-value { font-size: 32px; font-weight: 600; color: var(--apple-blue); }
+        .meta-label { font-size: 14px; color: var(--text-secondary); }
+    </style>
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="container nav-container">
+            <a href="../../../index.html" class="logo">KetoGuide</a>
+            <nav class="nav-menu" id="navMenu">
+                <a href="../../../index.html#gruende" class="nav-link">Warum Keto</a>
+                <a href="../../../index.html#rezepte" class="nav-link active">Rezepte</a>
+                <a href="../../../index.html#guides" class="nav-link">Guides</a>
+                <a href="../../../index.html#gesundheit" class="nav-link">Gesundheit</a>
+                <a href="../../../index.html#faq" class="nav-link">FAQ</a>
+            </nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menü"><span></span><span></span><span></span></button>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1 class="animate-fade-in-up">Vanille-Eis.</h1>
+            <p class="animate-fade-in-up delay-1">Cremig, zart, authentisch.</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container recipe-detail">
+            <div class="recipe-meta-large scroll-animate">
+                <div class="meta-item"><div class="meta-value">⏱️ 30</div><div class="meta-label">Minuten</div></div>
+                <div class="meta-item"><div class="meta-value">🔥 245</div><div class="meta-label">kcal</div></div>
+                <div class="meta-item"><div class="meta-value">🥑 2g</div><div class="meta-label">Netto-KH</div></div>
+                <div class="meta-item"><div class="meta-value">⭐ 4.8</div><div class="meta-label">Bewertung</div></div>
+            </div>
+
+            <div class="recipe-section scroll-animate">
+                <h3>Zutaten (4 Portionen)</h3>
+                <ul class="ingredients-list">
+                    <li>400ml Schlagsahne</li>
+                    <li>4 Eigelb (Bio-Qualität)</li>
+                    <li>80g Erythrit</li>
+                    <li>1 Vanilleschote (oder 2 TL Vanilleextrakt)</li>
+                    <li>1 Prise Salz</li>
+                    <li>1 TL MCT-Öl (optional, für Cremigkeit)</li>
+                </ul>
+            </div>
+
+            <div class="recipe-section scroll-animate">
+                <h3>Zubereitung</h3>
+                <ol class="instructions-list">
+                    <li>Vanilleschote längs aufschneiden und das Mark herauskratzen. Beides mit der Sahne in einen Topf geben und kurz aufkochen, dann vom Herd nehmen.</li>
+                    <li>Eigelbe und Erythrit in einer Schüssel schaumig schlagen, bis die Masse hellgelb und cremig ist.</li>
+                    <li>Die heiße Vanillesahne langsam unter ständigem Rühren in die Eigelbmasse gießen. Nicht zu schnell, damit die Eier nicht stocken.</li>
+                    <li>Die Mischung zurück in den Topf geben und bei niedriger Hitze unter ständigem Rühren auf 82°C erhitzen. Die Creme sollte leicht andicken.</li>
+                    <li>Durch ein feines Sieb in eine Schüssel gießen und auf Raumtemperatur abkühlen lassen. Das Salz unterrühren.</li>
+                    <li>Die Eiscreme-Masse 4-6 Stunden oder über Nacht im Kühlschrank durchkühlen.</li>
+                    <li>In die Eismaschine geben und nach Herstellerangaben gefrieren (ca. 20-30 Minuten).</li>
+                    <li>Sofort servieren oder in einen luftdichten Behälter füllen und mindestens 2 Stunden durchfrieren.</li>
+                </ol>
+            </div>
+
+            <div class="recipe-section scroll-animate">
+                <h3>Nährwerte pro Portion</h3>
+                <table class="nutrition-table">
+                    <tr><td>Kalorien</td><td>245 kcal</td></tr>
+                    <tr><td>Fett</td><td>22g</td></tr>
+                    <tr><td>Protein</td><td>4g</td></tr>
+                    <tr><td>Kohlenhydrate (gesamt)</td><td>4g</td></tr>
+                    <tr><td>Ballaststoffe</td><td>0g</td></tr>
+                    <tr><td><strong>Netto-KH</strong></td><td><strong>2g</strong></td></tr>
+                </table>
+            </div>
+
+            <div style="background: var(--apple-gray-100); padding: 32px; border-radius: var(--radius-lg); margin-top: 60px;">
+                <h3>💡 Tipp: Ohne Eismaschine</h3>
+                <p>Wenn du keine Eismaschine hast: Gefriere die Masse in einer flachen Schale 1 Stunde, dann mit einer Gabel aufkratzen und wieder einfrieren. Diesen Vorgang alle 30 Minuten wiederholen, bis das Eis cremig ist.</p>
+            </div>
+
+            <div style="margin-top: 40px; text-align: center;">
+                <a href="../desserts.html" class="btn btn-secondary">← Zurück zu allen Desserts</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo"><span class="logo">KetoGuide</span></div>
+                <nav class="footer-nav">
+                    <a href="../../../index.html" class="footer-link">Startseite</a>
+                    <a href="../../../index.html#guides" class="footer-link">Guides</a>
+                </nav>
+                <div class="footer-bottom"><p>&copy; 2025 KetoGuide</p></div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop">↑</button>
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

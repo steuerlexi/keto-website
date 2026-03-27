@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brokkoli-Cheddar-Suppe - Keto Abendessen Rezept</title>
+    <meta name="description" content="Cremige Brokkolisuppe mit Cheddar und knusprigen Bacon-Streifen. Wärmendes Keto-Abendessen in nur 30 Minuten.">
+    <link rel="stylesheet" href="../../../assets/css/base.css">
+    <style>
+        .recipe-detail {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .recipe-section {
+            margin-bottom: 40px;
+        }
+        .recipe-section h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+        .ingredients-list {
+            list-style: none;
+            padding: 0;
+        }
+        .ingredients-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--apple-gray-200);
+            display: flex;
+            align-items: center;
+        }
+        .ingredients-list li::before {
+            content: "✓";
+            color: var(--apple-green);
+            font-weight: bold;
+            margin-right: 12px;
+        }
+        .instructions-list {
+            counter-reset: step;
+            list-style: none;
+            padding: 0;
+        }
+        .instructions-list li {
+            counter-increment: step;
+            padding: 20px 0 20px 60px;
+            position: relative;
+            border-bottom: 1px solid var(--apple-gray-200);
+        }
+        .instructions-list li::before {
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 20px;
+            width: 40px;
+            height: 40px;
+            background: var(--apple-blue);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+        .nutrition-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .nutrition-table td {
+            padding: 16px;
+            border-bottom: 1px solid var(--apple-gray-200);
+        }
+        .nutrition-table td:last-child {
+            text-align: right;
+            font-weight: 600;
+        }
+        .recipe-meta-large {
+            display: flex;
+            gap: 40px;
+            margin: 30px 0;
+            padding: 24px;
+            background: var(--apple-gray-100);
+            border-radius: var(--radius-lg);
+        }
+        .meta-item {
+            text-align: center;
+        }
+        .meta-value {
+            font-size: 32px;
+            font-weight: 600;
+            color: var(--apple-blue);
+        }
+        .meta-label {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="container nav-container">
+            <a href="../../../index.html" class="logo">KetoGuide</a>
+            <nav class="nav-menu" id="navMenu">
+                <a href="../../../index.html#gruende" class="nav-link">Warum Keto</a>
+                <a href="../../../index.html#rezepte" class="nav-link active">Rezepte</a>
+                <a href="../../../index.html#guides" class="nav-link">Guides</a>
+                <a href="../../../index.html#gesundheit" class="nav-link">Gesundheit</a>
+                <a href="../../../index.html#faq" class="nav-link">FAQ</a>
+            </nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menü">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1 class="animate-fade-in-up">Brokkoli-Cheddar-Suppe.</h1>
+            <p class="animate-fade-in-up delay-1">Cremige Wohlfühl-Suppe mit Käse und knusprigem Bacon.</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container recipe-detail">
+
+            <div class="recipe-meta-large scroll-animate">
+                <div class="meta-item">
+                    <div class="meta-value">⏱️ 30</div>
+                    <div class="meta-label">Minuten</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-value">🔥 520</div>
+                    <div class="meta-label">kcal</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-value">🥑 7g</div>
+                    <div class="meta-label">Netto-KH</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-value">🥓 24g</div>
+                    <div class="meta-label">Protein</div>
+                </div>
+            </div>
+
+            <div class="recipe-section scroll-animate">
+                <h3>Zutaten (für 2-3 Personen)</h3>
+                <ul class="ingredients-list">
+                    <li>500g Brokkoli (ca. 1 großer Kopf)</li>
+                    <li>150g Cheddar (gerieben)</li>
+                    <li>100g Bacon (in Streifen)</li>
+                    <li>200ml schwere Sahne</li>
+                    <li>400ml Rinder- oder Gemüsebrühe</li>
+                    <li>50g Butter</li>
+                    <li>1 kleine Zwiebel (gewürfelt)</li>
+                    <li>2 Knoblauchzehen (gepresst)</li>
+                    <li>1/4 TL Muskatnuss (frisch gerieben)</li>
+                    <li>Salz und Pfeffer</li>
+                    <li>2 EL Frühlingszwiebeln (gehackt, zum Garnieren)</li>
+                    <li>Optional: 30g Frischkäse (zusätzliche Cremigkeit)</li>
+                </ul>
+            </div>
+
+            <div class="recipe-section scroll-animate">
+                <h3>Zubereitung</h3>
+                <ol class="instructions-list">
+                    <li>Wasche den Brokkoli und schneide ihn in kleine Röschen. Schäle den Strunk und schneide ihn in kleine Würfel – er enthält viele Nährstoffe und wird weich.</li>
+                    <li>Brate die Bacon-Streifen in einer großen Topf oder Pfanne knusprig. Nimm sie heraus und lasse sie auf Küchenpapier abtropfen. Gib das Bacon-Fett nicht weg!</li>
+                    <li>Schwitze die Zwiebel im Bacon-Fett (ergänze etwas Butter) glasig an. Füge den Knoblauch hinzu und brate ihn 1 Minute mit.</li>
+                    <li>Gib Brokkoli-Röschen und Strunkwürfel in den Topf. Gieße die Brühe hinzu und bringe alles zum Kochen. Koche 10-12 Minuten, bis der Brokkoli weich ist.</li>
+                    <li>Nimm etwa 1/3 des Brokkolis mit etwas Flüssigkeit heraus und stelle sie beiseite. Püriere den restlichen Brokkoli mit einem Stabmixer zu einer glatten Suppe.</li>
+                    <li>Reduziere die Hitze und rühre die Sahne unter. Lasse die Suppe bei niedriger Hitze erwärmen – aber nicht mehr kochen, damit die Sahne nicht gerinnt.</li>
+                    <li>Füge den geriebenen Cheddar nach und nach hinzu und rühre ihn unter, bis er vollständig geschmolzen ist. Optional kannst du auch Frischkäse hinzufügen.</li>
+                    <li>Gib die beiseite gestellten Brokkoli-Röschen zurück in die Suppe für Textur. Würze mit Muskatnuss, Salz und Pfeffer.</li>
+                    <li>Serviere die Suppe in Schüsseln, bestreut mit knusprigem Bacon und Frühlingszwiebeln.</li>
+                </ol>
+            </div>
+
+            <div class="recipe-section scroll-animate">
+                <h3>Nährwerte pro Portion (bei 2 Portionen)</h3>
+                <table class="nutrition-table">
+                    <tr>
+                        <td>Kalorien</td>
+                        <td>750 kcal</td>
+                    </tr>
+                    <tr>
+                        <td>Fett</td>
+                        <td>62g</td>
+                    </tr>
+                    <tr>
+                        <td>Protein</td>
+                        <td>32g</td>
+                    </tr>
+                    <tr>
+                        <td>Kohlenhydrate (gesamt)</td>
+                        <td>12g</td>
+                    </tr>
+                    <tr>
+                        <td>Ballaststoffe</td>
+                        <td>5g</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Netto-Kohlenhydrate</strong></td>
+                        <td><strong>7g</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Calcium</td>
+                        <td>380mg</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="recipe-section scroll-animate">
+                <h3>Tipps & Variationen</h3>
+                <ul style="list-style: disc; padding-left: 20px;">
+                    <li><strong>Extra cremig:</strong> Für eine noch cremigere Suppe püriere alle Brokkoli-Röschen.</li>
+                    <li><strong>Käse-Variante:</strong> Mische Cheddar mit Gruyère oder Gouda für einen komplexeren Geschmack.</li>
+                    <li><strong>Mehr Protein:</strong> Füge 100g gegrillte Hähnchenbruststreifen hinzu.</li>
+                    <li><strong>Säuerlicher:</strong> Ein Spritzer Zitronensaft vor dem Servieren macht die Suppe frischer.</li>
+                    <li><strong>Meal Prep:</strong> Die Suppe hält sich 3 Tage im Kühlschrank. Warme sie langsam auf.</li>
+                </ul>
+            </div>
+
+            <div style="background: var(--apple-gray-100); padding: 32px; border-radius: var(--radius-lg); margin-top: 60px;">
+                <h3>💡 Brokkoli auf Keto</h3>
+                <p>Brokkoli ist ein Keto-Superfood: Mit nur 4g Netto-Kohlenhydraten pro 100g, reich an Vitamin C, K und Folsäure. Die Kombination mit Cheddar liefert gesättigte Fette und Protein, während der Bacon für zusätzlichen Geschmack und Salzigkeit sorgt. Eine perfekte Mahlzeit für kalte Tage.</p>
+            </div>
+
+            <div style="margin-top: 40px; text-align: center;">
+                <a href="../abendessen.html" class="btn btn-secondary">← Zurück zu allen Abendessenrezepten</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo">KetoGuide</span>
+                </div>
+                <nav class="footer-nav">
+                    <a href="../../../index.html" class="footer-link">Startseite</a>
+                    <a href="../../../index.html#guides" class="footer-link">Guides</a>
+                    <a href="../../../index.html#gesundheit" class="footer-link">Gesundheit</a>
+                </nav>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 KetoGuide. Alle Rechte vorbehalten.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop">↑</button>
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

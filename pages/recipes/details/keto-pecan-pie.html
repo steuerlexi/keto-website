@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keto Pecan Pie - Keto Dessert</title>
+    <meta name="description" content="Der US-amerikanische Klassiker mit karamellisierten Pecannüssen. Zuckerfrei und unwiderstehlich.">
+    <link rel="stylesheet" href="../../../assets/css/base.css">
+    <style>
+        .recipe-detail { max-width: 800px; margin: 0 auto; }
+        .recipe-section { margin-bottom: 40px; }
+        .recipe-section h3 { font-size: 28px; margin-bottom: 20px; color: var(--text-primary); }
+        .ingredients-list { list-style: none; padding: 0; }
+        .ingredients-list li { padding: 12px 0; border-bottom: 1px solid var(--apple-gray-200); display: flex; align-items: center; }
+        .ingredients-list li::before { content: "✓"; color: var(--apple-green); font-weight: bold; margin-right: 12px; }
+        .instructions-list { counter-reset: step; list-style: none; padding: 0; }
+        .instructions-list li { counter-increment: step; padding: 20px 0 20px 60px; position: relative; border-bottom: 1px solid var(--apple-gray-200); }
+        .instructions-list li::before { content: counter(step); position: absolute; left: 0; top: 20px; width: 40px; height: 40px; background: var(--apple-blue); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; }
+        .nutrition-table { width: 100%; border-collapse: collapse; }
+        .nutrition-table td { padding: 16px; border-bottom: 1px solid var(--apple-gray-200); }
+        .nutrition-table td:last-child { text-align: right; font-weight: 600; }
+        .recipe-meta-large { display: flex; gap: 40px; margin: 30px 0; padding: 24px; background: var(--apple-gray-100); border-radius: var(--radius-lg); }
+        .meta-item { text-align: center; }
+        .meta-value { font-size: 32px; font-weight: 600; color: var(--apple-blue); }
+        .meta-label { font-size: 14px; color: var(--text-secondary); }
+        .recipe-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        @media (max-width: 768px) { .recipe-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="container nav-container">
+            <a href="../../../index.html" class="logo">KetoGuide</a>
+            <nav class="nav-menu" id="navMenu">
+                <a href="../../../index.html#gruende" class="nav-link">Warum Keto</a>
+                <a href="../../../index.html#rezepte" class="nav-link active">Rezepte</a>
+                <a href="../../../index.html#guides" class="nav-link">Guides</a>
+                <a href="../../../index.html#gesundheit" class="nav-link">Gesundheit</a>
+                <a href="../../../index.html#faq" class="nav-link">FAQ</a>
+            </nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menü"><span></span><span></span><span></span></button>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1 class="animate-fade-in-up">Keto Pecan Pie.</h1>
+            <p class="animate-fade-in-up delay-1">US-Klassiker mit karamellisierten Pecannüssen.</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container recipe-detail">
+            <div class="recipe-meta-large scroll-animate">
+                <div class="meta-item"><div class="meta-value">⏱️ 70</div><div class="meta-label">Minuten</div></div>
+                <div class="meta-item"><div class="meta-value">🔥 345</div><div class="meta-label">kcal</div></div>
+                <div class="meta-item"><div class="meta-value">🥑 3g</div><div class="meta-label">Netto-KH</div></div>
+                <div class="meta-item"><div class="meta-value">🥧 10</div><div class="meta-label">Stücke</div></div>
+            </div>
+
+            <div class="recipe-grid">
+                <div class="recipe-section scroll-animate">
+                    <h3>Für den Teig</h3>
+                    <ul class="ingredients-list">
+                        <li>200g Mandelmehl</li>
+                        <li>60g Butter (kalt, in Würfeln)</li>
+                        <li>1 Ei</li>
+                        <li>1 Prise Salz</li>
+                        <li>1 TL Erythrit</li>
+                        <li>1-2 EL Eiswasser</li>
+                    </ul>
+                </div>
+
+                <div class="recipe-section scroll-animate">
+                    <h3>Für die Füllung</h3>
+                    <ul class="ingredients-list">
+                        <li>200g Pecannüsse (ganz und gehackt)</li>
+                        <li>100g Butter</li>
+                        <li>120g Erythrit (goldener Zuckerersatz)</li>
+                        <li>80ml Sahne</li>
+                        <li>2 Eier (verquirlt)</li>
+                        <li>1 TL Vanilleextrakt</li>
+                        <li>1/2 TL Zimt</li>
+                        <li>Prise Salz</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="recipe-section scroll-animate">
+                <h3>Zubereitung</h3>
+                <ol class="instructions-list">
+                    <li>Den Ofen auf 175°C (Umluft) vorheizen. Eine 23cm Pie-Form (oder Springform) fetten.</li>
+                    <li>Für den Teig: Mandelmehl, Salz und Erythrit vermischen. Kalte Butter dazugeben und mit den Fingern zu einem krümeligen Teig verarbeiten.</li>
+                    <li>Das Ei unterkneten und nach Bedarf Eiswasser zugeben, bis der Teig zusammenhält. Nicht zu lange kneten!</li>
+                    <li>Den Teig zwischen zwei Backpapierblättern ausrollen und in die Form legen. Den Boden mehrmals mit einer Gabel einstechen.</li>
+                    <li>Den Teig 10-12 Minuten blind backen (mit Backbohnen beschwert), dann herausnehmen und abkühlen lassen.</li>
+                    <li>Für die Füllung: Butter und goldenen Erythrit in einem Topf erhitzen und 3-4 Minuten köcheln lassen, bis die Masse goldbraun ist.</li>
+                    <li>Vom Herd nehmen, Sahne unterrühren, dann die Eier und Vanille hinzufügen. Gut verrühren.</li>
+                    <li>Die gehackten Pecannüsse auf den vorgebackenen Boden streuen, die Butter-Zucker-Mischung darübergießen.</li>
+                    <li>Die ganzen Pecannüsse dekorativ auf der Oberfläche anordnen.</li>
+                    <li>30-35 Minuten backen, bis die Füllung fest ist und leicht gebräunt ist. Auskühlen lassen – die Füllung wird beim Abkühlen fester.</li>
+                </ol>
+            </div>
+
+            <div class="recipe-section scroll-animate">
+                <h3>Nährwerte pro Stück (bei 10 Stück)</h3>
+                <table class="nutrition-table">
+                    <tr><td>Kalorien</td><td>345 kcal</td></tr>
+                    <tr><td>Fett</td><td>32g</td></tr>
+                    <tr><td>Protein</td><td>6g</td></tr>
+                    <tr><td>Kohlenhydrate (gesamt)</td><td>7g</td></tr>
+                    <tr><td>Ballaststoffe</td><td>3g</td></tr>
+                    <tr><td><strong>Netto-KH</strong></td><td><strong>3g</strong></td></tr>
+                </table>
+            </div>
+
+            <div style="background: var(--apple-gray-100); padding: 32px; border-radius: var(--radius-lg); margin-top: 60px;">
+                <h3>💡 Traditionell servieren</h3>
+                <p>Der Pecan Pie schmeckt klassisch lauwarm mit einer Kugel Vanilleeis oder einer Portion Schlagsahne. Er lässt sich gut vorbereiten und hält sich 3 Tage im Kühlschrank. Für den typischen Glanz kannst du die Oberfläche nach dem Backen mit etwas warmem Zuckerfrei-Sirup bestreichen.</p>
+            </div>
+
+            <div style="margin-top: 40px; text-align: center;">
+                <a href="../desserts.html" class="btn btn-secondary">← Zurück zu allen Desserts</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo"><span class="logo">KetoGuide</span></div>
+                <nav class="footer-nav">
+                    <a href="../../../index.html" class="footer-link">Startseite</a>
+                    <a href="../../../index.html#guides" class="footer-link">Guides</a>
+                </nav>
+                <div class="footer-bottom"><p>&copy; 2025 KetoGuide</p></div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop">↑</button>
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

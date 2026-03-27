@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creme Brûlée - Keto Dessert</title>
+    <meta name="description" content="Französische Vanille-Creme mit karamellisierter Kruste. Ein elegantes zuckerfreies Dessert.">
+    <link rel="stylesheet" href="../../../assets/css/base.css">
+    <style>
+        .recipe-detail { max-width: 800px; margin: 0 auto; }
+        .recipe-section { margin-bottom: 40px; }
+        .recipe-section h3 { font-size: 28px; margin-bottom: 20px; color: var(--text-primary); }
+        .ingredients-list { list-style: none; padding: 0; }
+        .ingredients-list li { padding: 12px 0; border-bottom: 1px solid var(--apple-gray-200); display: flex; align-items: center; }
+        .ingredients-list li::before { content: "✓"; color: var(--apple-green); font-weight: bold; margin-right: 12px; }
+        .instructions-list { counter-reset: step; list-style: none; padding: 0; }
+        .instructions-list li { counter-increment: step; padding: 20px 0 20px 60px; position: relative; border-bottom: 1px solid var(--apple-gray-200); }
+        .instructions-list li::before { content: counter(step); position: absolute; left: 0; top: 20px; width: 40px; height: 40px; background: var(--apple-blue); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; }
+        .nutrition-table { width: 100%; border-collapse: collapse; }
+        .nutrition-table td { padding: 16px; border-bottom: 1px solid var(--apple-gray-200); }
+        .nutrition-table td:last-child { text-align: right; font-weight: 600; }
+        .recipe-meta-large { display: flex; gap: 40px; margin: 30px 0; padding: 24px; background: var(--apple-gray-100); border-radius: var(--radius-lg); }
+        .meta-item { text-align: center; }
+        .meta-value { font-size: 32px; font-weight: 600; color: var(--apple-blue); }
+        .meta-label { font-size: 14px; color: var(--text-secondary); }
+    </style>
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="container nav-container">
+            <a href="../../../index.html" class="logo">KetoGuide</a>
+            <nav class="nav-menu" id="navMenu">
+                <a href="../../../index.html#gruende" class="nav-link">Warum Keto</a>
+                <a href="../../../index.html#rezepte" class="nav-link active">Rezepte</a>
+                <a href="../../../index.html#guides" class="nav-link">Guides</a>
+                <a href="../../../index.html#gesundheit" class="nav-link">Gesundheit</a>
+                <a href="../../../index.html#faq" class="nav-link">FAQ</a>
+            </nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menü"><span></span><span></span><span></span></button>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1 class="animate-fade-in-up">Creme Brûlée.</h1>
+            <p class="animate-fade-in-up delay-1">Französischer Klassiker mit karamellisierter Kruste.</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container recipe-detail">
+            <div class="recipe-meta-large scroll-animate">
+                <div class="meta-item"><div class="meta-value">⏱️ 50</div><div class="meta-label">Minuten</div></div>
+                <div class="meta-item"><div class="meta-value">🔥 295</div><div class="meta-label">kcal</div></div>
+                <div class="meta-item"><div class="meta-value">🥑 2g</div><div class="meta-label">Netto-KH</div></div>
+                <div class="meta-item"><div class="meta-value">🍮 6</div><div class="meta-label">Portionen</div></div>
+            </div>
+
+            <div class="recipe-section scroll-animate">
+                <h3>Zutaten für die Creme</h3>
+                <ul class="ingredients-list">
+                    <li>500ml Schlagsahne</li>
+                    <li>6 Eigelb (Bio-Qualität)</li>
+                    <li>80g Erythrit (fein gemahlen)</li>
+                    <li>1 Vanilleschote (oder 2 TL Vanilleextrakt)</li>
+                    <li>1 Prise Salz</li>
+                </ul>
+            </div>
+
+            <div class="recipe-section scroll-animate">
+                <h3>Für die karamellisierte Kruste</h3>
+                <ul class="ingredients-list">
+                    <li>3 EL Erythrit (zum Karamellisieren)</li>
+                    <li>Optional: Frische Beeren zum Garnieren</li>
+                </ul>
+            </div>
+
+            <div class="recipe-section scroll-animate">
+                <h3>Zubereitung</h3>
+                <ol class="instructions-list">
+                    <li>Den Ofen auf 150°C vorheizen. Sechs flache Creme-Brûlée-Formen bereitstellen.</li>
+                    <li>Vanilleschote aufschneiden und das Mark herauskratzen. Sahne, Vanillemark und die ausgekratzte Schote in einen Topf geben und erhitzen – nicht kochen lassen!</li>
+                    <li>Eigelb und Erythrit in einer großen Schüssel cremig schlagen, bis die Masse hell und fluffig ist.</li>
+                    <li>Die heiße Sahne langsam unter ständigem Rühren in die Eigelbmasse gießen, um das Stocken der Eier zu verhindern.</li>
+                    <li>Die Creme durch ein feines Sieb gießen, um Vanillestückchen und eventuelle Eiklümpchen zu entfernen.</li>
+                    <li>Die Creme gleichmäßig auf die Formen verteilen. Die Formen in eine tiefe Backform stellen und heißes Wasser einfüllen (Wasserbad), bis zur Hälfte der Formhöhe.</li>
+                    <li>35-40 Minuten backen, bis die Creme am Rand fest, aber in der Mitte noch leicht wackelig ist.</li>
+                    <li>Aus dem Wasserbad nehmen und auf Raumtemperatur abkühlen lassen. Dann mindestens 4 Stunden oder über Nacht im Kühlschrank fest werden lassen.</li>
+                    <li>Vor dem Servieren Erythrit auf die Oberfläche streuen und mit einem Creme-Brûlée-Brenner karamellisieren, bis eine goldbraune Kruste entsteht.</li>
+                </ol>
+            </div>
+
+            <div class="recipe-section scroll-animate">
+                <h3>Nährwerte pro Portion</h3>
+                <table class="nutrition-table">
+                    <tr><td>Kalorien</td><td>295 kcal</td></tr>
+                    <tr><td>Fett</td><td>28g</td></tr>
+                    <tr><td>Protein</td><td>6g</td></tr>
+                    <tr><td>Kohlenhydrate (gesamt)</td><td>5g</td></tr>
+                    <tr><td>Ballaststoffe</td><td>0g</td></tr>
+                    <tr><td><strong>Netto-KH</strong></td><td><strong>2g</strong></td></tr>
+                </table>
+            </div>
+
+            <div style="background: var(--apple-gray-100); padding: 32px; border-radius: var(--radius-lg); margin-top: 60px;">
+                <h3>💡 Wichtiger Hinweis</h3>
+                <p>Ohne Creme-Brûlée-Brenner: Die Crème unter den vorgeheizten Grill (Oberhitze) schieben und kurz karamellisieren – aber aufpassen, dass sie nicht anbrennt! Die karamellisierte Schicht sollte beim Anschlagen mit dem Löffel knacken.</p>
+            </div>
+
+            <div style="margin-top: 40px; text-align: center;">
+                <a href="../desserts.html" class="btn btn-secondary">← Zurück zu allen Desserts</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo"><span class="logo">KetoGuide</span></div>
+                <nav class="footer-nav">
+                    <a href="../../../index.html" class="footer-link">Startseite</a>
+                    <a href="../../../index.html#guides" class="footer-link">Guides</a>
+                </nav>
+                <div class="footer-bottom"><p>&copy; 2025 KetoGuide</p></div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop">↑</button>
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

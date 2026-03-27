@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tintenfisch mit Knoblauch - Keto Abendessen Rezept</title>
+    <meta name="description" content="Calamari in Knoblauchbutter mit Zitrone. Ein mediterranes Keto-Abendessen mit nur 3g Netto-Kohlenhydraten.">
+    <link rel="stylesheet" href="../../../assets/css/base.css">
+    <style>
+        .recipe-detail {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .recipe-section {
+            margin-bottom: 40px;
+        }
+        .recipe-section h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+        .ingredients-list {
+            list-style: none;
+            padding: 0;
+        }
+        .ingredients-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--apple-gray-200);
+            display: flex;
+            align-items: center;
+        }
+        .ingredients-list li::before {
+            content: "✓";
+            color: var(--apple-green);
+            font-weight: bold;
+            margin-right: 12px;
+        }
+        .instructions-list {
+            counter-reset: step;
+            list-style: none;
+            padding: 0;
+        }
+        .instructions-list li {
+            counter-increment: step;
+            padding: 20px 0 20px 60px;
+            position: relative;
+            border-bottom: 1px solid var(--apple-gray-200);
+        }
+        .instructions-list li::before {
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 20px;
+            width: 40px;
+            height: 40px;
+            background: var(--apple-blue);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+        .nutrition-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .nutrition-table td {
+            padding: 16px;
+            border-bottom: 1px solid var(--apple-gray-200);
+        }
+        .nutrition-table td:last-child {
+            text-align: right;
+            font-weight: 600;
+        }
+        .recipe-meta-large {
+            display: flex;
+            gap: 40px;
+            margin: 30px 0;
+            padding: 24px;
+            background: var(--apple-gray-100);
+            border-radius: var(--radius-lg);
+        }
+        .meta-item {
+            text-align: center;
+        }
+        .meta-value {
+            font-size: 32px;
+            font-weight: 600;
+            color: var(--apple-blue);
+        }
+        .meta-label {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="container nav-container">
+            <a href="../../../index.html" class="logo">KetoGuide</a>
+            <nav class="nav-menu" id="navMenu">
+                <a href="../../../index.html#gruende" class="nav-link">Warum Keto</a>
+                <a href="../../../index.html#rezepte" class="nav-link active">Rezepte</a>
+                <a href="../../../index.html#guides" class="nav-link">Guides</a>
+                <a href="../../../index.html#gesundheit" class="nav-link">Gesundheit</a>
+                <a href="../../../index.html#faq" class="nav-link">FAQ</a>
+            </nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menü">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1 class="animate-fade-in-up">Tintenfisch mit Knoblauch.</h1>
+            <p class="animate-fade-in-up delay-1">Calamari in aromatischer Knoblauchbutter mit Zitrone.</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container recipe-detail">
+
+            <div class="recipe-meta-large scroll-animate">
+                <div class="meta-item">
+                    <div class="meta-value">⏱️ 15</div>
+                    <div class="meta-label">Minuten</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-value">🔥 380</div>
+                    <div class="meta-label">kcal</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-value">🥑 3g</div>
+                    <div class="meta-label">Netto-KH</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-value">🦑 32g</div>
+                    <div class="meta-label">Protein</div>
+                </div>
+            </div>
+
+            <div class="recipe-section scroll-animate">
+                <h3>Zutaten (für 2 Personen)</h3>
+                <ul class="ingredients-list">
+                    <li>400g Calamari (Tintenfisch-Ringe, frisch oder tiefgefroren)</li>
+                    <li>60g Butter</li>
+                    <li>4 Knoblauchzehen (fein gehackt)</li>
+                    <li>1 Bio-Zitrone (Saft und Abrieb)</li>
+                    <li>2 EL Olivenöl</li>
+                    <li>1 TL geräuchertes Paprikapulver</li>
+                    <li>1/2 TL Chiliflocken</li>
+                    <li>2 EL frische Petersilie (gehackt)</li>
+                    <li>Salz und schwarzer Pfeffer</li>
+                    <li>Optional: 1 EL Kapern</li>
+                    <li>Zum Servieren: 100g gemischter Blattsalat</li>
+                </ul>
+            </div>
+
+            <div class="recipe-section scroll-animate">
+                <h3>Zubereitung</h3>
+                <ol class="instructions-list">
+                    <li>Falls du tiefgefrorenen Tintenfisch verwendest, tauche ihn über Nacht im Kühlschrank auf. Tupfe die Calamari-Ringe gründlich mit Küchenpapier trocken – das ist entscheidend für die richtige Garung.</li>
+                    <li>Würze die Calamari mit Salz, Pfeffer und geräuchertem Paprikapulver. Achte darauf, dass alle Ringe gleichmäßig gewürzt sind.</li>
+                    <li>Erhitze Olivenöl in einer großen Pfanne bei sehr hoher Hitze. Die Pfanne sollte rauchend heiß sein.</li>
+                    <li>Gib die Calamari-Ringe in die Pfanne – achte darauf, dass sie nicht übereinanderliegen. Brate sie 1-2 Minuten ohne zu rühren, damit sie Farbe bekommen.</li>
+                    <li>Wende die Ringe und brate sie weitere 1-2 Minuten. Der Tintenfisch sollte weiß und leicht goldbraun sein, aber nicht gummiartig. Nimm sie sofort aus der Pfanne.</li>
+                    <li>Reduziere die Hitze auf mittel. Füge Butter und Knoblauch in dieselbe Pfanne. Brate den Knoblauch 30 Sekunden an, bis er duftet – aber nicht braun wird.</li>
+                    <li>Gib die Calamari zurück in die Pfanne und schwenke sie in der Knoblauchbutter. Füge Chiliflocken und Zitronensaft hinzu.</li>
+                    <li>Nimm die Pfanne vom Herd. Streue frische Petersilie und Zitronenabrieb über die Calamari.</li>
+                    <li>Serviere sofort mit einem einfachen Blattsalat, beträufelt mit Olivenöl und Zitronensaft.</li>
+                </ol>
+            </div>
+
+            <div class="recipe-section scroll-animate">
+                <h3>Nährwerte pro Portion</h3>
+                <table class="nutrition-table">
+                    <tr>
+                        <td>Kalorien</td>
+                        <td>380 kcal</td>
+                    </tr>
+                    <tr>
+                        <td>Fett</td>
+                        <td>28g</td>
+                    </tr>
+                    <tr>
+                        <td>Protein</td>
+                        <td>32g</td>
+                    </tr>
+                    <tr>
+                        <td>Kohlenhydrate (gesamt)</td>
+                        <td>5g</td>
+                    </tr>
+                    <tr>
+                        <td>Ballaststoffe</td>
+                        <td>2g</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Netto-Kohlenhydrate</strong></td>
+                        <td><strong>3g</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Cholesterol</td>
+                        <td>280mg</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="recipe-section scroll-animate">
+                <h3>Tipps & Variationen</h3>
+                <ul style="list-style: disc; padding-left: 20px;">
+                    <li><strong>Wichtig:</strong> Tintenfisch wird schnell zäh! Maximal 2-3 Minuten Gesamtgarzeit – bei zu langem Garen wird er gummiartig.</li>
+                    <li><strong>Tiefgefroren:</strong> Tiefgefrorene Calamari sind oft bereits vorgereitet und brauchen noch weniger Zeit.</li>
+                    <li><strong>Extra mediterran:</strong> Füge 50g getrocknete Tomaten und 20g Oliven hinzu.</li>
+                    <li><strong>Scharfe Version:</strong> Verwende frische Bird's Eye Chilis statt Chiliflocken.</li>
+                    <li><strong>Mehr Fett:</strong> Serviere mit 1/2 Avocado für zusätzliche gesunde Fette.</li>
+                </ul>
+            </div>
+
+            <div style="background: var(--apple-gray-100); padding: 32px; border-radius: var(--radius-lg); margin-top: 60px;">
+                <h3>💡 Tintenfisch auf Keto</h3>
+                <p>Tintenfisch ist eine hervorragende Proteinquelle mit sehr wenig Fett – ideal, um mit gesunden Fetten wie Butter und Olivenöl kombiniert zu werden. Er liefert wichtige Mineralstoffe wie Selen, Zink und Kupfer. Die schnelle Zubereitungszeit macht dieses Gericht perfekt für stressige Abende, wenn du etwas Besonderes möchtest, aber keine Zeit hast.</p>
+            </div>
+
+            <div style="margin-top: 40px; text-align: center;">
+                <a href="../abendessen.html" class="btn btn-secondary">← Zurück zu allen Abendessenrezepten</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo">KetoGuide</span>
+                </div>
+                <nav class="footer-nav">
+                    <a href="../../../index.html" class="footer-link">Startseite</a>
+                    <a href="../../../index.html#guides" class="footer-link">Guides</a>
+                    <a href="../../../index.html#gesundheit" class="footer-link">Gesundheit</a>
+                </nav>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 KetoGuide. Alle Rechte vorbehalten.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop">↑</button>
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html>
