@@ -138,7 +138,8 @@ a:hover {
     backdrop-filter: saturate(180%) blur(20px);
     -webkit-backdrop-filter: saturate(180%) blur(20px);
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    transition: all 0.3s var(--transition-smooth);
+    transition: background 0.3s var(--transition-smooth), box-shadow 0.3s var(--transition-smooth);
+    contain: layout style;
 }
 
 .header-scrolled {
@@ -330,38 +331,6 @@ a:hover {
     font-weight: 500;
 }
 
-/* Search Box */
-.nav-search {
-    position: relative;
-    margin-left: 20px;
-}
-
-.nav-search-input {
-    width: 200px;
-    padding: 8px 16px 8px 36px;
-    font-size: 14px;
-    border: 1px solid var(--apple-gray-300);
-    border-radius: 980px;
-    background: var(--apple-white);
-    transition: all 0.3s var(--transition-smooth);
-    outline: none;
-}
-
-.nav-search-input:focus {
-    width: 280px;
-    border-color: var(--apple-blue);
-    box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.1);
-}
-
-.nav-search-icon {
-    position: absolute;
-    left: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 14px;
-    color: var(--apple-gray-400);
-}
-
 /* Hero Section - Apple Style */
 .hero {
     min-height: 100vh;
@@ -510,6 +479,12 @@ a:hover {
 .bento-grid {
     display: grid;
     gap: 20px;
+    contain: layout style;
+}
+
+/* Containment for performance */
+.section, .hero, .page-header {
+    contain: layout style;
 }
 
 .bento-grid-2 {
@@ -530,6 +505,8 @@ a:hover {
     overflow: hidden;
     position: relative;
     transition: transform 0.4s var(--transition-smooth), box-shadow 0.4s var(--transition-smooth);
+    will-change: transform;
+    contain: layout style paint;
 }
 
 .bento-item:hover {
@@ -756,6 +733,7 @@ a:hover {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s var(--transition-smooth), padding 0.4s var(--transition-smooth);
+    will-change: max-height;
 }
 
 .faq-item.active .faq-answer {
@@ -936,6 +914,8 @@ a:hover {
     opacity: 0;
     transform: translateY(40px);
     transition: opacity 0.8s var(--transition-smooth), transform 0.8s var(--transition-smooth);
+    will-change: opacity, transform;
+    contain: layout style;
 }
 
 .scroll-animate.visible {
@@ -1031,7 +1011,9 @@ a:hover {
     border-radius: var(--radius-lg);
     overflow: hidden;
     border: 1px solid var(--apple-gray-200);
-    transition: all 0.4s var(--transition-smooth);
+    transition: transform 0.4s var(--transition-smooth), box-shadow 0.4s var(--transition-smooth);
+    will-change: transform;
+    contain: layout style;
 }
 
 .recipe-card:hover {
@@ -1181,19 +1163,6 @@ a:hover {
     .dropdown-item {
         padding: 12px 0 12px 24px;
         font-size: 17px;
-    }
-
-    .nav-search {
-        margin: 20px 0 0 0;
-        width: 100%;
-    }
-
-    .nav-search-input {
-        width: 100%;
-    }
-
-    .nav-search-input:focus {
-        width: 100%;
     }
 
     .mobile-menu-btn {
