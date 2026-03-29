@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keto-Granola - Knuspermüsli Rezept</title>
+    <meta name="description" content="Selbstgemachtes Keto-Granola mit Nüssen und Samen. Ohne Zucker, nur 3-4g Netto-KH pro Portion.">
+    <link rel="stylesheet" href="../../../assets/css/base.css">
+    <style>
+        .recipe-detail { max-width: 800px; margin: 0 auto; }
+        .recipe-section { margin-bottom: 40px; }
+        .recipe-section h3 { font-size: 28px; margin-bottom: 20px; color: var(--text-primary); }
+        .ingredients-list { list-style: none; padding: 0; }
+        .ingredients-list li { padding: 12px 0; border-bottom: 1px solid var(--apple-gray-200); display: flex; align-items: center; }
+        .ingredients-list li::before { content: "✓"; color: var(--apple-green); font-weight: bold; margin-right: 12px; }
+        .instructions-list { counter-reset: step; list-style: none; padding: 0; }
+        .instructions-list li { counter-increment: step; padding: 20px 0 20px 60px; position: relative; border-bottom: 1px solid var(--apple-gray-200); }
+        .instructions-list li::before { content: counter(step); position: absolute; left: 0; top: 20px; width: 40px; height: 40px; background: var(--apple-blue); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; }
+        .nutrition-table { width: 100%; border-collapse: collapse; }
+        .nutrition-table td { padding: 16px; border-bottom: 1px solid var(--apple-gray-200); }
+        .nutrition-table td:last-child { text-align: right; font-weight: 600; }
+        .recipe-meta-large { display: flex; gap: 40px; margin: 30px 0; padding: 24px; background: var(--apple-gray-100); border-radius: var(--radius-lg); flex-wrap: wrap; justify-content: center; }
+        .meta-item { text-align: center; }
+        .meta-value { font-size: 32px; font-weight: 600; color: var(--apple-blue); }
+        .meta-label { font-size: 14px; color: var(--text-secondary); }
+    </style>
+</head>
+<body>
+        <header class="header" id="header">
+        <div class="container nav-container">
+            <a href="../../../index.html" class="logo">KetoGuide</a>
+            <nav class="nav-menu" id="navMenu">
+                <div class="nav-item">
+                    <a href="../../../index.html#gruende" class="nav-link">Warum Keto</a>
+                </div>
+                <div class="nav-item nav-item-dropdown">
+                    <a href="../../../index.html#rezepte" class="nav-link active">Rezepte &#9662;</a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-header">Kategorien</div>
+                        <a href="../fruehstueck.html" class="dropdown-item">
+                            <span class="dropdown-item-icon">&#127859;</span> Frühstück
+                        </a>
+                        <a href="../mittagessen.html" class="dropdown-item">
+                            <span class="dropdown-item-icon">&#129367;</span> Mittagessen
+                        </a>
+                        <a href="../abendessen.html" class="dropdown-item">
+                            <span class="dropdown-item-icon">&#127860;</span> Abendessen
+                        </a>
+                        <a href="../snacks.html" class="dropdown-item">
+                            <span class="dropdown-item-icon">&#129379;</span> Snacks
+                        </a>
+                        <a href="../desserts.html" class="dropdown-item">
+                            <span class="dropdown-item-icon">&#127856;</span> Desserts
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="../brot-gebaeck.html" class="dropdown-item">
+                            <span class="dropdown-item-icon">&#127838;</span> Brot & Gebäck
+                        </a>
+                        <a href="../getraenke.html" class="dropdown-item">
+                            <span class="dropdown-item-icon">&#129380;</span> Getränke
+                        </a>
+                        <a href="../vegetarisch.html" class="dropdown-item">
+                            <span class="dropdown-item-icon">&#127793;</span> Vegetarisch
+                        </a>
+                    </div>
+                </div>
+                <div class="nav-item nav-item-dropdown">
+                    <a href="../../../index.html#guides" class="nav-link">Guides &#9662;</a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-header">Anleitungen</div>
+                        <a href="../../guides/starten.html" class="dropdown-item">
+                            <span class="dropdown-item-icon">&#128640;</span> Einstieg
+                        </a>
+                        <a href="../../guides/tracking.html" class="dropdown-item">
+                            <span class="dropdown-item-icon">&#128202;</span> Makros tracken
+                        </a>
+                        <a href="../../guides/mealprep.html" class="dropdown-item">
+                            <span class="dropdown-item-icon">&#127857;</span> Meal Prep
+                        </a>
+                        <a href="../../guides/sport.html" class="dropdown-item">
+                            <span class="dropdown-item-icon">&#128170;</span> Sport & Keto
+                        </a>
+                    </div>
+                </div>
+                <div class="nav-item nav-item-dropdown">
+                    <a href="../../../index.html#gesundheit" class="nav-link">Gesundheit &#9662;</a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-header">Themen</div>
+                        <a href="../../health/gewicht.html" class="dropdown-item">
+                            <span class="dropdown-item-icon">&#9878;</span> Gewichtsmanagement
+                        </a>
+                        <a href="../../health/gehirn.html" class="dropdown-item">
+                            <span class="dropdown-item-icon">&#129504;</span> Mentale Klarheit
+                        </a>
+                        <a href="../../health/herz.html" class="dropdown-item">
+                            <span class="dropdown-item-icon">&#10084;&#65039;</span> Herzgesundheit
+                        </a>
+                        <a href="../../health/diabetes.html" class="dropdown-item">
+                            <span class="dropdown-item-icon">&#128657;</span> Diabetes & Keto
+                        </a>
+                        <a href="../../health/entzuendung.html" class="dropdown-item">
+                            <span class="dropdown-item-icon">&#128737;</span> Entzündungen
+                        </a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="../../../index.html#faq" class="nav-link">FAQ</a>
+                </div>
+            </nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menü">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1 class="animate-fade-in-up">Keto-Granola.</h1>
+            <p class="animate-fade-in-up delay-1">Selbstgemachtes Knuspermüsli ohne Zucker.</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container recipe-detail">
+            <div class="recipe-meta-large scroll-animate">
+                <div class="meta-item">
+                    <div class="meta-value">⏱️ 15</div>
+                    <div class="meta-label">Min. Zubereitung</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-value">🔥 25</div>
+                    <div class="meta-label">Min. Backzeit</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-value">🥣 8</div>
+                    <div class="meta-label">Portionen</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-value">🥑 3-4g</div>
+                    <div class="meta-label">Netto-KH</div>
+                </div>
+            </div>
+
+            <div class="recipe-section scroll-animate">
+                <h3>Zutaten</h3>
+                <ul class="ingredients-list">
+                    <li>150g Mandeln</li>
+                    <li>100g Walnüsse</li>
+                    <li>100g Pekannüsse</li>
+                    <li>90g Kokoschips</li>
+                    <li>40g geschrotete Leinsamen</li>
+                    <li>10g Chia-Samen</li>
+                    <li>50g Mandelmus</li>
+                    <li>70g Erythrit (Puder)</li>
+                    <li>1 Eiweiß</li>
+                    <li>80ml Wasser</li>
+                    <li>1 TL Zitronensaft</li>
+                    <li>10g gefriergetrocknete Himbeeren</li>
+                    <li>Prise Salz und Vanille</li>
+                </ul>
+            </div>
+
+            <div class="recipe-section scroll-animate">
+                <h3>Zubereitung</h3>
+                <ol class="instructions-list">
+                    <li>Backofen auf 170°C vorheizen.</li>
+                    <li>Mandeln, Walnüsse und Pekannüsse grob hacken und mit Chia-Samen, Leinsamen, Kokoschips, Salz und Vanille vermischen.</li>
+                    <li>Mandelmus mit Wasser erwärmen, Erythrit einrühren.</li>
+                    <li>Mit Eiweiß und Zitronensaft verbinden und zur Nussmenge geben.</li>
+                    <li>Mit den Händen kneten, bis alles gleichmäßig verteilt ist.</li>
+                    <li>Auf einem Backblech verteilen und ca. 15-20 Minuten backen, dann umrühren und weitere 5-10 Minuten rösten.</li>
+                    <li>Vollständig auskühlen lassen, dann Himbeeren untermischen.</li>
+                </ol>
+            </div>
+
+            <div class="recipe-section scroll-animate">
+                <h3>Nährwerte pro Portion (50g)</h3>
+                <table class="nutrition-table">
+                    <tr><td>Kalorien</td><td>251 kcal</td></tr>
+                    <tr><td>Fett</td><td>23,5g</td></tr>
+                    <tr><td>Protein</td><td>6,5g</td></tr>
+                    <tr><td>Kohlenhydrate (gesamt)</td><td>6g</td></tr>
+                    <tr><td><strong>Netto-Kohlenhydrate</strong></td><td><strong>3-4g</strong></td></tr>
+                </table>
+            </div>
+
+            <div style="background: var(--apple-gray-100); padding: 32px; border-radius: var(--radius-lg); margin-top: 60px;">
+                <h3>💡 Tipp</h3>
+                <p>Das Granola hält sich luftdicht verschlossen mehrere Wochen. Perfekt mit unsüßter Mandelmilch oder Joghurt.</p>
+            </div>
+
+            <div style="margin-top: 40px; text-align: center;">
+                <a href="../fruehstueck.html" class="btn btn-secondary">← Zurück zu Frühstück</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo"><span class="logo">KetoGuide</span></div>
+                <nav class="footer-nav" style="margin-bottom: 20px;">
+                    <a href="../../../index.html" class="footer-link">Startseite</a>
+                    <a href="../../legal/impressum.html" class="footer-link">Impressum</a>
+                    <a href="../../legal/datenschutz.html" class="footer-link">Datenschutz</a>
+                </nav>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 KetoGuide. Alle Rechte vorbehalten.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop">↑</button>
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

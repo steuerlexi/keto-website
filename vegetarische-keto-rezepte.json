@@ -1,0 +1,675 @@
+[
+  {
+    "title": "Keto Zucchini-Pfannkuchen mit Feta",
+    "description": "Herzhafte Pfannkuchen aus geriebenen Zucchini mit Feta und Frühlingszwiebeln. Perfekt für ein sättigendes Low-Carb-Mittagessen.",
+    "time": "25 Min",
+    "difficulty": "Anfänger",
+    "ingredients": [
+      "3 mittelgroße Zucchini (geraspelt)",
+      "2 Eier",
+      "60g Mandelmehl",
+      "60g Feta",
+      "2 Frühlingszwiebeln",
+      "2 Knoblauchzehen",
+      "1 EL Petersilie (gehackt)",
+      "Salz und Pfeffer",
+      "Olivenöl zum Braten"
+    ],
+    "instructions": [
+      "Zucchini grob raspeln, salzen und 10 Minuten ziehen lassen",
+      "Flüssigkeit aus den Zucchini gut ausdrücken",
+      "Zucchini mit Eiern, Mandelmehl, Feta, Frühlingszwiebeln, Knoblauch und Petersilie vermischen",
+      "Mit Salz und Pfeffer würzen",
+      "Bei mittlerer Hitze in Olivenöl goldbraun braten (2-3 Minuten pro Seite)"
+    ],
+    "nutrition": {
+      "calories": 420,
+      "fat": 34,
+      "protein": 18,
+      "netCarbs": 6
+    },
+    "category": "Vegetarisch"
+  },
+  {
+    "title": "Spinat-Frittata mit Feta",
+    "description": "Fluffiges Eiergericht mit frischem Spinat und cremigem Feta. Ideal zum Frühstück oder Brunch mit nur 1g Netto-Kohlenhydraten.",
+    "time": "20 Min",
+    "difficulty": "Anfänger",
+    "ingredients": [
+      "6 Eier",
+      "300g frischer Spinat",
+      "100g Feta",
+      "70g geriebener Gouda",
+      "2 EL Butter",
+      "½ TL Paprikapulver",
+      "Salz und Pfeffer"
+    ],
+    "instructions": [
+      "Spinat waschen und grob schneiden",
+      "Ofen auf 180°C vorheizen",
+      "Spinat in einer ofenfesten Pfanne mit Butter 5 Minuten anschwitzen",
+      "Paprikapulver hinzufügen",
+      "Eier verquirlen, würzen und über den Spinat gießen",
+      "Hälfte des Goudas unterrühhen",
+      "Feta darüber krümeln, restlichen Gouda bestreuen",
+      "Bei 180°C für 10 Minuten backen"
+    ],
+    "nutrition": {
+      "calories": 534,
+      "fat": 44,
+      "protein": 32,
+      "netCarbs": 1
+    },
+    "category": "Vegetarisch"
+  },
+  {
+    "title": "Blumenkohl Mac & Cheese",
+    "description": "Cremiger Käse-Blumenkohl statt Pasta – eine kohlenhydratarme Alternative zum klassischen Comfort Food mit extra viel Käse.",
+    "time": "35 Min",
+    "difficulty": "Mittel",
+    "ingredients": [
+      "1 großer Blumenkohl (in Röschen)",
+      "200g Cheddar (gerieben)",
+      "100g Frischkäse",
+      "200ml Sahne",
+      "40g Butter",
+      "1 TL Senf",
+      "1 Knoblauchzehe",
+      "Salz, Pfeffer, Paprikapulver"
+    ],
+    "instructions": [
+      "Blumenkohlröschen waschen",
+      "Butter in einem Topf schmelzen, Blumenkohl kurz anbraten",
+      "Sahne, Frischkäse und Senf hinzufügen, aufkochen",
+      "Cheddar unterrühren bis geschmolzen",
+      "Mit Salz, Pfeffer und Paprika abschmecken",
+      "Bei Bedarf bei 200°C für 10 Minuten überbacken"
+    ],
+    "nutrition": {
+      "calories": 639,
+      "fat": 54,
+      "protein": 28,
+      "netCarbs": 3
+    },
+    "category": "Vegetarisch"
+  },
+  {
+    "title": "Keto Gemüseauflauf mit Feta",
+    "description": "Bunter Gemüseauflauf mit Zucchini, Paprika und Champignons, überbacken mit cremigem Feta und geriebenem Käse.",
+    "time": "30 Min",
+    "difficulty": "Anfänger",
+    "ingredients": [
+      "2 Zucchini (in Scheiben)",
+      "1 rote Paprika (gewürfelt)",
+      "200g Champignons (halbiert)",
+      "150g Cocktailtomaten",
+      "150g Feta",
+      "100g geriebener Käse",
+      "1 Zwiebel",
+      "2 Knoblauchzehen",
+      "2 EL Butter",
+      "Italienische Kräuter, Salz, Pfeffer"
+    ],
+    "instructions": [
+      "Ofen auf 180°C vorheizen",
+      "Zucchini, Paprika und Champignons in Butter anbraten",
+      "Zwiebel und Knoblauch hinzufügen",
+      "Gemüse in eine Auflaufform geben",
+      "Mit Feta und geriebenem Käse bestreuen",
+      "Bei 180°C für 15-20 Minuten überbacken"
+    ],
+    "nutrition": {
+      "calories": 475,
+      "fat": 35,
+      "protein": 30,
+      "netCarbs": 9
+    },
+    "category": "Vegetarisch"
+  },
+  {
+    "title": "Vegetarischer Käse-Nuss-Braten",
+    "description": "Herzhafter Nussbraten mit Walnüssen, Mandeln und Bergkäse – perfekt als festliches Hauptgericht oder zur Weihnachtszeit.",
+    "time": "60 Min",
+    "difficulty": "Mittel",
+    "ingredients": [
+      "200g Nussmischung (Walnüsse, Mandeln, Haselnüsse)",
+      "150g Bergkäse (gerieben)",
+      "100g gemischte Kerne (Kürbis-, Sonnenblumenkerne, Sesam)",
+      "3 Eier",
+      "20g Goldleinmehl",
+      "1 kleine Zucchini (gewürfelt)",
+      "1 Tomate (gewürfelt)",
+      "1 kleine Zwiebel",
+      "1 EL Olivenöl",
+      "Dill, Salz, Pfeffer"
+    ],
+    "instructions": [
+      "Ofen auf 180°C vorheizen",
+      "Nüsse grob hacken",
+      "Eier mit Öl verquirlen",
+      "Alle Zutaten in einer Schüssel vermengen",
+      "Masse in eine Kastenform geben, festdrücken",
+      "Bei 180°C für 45-50 Minuten backen"
+    ],
+    "nutrition": {
+      "calories": 462,
+      "fat": 38,
+      "protein": 21,
+      "netCarbs": 4
+    },
+    "category": "Vegetarisch"
+  },
+  {
+    "title": "Keto Blumenkohlpizza (vegetarisch)",
+    "description": "Pizza mit knusprigem Blumenkohlboden statt Teig, belegt mit Tomaten, Mozzarella und frischen Kräutern.",
+    "time": "50 Min",
+    "difficulty": "Mittel",
+    "ingredients": [
+      "1 mittlerer Blumenkohl (ca. 500g)",
+      "60g Mandelmehl",
+      "2 EL Leinmehl",
+      "1 Ei",
+      "½ TL Salz, ¼ TL Pfeffer",
+      "½ TL Knoblauchpulver",
+      "1 TL italienische Kräuter",
+      "100g Passierte Tomaten",
+      "150g Mozzarella",
+      "Frische Basilikumblätter"
+    ],
+    "instructions": [
+      "Blumenkohl in Röschen teilen, waschen",
+      "Blumenkohl 10 Minuten blanchieren, gut abtropfen lassen",
+      "Blumenkohl in einem Mixer fein hacken",
+      "Flüssigkeit aus dem Blumenkohl ausdrücken (sehr wichtig!)",
+      "Blumenkohl mit Mandelmehl, Leinmehl, Ei und Gewürzen vermischen",
+      "Auf Backpapier zu einem Kreis formen",
+      "Bei 180°C für 20-25 Minuten vorbacken",
+      "Mit Tomatensauce und Mozzarella belegen",
+      "Weitere 10 Minuten backen"
+    ],
+    "nutrition": {
+      "calories": 380,
+      "fat": 28,
+      "protein": 22,
+      "netCarbs": 8
+    },
+    "category": "Vegetarisch"
+  },
+  {
+    "title": "Spiegelei-Avocado-Teller",
+    "description": "Klassisches Keto-Frühstück mit cremiger Avocado und perfekt gebratenen Spiegeleiern – schnell, einfach und nährstoffreich.",
+    "time": "10 Min",
+    "difficulty": "Anfänger",
+    "ingredients": [
+      "2 Eier",
+      "1 reife Avocado",
+      "1 EL Butter",
+      "Schnittlauch (gehackt)",
+      "Salz und Pfeffer",
+      "Optional: Chiliflocken"
+    ],
+    "instructions": [
+      "Butter in einer Pfanne bei mittlerer Hitze zerlassen",
+      "Eier als Spiegeleier braten (2-3 Minuten)",
+      "Avocado halbieren, entkernen",
+      "Fruchtfleisch in Scheiben schneiden",
+      "Eier und Avocado auf einem Teller anrichten",
+      "Mit Salz, Pfeffer und Schnittlauch würzen"
+    ],
+    "nutrition": {
+      "calories": 405,
+      "fat": 33,
+      "protein": 22,
+      "netCarbs": 3
+    },
+    "category": "Vegetarisch"
+  },
+  {
+    "title": "Keto-Guacamole mit Käse-Chips",
+    "description": "Cremige Avocado-Dip mit Tomaten, Zwiebeln und Koriander – serviert mit selbstgemachten Käse-Chips statt Nachos.",
+    "time": "15 Min",
+    "difficulty": "Anfänger",
+    "ingredients": [
+      "2 reife Avocados",
+      "1 Tomate (gewürfelt)",
+      "¼ rote Zwiebel (fein gewürfelt)",
+      "1 Knoblauchzehe (gepresst)",
+      "Saft von 1 Limette",
+      "2 EL frischer Koriander (gehackt)",
+      "Salz und Pfeffer",
+      "Für Chips: 100g geriebener Cheddar"
+    ],
+    "instructions": [
+      "Avocados halbieren, entkernen, Fruchtfleisch auslöffeln",
+      "Avocados mit einer Gabel zerdrücken",
+      "Tomate, Zwiebel, Knoblauch und Koriander hinzufügen",
+      "Limettensaft, Salz und Pfeffer unterrühren",
+      "Für Chips: Cheddar-Häufchen auf Backpapier geben",
+      "Bei 180°C für 8-10 Minuten backen",
+      "Guacamole mit Käse-Chips servieren"
+    ],
+    "nutrition": {
+      "calories": 485,
+      "fat": 42,
+      "protein": 16,
+      "netCarbs": 4
+    },
+    "category": "Vegetarisch"
+  },
+  {
+    "title": "Shirataki-Nudeln mit Erdnusssauce",
+    "description": "Kalorienarme Konjak-Nudeln mit cremiger, würziger Erdnusssauce und knackigem Gemüse – asiatisch inspiriert und keto-konform.",
+    "time": "20 Min",
+    "difficulty": "Mittel",
+    "ingredients": [
+      "400g Shirataki-Nudeln (Spaghetti)",
+      "100g Tofu (gewürfelt)",
+      "½ Gurke (in Streifen)",
+      "1 Karotte (Julienne)",
+      "1 EL Sesam (zum Garnieren)",
+      "Für Sauce: 3 EL Erdnussmus",
+      "2 EL Sojasauce",
+      "2 EL Naturjoghurt",
+      "1 EL Kokosmilch",
+      "1 Knoblauchzehe"
+    ],
+    "instructions": [
+      "Shirataki-Nudeln abgießen, unter fließendem Wasser spülen",
+      "3-4 Minuten in Salzwasser kochen",
+      "Nudeln gut abtropfen lassen (Wasser ausdrücken!)",
+      "In einer Pfanne ohne Fett kurz anbraten",
+      "Alle Saucenzutaten verrühren",
+      "Gemüse und Tofu vorbereiten",
+      "Nudeln mit Sauce und Gemüse vermengen",
+      "Mit Sesam bestreuen"
+    ],
+    "nutrition": {
+      "calories": 380,
+      "fat": 28,
+      "protein": 18,
+      "netCarbs": 8
+    },
+    "category": "Vegetarisch"
+  },
+  {
+    "title": "Spinat-Ei-Rolle",
+    "description": "Elegante Rolle aus Spinat-Ei-Teig mit cremiger Frischkäse-Füllung – perfekt für Buffet oder Meal-Prep.",
+    "time": "30 Min",
+    "difficulty": "Mittel",
+    "ingredients": [
+      "4 Eier",
+      "100g frischer Spinat",
+      "50g Frischkäse",
+      "1 EL Butter",
+      "Für Füllung: 150g Frischkäse",
+      "100g geriebener Gouda",
+      "50g Walnüsse (gehackt)",
+      "Frischer Rucola",
+      "Salz, Pfeffer, Muskat"
+    ],
+    "instructions": [
+      "Spinat waschen, in Butter anschwitzen",
+      "Eier mit Frischkäse verquirlen",
+      "Spinat unter die Eimasse rühren",
+      "Masse auf ein mit Backpapier ausgelegtes Blech gießen",
+      "Bei 180°C für 12-15 Minuten backen",
+      "Aus dem Ofen nehmen, abkühlen lassen",
+      "Mit Frischkäse, Käse, Nüssen und Rucola bestreichen",
+      "Rolle vorsichtig aufrollen, in Scheiben schneiden"
+    ],
+    "nutrition": {
+      "calories": 445,
+      "fat": 38,
+      "protein": 22,
+      "netCarbs": 2
+    },
+    "category": "Vegetarisch"
+  },
+  {
+    "title": "Keto Käsekuchen ohne Zucker",
+    "description": "Cremiger Käsekuchen mit Mandelmehl-Boden, gesüßt mit Erythrit – der perfekte keto-freundliche Nachtisch.",
+    "time": "70 Min",
+    "difficulty": "Mittel",
+    "ingredients": [
+      "Für Boden: 250g gemahlene Mandeln",
+      "110g geschmolzene Butter",
+      "90g Erythrit",
+      "Für Füllung: 525g Frischkäse",
+      "300g Schmand",
+      "120g Erythrit",
+      "2 Eier",
+      "Saft von 1 Zitrone",
+      "1 TL Vanillearoma (zuckerfrei)"
+    ],
+    "instructions": [
+      "Ofen auf 160°C vorheizen",
+      "Mandeln, Butter und Erythrit für den Boden vermischen",
+      "Bodenmasse in eine Springform drücken",
+      "Frischkäse, Schmand und Erythrit schaumig rühren",
+      "Eier nacheinander unterrühren",
+      "Zitronensaft und Vanille hinzufügen",
+      "Masse auf den Boden gießen",
+      "Bei 160°C für 50-60 Minuten backen",
+      "Abkühlen lassen, mindestens 4 Stunden kalt stellen"
+    ],
+    "nutrition": {
+      "calories": 372,
+      "fat": 35,
+      "protein": 10,
+      "netCarbs": 4
+    },
+    "category": "Vegetarisch"
+  },
+  {
+    "title": "Blumenkohl-Käse-Nuggets",
+    "description": "Knusprige Low-Carb-Nuggets aus Blumenkohl und Käse – die gesunde Alternative zu Fast Food.",
+    "time": "35 Min",
+    "difficulty": "Anfänger",
+    "ingredients": [
+      "1 kleiner Blumenkohl",
+      "1 Ei",
+      "100g Mandelmehl",
+      "100g Parmesan (gerieben)",
+      "30g Gouda (gerieben)",
+      "2 EL Frischkäse",
+      "½ TL Paprikapulver",
+      "½ TL Majoran",
+      "Salz und Pfeffer"
+    ],
+    "instructions": [
+      "Blumenkohl in Röschen teilen, waschen",
+      "Blumenkohl 5 Minuten dämpfen",
+      "Blumenkohl fein hacken oder pürieren",
+      "Wenn zu feucht, Flüssigkeit ausdrücken",
+      "Alle Zutaten vermengen",
+      "Masse zu kleinen Nuggets formen",
+      "Bei 180°C für 20-25 Minuten goldbraun backen"
+    ],
+    "nutrition": {
+      "calories": 285,
+      "fat": 22,
+      "protein": 16,
+      "netCarbs": 5
+    },
+    "category": "Vegetarisch"
+  },
+  {
+    "title": "Avocado-Carpaccio mit Frischkäse",
+    "description": "Elegantes Carpaccio aus reifer Avocado mit Frischkäsenocken und Pinienkernen – eine raffinierte Vorspeise.",
+    "time": "15 Min",
+    "difficulty": "Anfänger",
+    "ingredients": [
+      "2 reife Avocados",
+      "100g Frischkäse",
+      "30g Pinienkerne (geröstet)",
+      "1 Handvoll frisches Basilikum",
+      "10 Kirschtomaten (halbiert)",
+      "3 EL Olivenöl (extra nativ)",
+      "1 TL Balsamico",
+      "Salz und Pfeffer"
+    ],
+    "instructions": [
+      "Avocados schälen, entkernen",
+      "In dünne Scheiben schneiden",
+      "Scheiben auf Tellern verteilen",
+      "Frischkäse zu kleinen Nocken formen",
+      "Tomaten, Basilikum und Pinienkerne verteilen",
+      "Mit Olivenöl und Balsamico beträufeln",
+      "Mit Salz und Pfeffer würzen"
+    ],
+    "nutrition": {
+      "calories": 580,
+      "fat": 52,
+      "protein": 12,
+      "netCarbs": 6
+    },
+    "category": "Vegetarisch"
+  },
+  {
+    "title": "Keto-Grünkohl-Caesar-Salat",
+    "description": "Caesar-Salat-Variante mit Grünkohl statt Salat und selbstgemachten Parmesanchips – Low-Carb und nährstoffreich.",
+    "time": "20 Min",
+    "difficulty": "Mittel",
+    "ingredients": [
+      "200g Grünkohl (ohne Stiele)",
+      "50g Parmesan (in dünne Scheiben gehobelt)",
+      "Für Dressing: 3 EL Olivenöl",
+      "1 EL Zitronensaft",
+      "1 TL Dijon-Senf",
+      "1 Knoblauchzehe (gepresst)",
+      "2 EL Mayonnaise",
+      "30g Pinienkerne (optional)",
+      "Salz und Pfeffer"
+    ],
+    "instructions": [
+      "Grünkohl waschen, trocknen, in mundgerechte Stücke reißen",
+      "Grünkohl mit 1 EL Olivenöl massieren (wird weicher)",
+      "Parmesan-Häufchen auf Backpapier verteilen",
+      "Bei 180°C für 5-7 Minuten zu Chips backen",
+      "Alle Dressing-Zutaten verquirlen",
+      "Grünkohl mit Dressing vermengen",
+      "Mit Parmesanchips und Pinienkernen toppen"
+    ],
+    "nutrition": {
+      "calories": 420,
+      "fat": 38,
+      "protein": 14,
+      "netCarbs": 3
+    },
+    "category": "Vegetarisch"
+  },
+  {
+    "title": "Zucchini-Lasagne (vegetarisch)",
+    "description": "Klassische Lasagne mit Zucchinischeiben statt Nudeln, geschichtet mit Ricotta, Spinat und Käse.",
+    "time": "60 Min",
+    "difficulty": "Mittel",
+    "ingredients": [
+      "4 große Zucchini",
+      "400g Ricotta",
+      "200g frischer Spinat",
+      "200g Mozzarella",
+      "100g Parmesan (gerieben)",
+      "400g Passierte Tomaten",
+      "1 Zwiebel",
+      "2 Knoblauchzehen",
+      "Italienische Kräuter, Salz, Pfeffer",
+      "2 EL Olivenöl"
+    ],
+    "instructions": [
+      "Ofen auf 180°C vorheizen",
+      "Zucchini in längliche Scheiben schneiden",
+      "Zwiebel und Knoblauch in Öl anschwitzen",
+      "Tomaten mit Kräutern hinzufügen, 10 Min köcheln",
+      "Spinat kurz anschwitzen, mit Ricotta vermischen",
+      "Zucchini-Scheiben als erste Schicht in eine Form legen",
+      "Ricotta-Spinat-Mischung darauf verteilen",
+      "Mit Mozzarella und Parmesan bestreuen",
+      "Schichten wiederholen, mit Käse abschließen",
+      "Bei 180°C für 30-35 Minuten backen"
+    ],
+    "nutrition": {
+      "calories": 485,
+      "fat": 34,
+      "protein": 28,
+      "netCarbs": 7
+    },
+    "category": "Vegetarisch"
+  },
+  {
+    "title": "Keto-Eier mit Pilz-Rahm-Sauce",
+    "description": "Perfekt pochierte Eier auf einem Bett aus Sahne-Pilzen – ein wohltuendes Komfort-Gericht.",
+    "time": "25 Min",
+    "difficulty": "Mittel",
+    "ingredients": [
+      "4 Eier (frisch)",
+      "300g Champignons (in Scheiben)",
+      "200ml Sahne",
+      "50g Butter",
+      "1 Schalotte (fein gewürfelt)",
+      "1 EL Zitronensaft",
+      "Frische Petersilie",
+      "Salz, Pfeffer, Muskat"
+    ],
+    "instructions": [
+      "Butter in einer Pfanne schmelzen",
+      "Schalotte glasig anschwitzen",
+      "Champignons zugeben, 5 Minuten braten",
+      "Sahne hinzufügen, aufkochen",
+      "Mit Salz, Pfeffer und Muskat würzen",
+      "Wasser in einem Topf zum Köcheln bringen",
+      "Eier einzeln in eine Tasse schlagen",
+      "Mit einem Löffel Strudel im Wasser erzeugen",
+      "Eier vorsichtig ins Wasser gleiten lassen",
+      "3-4 Minuten pochieren",
+      "Eier auf Pilz-Sauce anrichten"
+    ],
+    "nutrition": {
+      "calories": 495,
+      "fat": 44,
+      "protein": 18,
+      "netCarbs": 4
+    },
+    "category": "Vegetarisch"
+  },
+  {
+    "title": "Spinatpfannkuchen mit Feta",
+    "description": "Herzhafter Ofenpfannkuchen aus Eiern, Spinat und gemahlenen Mandeln, gefüllt mit cremigem Feta.",
+    "time": "30 Min",
+    "difficulty": "Anfänger",
+    "ingredients": [
+      "3 Eier",
+      "100g gemahlene Mandeln",
+      "100ml Sahne",
+      "150g frischer Spinat",
+      "100g Feta",
+      "1 Schalotte (fein gewürfelt)",
+      "1 TL Paprikapulver",
+      "Butter für die Form",
+      "Salz und Pfeffer"
+    ],
+    "instructions": [
+      "Ofen auf 180°C vorheizen",
+      "Eier mit Sahne verquirlen",
+      "Gemahlene Mandeln, Salz, Pfeffer und Paprika einrühren",
+      "Spinat waschen, grob hacken",
+      "Ofenfeste Pfanne mit Butter einfetten",
+      "Teig hineingießen",
+      "Spinat, Schalotte und Feta darauf verteilen",
+      "Bei 180°C für 20-25 Minuten backen"
+    ],
+    "nutrition": {
+      "calories": 638,
+      "fat": 56,
+      "protein": 22,
+      "netCarbs": 6
+    },
+    "category": "Vegetarisch"
+  },
+  {
+    "title": "Blumenkohl-Steaks mit Kapern-Butter",
+    "description": "Dick geschnittene Blumenkohl-Steaks, angebraten und mit würziger Kapern-Butter serviert.",
+    "time": "30 Min",
+    "difficulty": "Mittel",
+    "ingredients": [
+      "1 großer Blumenkohl",
+      "4 EL Olivenöl",
+      "50g Butter",
+      "2 EL Kapern (abgetropft)",
+      "2 Knoblauchzehen (geschlitzt)",
+      "Saft von ½ Zitrone",
+      "30g Mandelblättchen (geröstet)",
+      "Frische Petersilie",
+      "Salz und Pfeffer"
+    ],
+    "instructions": [
+      "Blumenkohl waschen, in 2cm dicke Scheiben schneiden (Steaks)",
+      "Olivenöl in einer Pfanne erhitzen",
+      "Blumenkohl-Steaks bei mittlerer Hitze 4-5 Minuten pro Seite braten",
+      "Mit Salz und Pfeffer würzen",
+      "Butter in einer kleinen Pfanne schmelzen",
+      "Knoblauch und Kapern hinzufügen, kurz anbraten",
+      "Zitronensaft unterrühren",
+      "Steaks mit Kapern-Butter übergießen",
+      "Mit Mandeln und Petersilie garnieren"
+    ],
+    "nutrition": {
+      "calories": 380,
+      "fat": 34,
+      "protein": 8,
+      "netCarbs": 7
+    },
+    "category": "Vegetarisch"
+  },
+  {
+    "title": "Keto-Keto-Bowl mit Tofu und Tahini",
+    "description": "Nährstoffreiche Buddha-Bowl mit gebratenem Tofu, cremigem Avocado und würzigem Tahini-Dressing.",
+    "time": "25 Min",
+    "difficulty": "Anfänger",
+    "ingredients": [
+      "200g festen Tofu (gewürfelt)",
+      "1 Avocado (in Scheiben)",
+      "100g Spinat",
+      "1 kleine Zucchini (gewürfelt)",
+      "50g Kichererbsen (optional, sparsam)",
+      "2 EL Sesam",
+      "Für Dressing: 3 EL Tahini",
+      "1 EL Olivenöl",
+      "Saft von ½ Zitrone",
+      "1 Knoblauchzehe",
+      "Wasser zum Verdünnen",
+      "Salz und Pfeffer"
+    ],
+    "instructions": [
+      "Tofu in einer Pfanne goldbraun braten",
+      "Zucchini kurz anbraten",
+      "Spinat zusammenfallen lassen",
+      "Alle Dressing-Zutaten verrühren, mit Wasser verdünnen",
+      "Spinat als Basis in eine Schüssel geben",
+      "Tofu, Zucchini, Avocado und Kichererbsen darauf anrichten",
+      "Mit Tahini-Dressing beträufeln",
+      "Mit Sesam bestreuen"
+    ],
+    "nutrition": {
+      "calories": 520,
+      "fat": 42,
+      "protein": 22,
+      "netCarbs": 9
+    },
+    "category": "Vegetarisch"
+  },
+  {
+    "title": "Low-Carb Zucchini-Carbonara",
+    "description": "Klassische Carbonara mit Zucchini-Nudeln statt Spaghetti – cremig, würzig und kohlenhydratarm.",
+    "time": "20 Min",
+    "difficulty": "Anfänger",
+    "ingredients": [
+      "4 große Zucchini",
+      "3 Eier",
+      "50g Parmesan (gerieben)",
+      "50g Pecorino (gerieben)",
+      "100g Pancetta (optional ersetzen durch Pilze für vegetarisch)",
+      "100g Champignons (für vegetarische Version)",
+      "2 Knoblauchzehen",
+      "2 EL Olivenöl",
+      "Frischer Pfeffer",
+      "Salz"
+    ],
+    "instructions": [
+      "Zucchini mit einem Spiralschneider zu Nudeln verarbeiten",
+      "Eier mit geriebenem Parmesan und Pecorino verquirlen",
+      "Champignons in Scheiben schneiden, in Öl anbraten",
+      "Knoblauch hinzufügen",
+      "Zucchini-Nudeln zugeben, 2-3 Minuten schwenken",
+      "Vom Herd nehmen, Ei-Käse-Mischung unterrühren",
+      "Mit Restwärme cremig werden lassen",
+      "Mit Pfeffer würzen, sofort servieren"
+    ],
+    "nutrition": {
+      "calories": 485,
+      "fat": 36,
+      "protein": 28,
+      "netCarbs": 5
+    },
+    "category": "Vegetarisch"
+  }
+]

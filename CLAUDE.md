@@ -32,6 +32,19 @@ This is a **static HTML website** with no build process, no package manager, and
     └── ketopedia/          # Educational articles (001-was-ist-keto.html, 002-keto-flu.html)
 ```
 
+### Asset Path Conventions
+
+The most common error when adding pages is incorrect asset paths:
+
+| Page Location | CSS Path | Root Index Link |
+|--------------|----------|-----------------|
+| `/index.html` | `assets/css/base.css` | `index.html` |
+| `/pages/recipes/*.html` | `../../assets/css/base.css` | `../../index.html` |
+| `/pages/recipes/details/*.html` | `../../../assets/css/base.css` | `../../../index.html` |
+| `/pages/health/*.html` | `../../assets/css/base.css` | `../../index.html` |
+| `/pages/guides/*.html` | `../../assets/css/base.css` | `../../index.html` |
+| `/pages/topics/*.html` | `../../assets/css/base.css` | `../../index.html` |
+
 ### Design System - Apple Style
 
 The site uses an **Apple-inspired design** defined in `assets/css/base.css`:
@@ -62,10 +75,11 @@ All pages follow this structure:
 ### Navigation Structure
 
 All pages have consistent navigation:
-- Logo links to `index.html`
+- Logo links to `index.html` (or `../../index.html` from subdirectories)
 - Nav links: Warum Keto, Rezepte, Guides, Gesundheit, FAQ
 - Active state indicated with `.active` class
 - Mobile menu with hamburger icon
+- Dropdown menus for Rezepte, Guides, and Gesundheit sections
 
 ### JavaScript Functionality
 
@@ -153,6 +167,7 @@ Then open `http://localhost:8000` in a browser.
             <span>🥑 2g Netto-KH</span>
         </div>
         <p>Description...</p>
+        <a href="details/recipe-name.html" class="btn-secondary">Zum Rezept</a>
     </div>
 </div>
 ```
@@ -185,6 +200,24 @@ Then open `http://localhost:8000` in a browser.
 Recipe detail pages in `pages/recipes/details/` include inline styles for:
 - `.recipe-detail` - container with max-width 800px
 - `.recipe-section` - content sections with h3 headings
-- `.ingredients-list` - checklist-style ingredient items
-- `.instructions-list` - numbered step-by-step instructions
+- `.ingredients-list` - checklist-style ingredient items with ✓ marker
+- `.instructions-list` - numbered step-by-step instructions with circular step numbers
 - `.recipe-meta-bar` - nutrition info bar at top
+
+## Common Tasks
+
+### Link to a new recipe detail page from a category page
+```html
+<a href="details/new-recipe.html" class="recipe-card-link">
+    <div class="recipe-card">...</div>
+</a>
+```
+
+### Add navigation link to a new section
+Update the dropdown menu in all pages that contain the navigation:
+- Root `index.html` - links to `pages/section/page.html`
+- `/pages/*/*.html` - links to `../section/page.html`
+- `/pages/recipes/details/*.html` - links to `../../section/page.html`
+
+### Add a new CSS component style
+Add to `assets/css/base.css` in the appropriate section (components, utilities, etc.). The file is organized with clear comment headers.
