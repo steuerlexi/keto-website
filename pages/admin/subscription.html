@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Subscription Management - KetoGuide</title>
+    <link rel="stylesheet" href="../../assets/css/base.css">
+    <style>
+        .admin-header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 60px 0;
+            margin-top: 52px;
+        }
+
+        .admin-header h1 {
+            color: white;
+            font-size: 40px;
+            margin-bottom: 8px;
+        }
+
+        .admin-header p {
+            color: var(--apple-gray-300);
+            font-size: 16px;
+        }
+
+        .admin-badge {
+            display: inline-block;
+            background: #ef4444;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 980px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: 12px;
+        }
+
+        .admin-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .pricing-section {
+            margin-bottom: 40px;
+        }
+
+        .pricing-card {
+            background: white;
+            border: 2px solid var(--apple-gray-200);
+            border-radius: var(--radius-xl);
+            padding: 40px;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+
+        .pricing-card:hover {
+            border-color: var(--apple-blue);
+        }
+
+        .pricing-card h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .pricing-card .price {
+            font-size: 48px;
+            font-weight: 600;
+            color: var(--apple-blue);
+            margin-bottom: 20px;
+        }
+
+        .pricing-card .price span {
+            font-size: 16px;
+            color: var(--text-secondary);
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .pricing-card ul li {
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 15px;
+        }
+
+        .pricing-card ul li::before {
+            content: '✓';
+            color: var(--apple-green);
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .revenue-section {
+            background: white;
+            border: 1px solid var(--apple-gray-200);
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            margin-bottom: 20px;
+        }
+
+        .revenue-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .revenue-item {
+            text-align: center;
+        }
+
+        .revenue-item .label {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .revenue-item .value {
+            font-size: 32px;
+            font-weight: 600;
+            color: var(--apple-green);
+        }
+
+        .btn {
+            padding: 14px 24px;
+            border-radius: var(--radius-md);
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--apple-blue);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--apple-blue-hover);
+        }
+
+        .btn-logout {
+            background: var(--apple-gray-200);
+            color: var(--text-primary);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container nav-container">
+            <a href="../../index.html" class="logo">KetoGuide</a>
+            <nav class="nav-menu" id="navMenu">
+                <div class="nav-item">
+                    <a href="users.html" class="nav-link">User</a>
+                </div>
+                <div class="nav-item">
+                    <a href="subscription.html" class="nav-link active">Subscription</a>
+                </div>
+                <div class="nav-item">
+                    <a href="../members/dashboard.html" class="nav-link">Dashboard</a>
+                </div>
+                <div class="nav-item">
+                    <button onclick="logoutAdmin()" class="btn btn-logout">Logout</button>
+                </div>
+            </nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menü">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Admin Header -->
+    <section class="admin-header">
+        <div class="container">
+            <h1>Subscription Management <span class="admin-badge">ADMIN</span></h1>
+            <p>Preise und Revenue-Übersicht</p>
+        </div>
+    </section>
+
+    <!-- Admin Content -->
+    <div class="admin-container">
+        <!-- Revenue Stats -->
+        <div class="revenue-section">
+            <h3 style="margin-bottom: 20px;">📊 Revenue Übersicht</h3>
+            <div class="revenue-grid">
+                <div class="revenue-item">
+                    <div class="label">Monatliche Einnahmen (geschätzt)</div>
+                    <div class="value" id="monthlyRevenue">€0</div>
+                </div>
+                <div class="revenue-item">
+                    <div class="label">Jährliche Einnahmen (geschätzt)</div>
+                    <div class="value" id="yearlyRevenue">€0</div>
+                </div>
+                <div class="revenue-item">
+                    <div class="label">MRR (Monthly Recurring)</div>
+                    <div class="value" id="mrr">€0</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pricing Plans -->
+        <div class="pricing-section">
+            <h3 style="margin-bottom: 20px;">Aktuelle Pläne</h3>
+
+            <div class="pricing-card">
+                <h3>🆓 Free</h3>
+                <div class="price">€0 <span>/ Monat</span></div>
+                <ul>
+                    <li>Zugang zu ausgewählten Rezepten</li>
+                    <li>Basis-Informationen zu Keto</li>
+                    <li>Community-Zugang</li>
+                </ul>
+            </div>
+
+            <div class="pricing-card">
+                <h3>⭐ Premium Monthly</h3>
+                <div class="price">€9,99 <span>/ Monat</span></div>
+                <ul>
+                    <li>120+ Premium Rezepte</li>
+                    <li>Alle wissenschaftlichen Guides</li>
+                    <li>Persönlicher E-Mail Support</li>
+                    <li>Exklusive Video-Tutorials</li>
+                    <li>Meal-Planner & Einkaufslisten</li>
+                    <li>Früher Zugang zu neuen Inhalten</li>
+                </ul>
+            </div>
+
+            <div class="pricing-card">
+                <h3>💎 Premium Annual</h3>
+                <div class="price">€99 <span>/ Jahr</span></div>
+                <p style="color: var(--apple-green); font-size: 14px; margin-bottom: 10px;">2 Monate sparen!</p>
+                <ul>
+                    <li>Alle Premium Features</li>
+                    <li>1:1 Beratung (30 Min/Monat)</li>
+                    <li>Exklusive Rezept-Datenbank</li>
+                    <li>Priority Support</li>
+                    <li>Bonus: E-Book Download</li>
+                    <li>VIP Community Zugang</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../assets/js/main.js"></script>
+    <script>
+        // Admin authentication check
+        (function() {
+            const adminKey = 'ketoguide_admin';
+            const adminPassword = 'admin2025';
+
+            if (localStorage.getItem(adminKey) !== 'true') {
+                const password = prompt('Admin Passwort eingeben:');
+                if (password === adminPassword) {
+                    localStorage.setItem(adminKey, 'true');
+                } else {
+                    alert('Falsches Passwort!');
+                    window.location.href = '../../index.html';
+                }
+            }
+        })();
+
+        // Calculate revenue stats
+        function calculateRevenue() {
+            const users = localStorage.getItem('ketoguide_users');
+            const allUsers = users ? JSON.parse(users) : [];
+
+            const premiumUsers = allUsers.filter(u => u.isPremium);
+            const monthlyUsers = premiumUsers.filter(u => !u.subscribedAt || new Date(u.subscribedAt).getTime() > Date.now() - 30 * 24 * 60 * 60 * 1000);
+
+            // Simple estimation
+            const monthlyRevenue = premiumUsers.length * 9.99;
+            const yearlyRevenue = monthlyRevenue * 12;
+            const mrr = monthlyUsers.length * 9.99;
+
+            document.getElementById('monthlyRevenue').textContent = '€' + monthlyRevenue.toFixed(2);
+            document.getElementById('yearlyRevenue').textContent = '€' + yearlyRevenue.toFixed(2);
+            document.getElementById('mrr').textContent = '€' + mrr.toFixed(2);
+        }
+
+        function logoutAdmin() {
+            localStorage.removeItem('ketoguide_admin');
+            window.location.href = '../../index.html';
+        }
+
+        calculateRevenue();
+    </script>
+</body>
+</html>
