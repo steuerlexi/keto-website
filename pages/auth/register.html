@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrieren - KetoGuide Premium</title>
+    <meta name="description" content="Erstelle dein kostenloses KetoGuide Konto und entdecke Premium-Inhalte.">
+    <link rel="stylesheet" href="../../assets/css/base.css">
+    <style>
+        .auth-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(180deg, var(--apple-gray-100) 0%, var(--apple-white) 100%);
+            padding: 100px 20px;
+        }
+
+        .auth-container {
+            width: 100%;
+            max-width: 440px;
+            background: white;
+            border-radius: var(--radius-xl);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            padding: 48px;
+        }
+
+        .auth-header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .auth-logo {
+            font-size: 32px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .auth-title {
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .auth-subtitle {
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        .premium-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: linear-gradient(135deg, #ffd700 0%, #ffb700 100%);
+            color: black;
+            padding: 6px 16px;
+            border-radius: 980px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-top: 12px;
+        }
+
+        .auth-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .form-group input {
+            padding: 14px 16px;
+            border: 1px solid var(--apple-gray-300);
+            border-radius: var(--radius-md);
+            font-size: 16px;
+            font-family: var(--font-system);
+            transition: all 0.3s var(--transition-smooth);
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--apple-blue);
+            box-shadow: 0 0 0 3px rgba(0,113,227,0.1);
+        }
+
+        .form-hint {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .form-options {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .form-options a {
+            color: var(--apple-blue);
+        }
+
+        .btn-auth {
+            padding: 16px;
+            border: none;
+            border-radius: var(--radius-md);
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s var(--transition-smooth);
+        }
+
+        .btn-primary-auth {
+            background: var(--apple-blue);
+            color: white;
+        }
+
+        .btn-primary-auth:hover {
+            background: var(--apple-blue-hover);
+            transform: scale(1.02);
+        }
+
+        .btn-primary-auth:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        .auth-footer {
+            text-align: center;
+            margin-top: 24px;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .auth-footer a {
+            color: var(--apple-blue);
+            font-weight: 500;
+        }
+
+        .auth-footer a:hover {
+            color: var(--apple-blue-hover);
+        }
+
+        .alert {
+            padding: 14px 16px;
+            border-radius: var(--radius-md);
+            font-size: 14px;
+            display: none;
+        }
+
+        .alert-error {
+            background: #fef2f2;
+            color: #dc2626;
+            border: 1px solid #fecaca;
+        }
+
+        .alert-success {
+            background: #f0fdf4;
+            color: #16a34a;
+            border: 1px solid #bbf7d0;
+        }
+
+        .benefits-list {
+            background: var(--apple-gray-100);
+            padding: 20px;
+            border-radius: var(--radius-md);
+            margin-bottom: 24px;
+        }
+
+        .benefits-list h4 {
+            font-size: 14px;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        .benefits-list ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .benefits-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .benefits-list li::before {
+            content: '✓';
+            color: var(--apple-green);
+            font-weight: bold;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-page">
+        <div class="auth-container">
+            <div class="auth-header">
+                <div class="auth-logo">KetoGuide</div>
+                <h1 class="auth-title">Konto erstellen</h1>
+                <p class="auth-subtitle">Starte deine Premium-Reise</p>
+                <div class="premium-badge">★ 14 Tage Geld-zurück-Garantie</div>
+            </div>
+
+            <div class="benefits-list">
+                <h4>Deine Premium-Vorteile:</h4>
+                <ul>
+                    <li>120+ exklusive Rezepte</li>
+                    <li>Wissenschaftliche Guides</li>
+                    <li>Persönlicher Support</li>
+                    <li>Jederzeit kündbar</li>
+                </ul>
+            </div>
+
+            <div id="alertContainer"></div>
+
+            <form class="auth-form" id="registerForm">
+                <div class="form-group">
+                    <label for="name">Vollständiger Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Max Mustermann" autocomplete="name">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-Mail</label>
+                    <input type="email" id="email" name="email" required placeholder="deine@email.de" autocomplete="email">
+                    <span class="form-hint">Du erhältst eine Bestätigungs-E-Mail</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Passwort</label>
+                    <input type="password" id="password" name="password" required placeholder="Mindestens 6 Zeichen" autocomplete="new-password" minlength="6">
+                    <span class="form-hint">Mindestens 6 Zeichen lang</span>
+                </div>
+
+                <div class="form-options">
+                    <label>
+                        <input type="checkbox" id="terms" name="terms" required>
+                        Ich akzeptiere die <a href="../legal/agb.html" target="_blank">AGB</a> und <a href="../legal/datenschutz.html" target="_blank">Datenschutzerklärung</a>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn-auth btn-primary-auth" id="submitBtn">
+                    Kostenlos registrieren
+                </button>
+            </form>
+
+            <div class="auth-footer">
+                Bereits ein Konto? <a href="login.html">Einloggen</a>
+            </div>
+
+            <div class="auth-footer">
+                <a href="../../index.html">← Zurück zur Startseite</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../assets/js/auth.js"></script>
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value;
+            const terms = document.getElementById('terms').checked;
+            const btn = document.getElementById('submitBtn');
+            const alertContainer = document.getElementById('alertContainer');
+
+            if (!terms) {
+                showAlert('error', 'Bitte akzeptiere die AGB und Datenschutzerklärung.');
+                return;
+            }
+
+            btn.disabled = true;
+            btn.textContent = 'Wird erstellt...';
+
+            const result = KetoAuth.register(name, email, password);
+
+            if (result.success) {
+                showAlert('success', result.message + ' Weiterleitung...');
+                setTimeout(() => {
+                    window.location.href = 'redirect.html';
+                }, 1500);
+            } else {
+                showAlert('error', result.message);
+                btn.disabled = false;
+                btn.textContent = 'Kostenlos registrieren';
+            }
+        });
+
+        function showAlert(type, message) {
+            const alertContainer = document.getElementById('alertContainer');
+            alertContainer.innerHTML = `
+                <div class="alert alert-${type}" style="display: block;">
+                    ${message}
+                </div>
+            `;
+        }
+
+        // Check if already logged in
+        if (KetoAuth.isLoggedIn()) {
+            window.location.href = 'redirect.html';
+        }
+    </script>
+</body>
+</html>

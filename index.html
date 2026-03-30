@@ -3,13 +3,240 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Keto Guide - Ketogene Ernährung neu gedacht</title>
-    <meta name="description" content="Entdecke die ketogene Ernährung neu. Umfassende Guides, leckere Rezepte und wissenschaftlich fundierte Gesundheitstipps.">
+    <title>KetoGuide Premium - Ketogene Ernährung neu gedacht</title>
+    <meta name="description" content="Entdecke die ketogene Ernährung neu. 120+ Premium-Rezepte, wissenschaftliche Guides und persönliche Beratung.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="preload" href="assets/css/base.css" as="style">
     <link rel="preload" href="assets/js/main.js" as="script">
     <link rel="stylesheet" href="assets/css/base.css">
+    <style>
+        /* Landing Page Specific Styles */
+        .locked-content {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .locked-content::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent 60%, rgba(255,255,255,0.95) 100%);
+            pointer-events: none;
+        }
+
+        .lock-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            text-align: center;
+            border-radius: var(--radius-lg);
+            margin-top: -20px;
+        }
+
+        .lock-overlay h3 {
+            color: white;
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .lock-overlay p {
+            color: var(--apple-gray-300);
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        .lock-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .blur-preview {
+            filter: blur(8px);
+            user-select: none;
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            background: linear-gradient(180deg, var(--apple-black) 0%, #1a1a1a 100%);
+            color: white;
+        }
+
+        .pricing-section h2,
+        .pricing-section h3 {
+            color: white;
+        }
+
+        .pricing-section p {
+            color: var(--apple-gray-300);
+        }
+
+        .pricing-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: var(--radius-xl);
+            padding: 40px;
+            text-align: center;
+            transition: all 0.4s var(--transition-smooth);
+        }
+
+        .pricing-card:hover {
+            transform: scale(1.02);
+            border-color: var(--apple-blue);
+            box-shadow: 0 20px 60px rgba(0,113,227,0.3);
+        }
+
+        .pricing-card.featured {
+            background: linear-gradient(135deg, rgba(0,113,227,0.2) 0%, rgba(0,113,227,0.1) 100%);
+            border-color: var(--apple-blue);
+        }
+
+        .pricing-icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+
+        .pricing-price {
+            font-size: 56px;
+            font-weight: 600;
+            color: white;
+            margin: 20px 0;
+        }
+
+        .pricing-price span {
+            font-size: 18px;
+            color: var(--apple-gray-400);
+        }
+
+        .pricing-features {
+            list-style: none;
+            padding: 0;
+            margin: 30px 0;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--apple-gray-300);
+        }
+
+        .pricing-features li::before {
+            content: '✓';
+            color: var(--apple-green);
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .pricing-features li.unavailable {
+            opacity: 0.5;
+        }
+
+        .pricing-features li.unavailable::before {
+            content: '✕';
+            color: var(--apple-red);
+        }
+
+        /* Testimonial */
+        .testimonial {
+            background: var(--apple-gray-100);
+            border-radius: var(--radius-xl);
+            padding: 40px;
+            text-align: center;
+        }
+
+        .testimonial-text {
+            font-size: 21px;
+            font-style: italic;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--apple-gray-300);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .testimonial-info h4 {
+            margin: 0;
+            font-size: 17px;
+        }
+
+        .testimonial-info p {
+            margin: 0;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* Auth Links in Header */
+        .auth-links {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .auth-links .btn {
+            padding: 8px 16px;
+            font-size: 14px;
+        }
+
+        .user-menu {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .user-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--apple-blue);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .premium-badge {
+            background: linear-gradient(135deg, #ffd700 0%, #ffb700 100%);
+            color: black;
+            padding: 4px 12px;
+            border-radius: 980px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* Hero CTA */
+        .hero-cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -18,80 +245,31 @@
             <a href="index.html" class="logo">KetoGuide</a>
             <nav class="nav-menu" id="navMenu">
                 <div class="nav-item">
-                    <a href="#gruende" class="nav-link">Warum Keto</a>
+                    <a href="#vorteile" class="nav-link">Vorteile</a>
                 </div>
-                <div class="nav-item nav-item-dropdown">
-                    <a href="#rezepte" class="nav-link">Rezepte ▾</a>
-                    <div class="dropdown-menu">
-                        <div class="dropdown-header">Kategorien</div>
-                        <a href="pages/recipes/fruehstueck.html" class="dropdown-item">
-                            <span class="dropdown-item-icon">🍳</span> Frühstück
-                        </a>
-                        <a href="pages/recipes/mittagessen.html" class="dropdown-item">
-                            <span class="dropdown-item-icon">🥗</span> Mittagessen
-                        </a>
-                        <a href="pages/recipes/abendessen.html" class="dropdown-item">
-                            <span class="dropdown-item-icon">🍽️</span> Abendessen
-                        </a>
-                        <a href="pages/recipes/snacks.html" class="dropdown-item">
-                            <span class="dropdown-item-icon">🥜</span> Snacks
-                        </a>
-                        <a href="pages/recipes/desserts.html" class="dropdown-item">
-                            <span class="dropdown-item-icon">🍰</span> Desserts
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="pages/recipes/brot-gebaeck.html" class="dropdown-item">
-                            <span class="dropdown-item-icon">🥖</span> Brot & Gebäck
-                        </a>
-                        <a href="pages/recipes/getraenke.html" class="dropdown-item">
-                            <span class="dropdown-item-icon">🥤</span> Getränke
-                        </a>
-                        <a href="pages/recipes/vegetarisch.html" class="dropdown-item">
-                            <span class="dropdown-item-icon">🌱</span> Vegetarisch
-                        </a>
-                    </div>
+                <div class="nav-item">
+                    <a href="#rezepte" class="nav-link">Rezepte</a>
                 </div>
-                <div class="nav-item nav-item-dropdown">
-                    <a href="#guides" class="nav-link">Guides ▾</a>
-                    <div class="dropdown-menu">
-                        <div class="dropdown-header">Anleitungen</div>
-                        <a href="pages/guides/starten.html" class="dropdown-item">
-                            <span class="dropdown-item-icon">🚀</span> Einstieg
-                        </a>
-                        <a href="pages/guides/tracking.html" class="dropdown-item">
-                            <span class="dropdown-item-icon">📊</span> Makros tracken
-                        </a>
-                        <a href="pages/guides/mealprep.html" class="dropdown-item">
-                            <span class="dropdown-item-icon">🍱</span> Meal Prep
-                        </a>
-                        <a href="pages/guides/sport.html" class="dropdown-item">
-                            <span class="dropdown-item-icon">💪</span> Sport & Keto
-                        </a>
-                    </div>
+                <div class="nav-item">
+                    <a href="#guides" class="nav-link">Guides</a>
                 </div>
-                <div class="nav-item nav-item-dropdown">
-                    <a href="#gesundheit" class="nav-link">Gesundheit ▾</a>
-                    <div class="dropdown-menu">
-                        <div class="dropdown-header">Themen</div>
-                        <a href="pages/health/gewicht.html" class="dropdown-item">
-                            <span class="dropdown-item-icon">⚖️</span> Gewichtsmanagement
-                        </a>
-                        <a href="pages/health/gehirn.html" class="dropdown-item">
-                            <span class="dropdown-item-icon">🧠</span> Mentale Klarheit
-                        </a>
-                        <a href="pages/health/herz.html" class="dropdown-item">
-                            <span class="dropdown-item-icon">❤️</span> Herzgesundheit
-                        </a>
-                        <a href="pages/health/diabetes.html" class="dropdown-item">
-                            <span class="dropdown-item-icon">🩺</span> Diabetes & Keto
-                        </a>
-                        <a href="pages/health/entzuendung.html" class="dropdown-item">
-                            <span class="dropdown-item-icon">🛡️</span> Entzündungen
-                        </a>
-                    </div>
+                <div class="nav-item">
+                    <a href="#preise" class="nav-link">Preise</a>
                 </div>
                 <div class="nav-item">
                     <a href="#faq" class="nav-link">FAQ</a>
+                </div>
+                <div class="nav-item auth-links auth-login-link" style="display: none;">
+                    <a href="pages/auth/login.html" class="btn btn-secondary">Login</a>
+                    <a href="pages/auth/register.html" class="btn btn-primary">Premium starten</a>
+                </div>
+                <div class="nav-item auth-links auth-logout-link" style="display: none;">
+                    <div class="user-menu">
+                        <div class="user-avatar auth-user-avatar">U</div>
+                        <span class="auth-user-name" style="font-size: 14px;"></span>
+                        <span class="premium-badge auth-premium-badge" style="display: none;">★ PREMIUM</span>
+                        <a href="pages/members/dashboard.html" class="btn btn-primary" style="padding: 8px 16px; font-size: 13px;">Members Area</a>
+                    </div>
                 </div>
             </nav>
             <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menü">
@@ -105,11 +283,11 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container hero-content">
-            <h1 class="animate-fade-in-up">Keto Guide.</h1>
-            <p class="hero-subtitle animate-fade-in-up delay-1">Ketogene Ernährung neu gedacht.<br>Dein umfassender Wegweiser zu einem gesünderen Leben.</p>
-            <div class="hero-cta animate-fade-in-up delay-2">
-                <a href="pages/guides/starten.html" class="btn btn-primary btn-large">Loslegen</a>
-                <a href="#rezepte" class="btn btn-secondary btn-large">Rezepte entdecken</a>
+            <h1 class="animate-fade-in-up">KetoGuide Premium.</h1>
+            <p class="hero-subtitle animate-fade-in-up delay-1">Dein ultimativer Begleiter für ketogene Ernährung.<br>120+ Rezepte, wissenschaftliche Guides und persönliche Unterstützung.</p>
+            <div class="hero-cta-buttons animate-fade-in-up delay-2">
+                <a href="pages/auth/register.html" class="btn btn-primary btn-large">Jetzt Premium starten</a>
+                <a href="#vorteile" class="btn btn-secondary btn-large">Mehr erfahren</a>
             </div>
         </div>
     </section>
@@ -119,31 +297,31 @@
         <div class="container">
             <div class="stats-row scroll-animate">
                 <div class="stat-item">
-                    <div class="stat-number">70-80%</div>
-                    <div class="stat-label">Gesunde Fette</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">20-25%</div>
-                    <div class="stat-label">Qualitatives Protein</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">5-10%</div>
-                    <div class="stat-label">Wenige Kohlenhydrate</div>
-                </div>
-                <div class="stat-item">
                     <div class="stat-number">120+</div>
-                    <div class="stat-label">Rezepte verfügbar</div>
+                    <div class="stat-label">Premium Rezepte</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Wissenschaftliche Guides</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Exklusive Kategorien</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Community Support</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Bento Grid - Main Content -->
-    <section id="gruende" class="section">
+    <!-- Vorteile Section -->
+    <section id="vorteile" class="section">
         <div class="container-wide" style="padding: 0 40px;">
             <div class="section-headline scroll-animate">
-                <h2>Warum Keto?</h2>
-                <p>Die ketogene Ernährung verändert die Art, wie dein Körper Energie gewinnt – mit nachweisbaren Vorteilen.</p>
+                <h2>Warum KetoGuide Premium?</h2>
+                <p>Mehr als nur Rezepte – dein komplettes Ökosystem für erfolgreiche ketogene Ernährung.</p>
             </div>
 
             <div class="bento-grid bento-grid-2">
@@ -151,323 +329,280 @@
                     <div class="bento-content">
                         <div>
                             <div class="bento-icon">🔥</div>
-                            <h3>Fettverbrennung aktiviert</h3>
-                            <p>Dein Körper lernt, Fett als primäre Energiequelle zu nutzen. Das bedeutet nachhaltige Energie ohne Zucker-Crashs.</p>
+                            <h3>120+ Premium Rezepte</h3>
+                            <p>Vom schnellen Frühstück bis zum festlichen Dinner – alle Rezepte mit detaillierten Nährwertangaben und Einkaufslisten.</p>
                         </div>
-                        <a href="pages/health/gewicht.html" class="btn btn-secondary">Mehr erfahren</a>
+                        <a href="pages/auth/register.html" class="btn btn-secondary">Alle Rezepte entdecken</a>
                     </div>
                 </div>
 
                 <div class="bento-item scroll-animate delay-1">
                     <div class="bento-content">
-                        <div class="bento-icon">🧠</div>
-                        <h3>Klare Konzentration</h3>
-                        <p>Ketonkörper versorgen dein Gehirn effizienter mit Energie.</p>
+                        <div class="bento-icon">📊</div>
+                        <h3>Makro Tracker</h3>
+                        <p>Behalte deine Fortschritte im Blick.</p>
                     </div>
                 </div>
 
                 <div class="bento-item scroll-animate delay-2">
                     <div class="bento-content">
-                        <div class="bento-icon">⚡</div>
-                        <h3>Konstante Energie</h3>
-                        <p>Keine hungerinduzierten Energietiefs mehr.</p>
+                        <div class="bento-icon">📱</div>
+                        <h3>Mobile Optimiert</h3>
+                        <p>Überall zugreifen.</p>
                     </div>
                 </div>
             </div>
 
             <div class="bento-grid bento-grid-3" style="margin-top: 20px;">
-                <a href="pages/health/herz.html" class="bento-item link-card scroll-animate delay-1">
+                <a href="pages/auth/register.html" class="bento-item link-card scroll-animate delay-1">
                     <div class="bento-content">
-                        <div class="bento-icon">❤️</div>
-                        <h3>Herzgesundheit</h3>
-                        <p>Verbesserte Marker für Herz-Kreislauf</p>
+                        <div class="bento-icon">🧠</div>
+                        <h3>Wissenschaftliche Guides</h3>
+                        <p>Fundierte Artikel zu Gesundheitsthemen</p>
                     </div>
                 </a>
 
-                <a href="pages/health/entzuendung.html" class="bento-item link-card scroll-animate delay-2">
+                <a href="pages/auth/register.html" class="bento-item link-card scroll-animate delay-2">
                     <div class="bento-content">
                         <div class="bento-icon">🛡️</div>
-                        <h3>Weniger Entzündungen</h3>
-                        <p>Systemische Entzündungen reduzieren sich</p>
+                        <h3>Entzündungen reduzieren</h3>
+                        <p>Systemische Entzündungen natürlich bekämpfen</p>
                     </div>
                 </a>
 
-                <a href="pages/health/schlaf.html" class="bento-item link-card scroll-animate delay-3">
+                <a href="pages/auth/register.html" class="bento-item link-card scroll-animate delay-3">
                     <div class="bento-content">
                         <div class="bento-icon">😴</div>
                         <h3>Besserer Schlaf</h3>
-                        <p>Stabile Blutzuckerwerte fördern Erholung</p>
+                        <p>Optimiere deine Schlafqualität</p>
                     </div>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Recipes Section -->
+    <!-- Recipes Teaser Section -->
     <section id="rezepte" class="section" style="background: var(--apple-gray-100);">
         <div class="container">
             <div class="section-headline scroll-animate">
-                <h2>120+ Keto Rezepte.</h2>
-                <p>Über 120 köstliche Mahlzeiten in 10 Kategorien – alle zuckerfrei und kohlenhydratarm.</p>
+                <h2>120+ Premium Rezepte.</h2>
+                <p>Entdecke köstliche Mahlzeiten in 10 Kategorien – alle zuckerfrei und kohlenhydratarm.</p>
             </div>
 
-            <div class="bento-grid bento-grid-3">
-                <a href="pages/recipes/fruehstueck.html" class="bento-item link-card scroll-animate" style="background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);">
+            <div class="bento-grid bento-grid-3 locked-content">
+                <div class="bento-item link-card scroll-animate blur-preview" style="background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);">
                     <div class="bento-content">
                         <div class="bento-icon">🍳</div>
                         <h3>Frühstück</h3>
                         <p>12 Rezepte für den perfekten Start</p>
                     </div>
-                </a>
+                </div>
 
-                <a href="pages/recipes/mittagessen.html" class="bento-item link-card scroll-animate delay-1" style="background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);">
+                <div class="bento-item link-card scroll-animate delay-1 blur-preview" style="background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);">
                     <div class="bento-content">
                         <div class="bento-icon">🥗</div>
                         <h3>Mittagessen</h3>
                         <p>12 sättigende Hauptgerichte</p>
                     </div>
-                </a>
+                </div>
 
-                <a href="pages/recipes/desserts.html" class="bento-item link-card scroll-animate delay-2" style="background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%);">
+                <div class="bento-item link-card scroll-animate delay-2 blur-preview" style="background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%);">
                     <div class="bento-content">
                         <div class="bento-icon">🍰</div>
                         <h3>Desserts</h3>
                         <p>12 süße Versuchungen ohne Zucker</p>
                     </div>
-                </a>
+                </div>
 
-                <a href="pages/recipes/vegetarisch.html" class="bento-item link-card scroll-animate delay-1" style="background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%);">
+                <div class="bento-item link-card scroll-animate delay-1 blur-preview" style="background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%);">
                     <div class="bento-content">
                         <div class="bento-icon">🌱</div>
                         <h3>Vegetarisch</h3>
                         <p>12 pflanzliche Keto-Rezepte</p>
                     </div>
-                </a>
+                </div>
 
-                <a href="pages/recipes/snacks.html" class="bento-item link-card scroll-animate delay-2" style="background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);">
+                <div class="bento-item link-card scroll-animate delay-2 blur-preview" style="background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);">
                     <div class="bento-content">
                         <div class="bento-icon">🥜</div>
                         <h3>Snacks</h3>
                         <p>12 Ideen für zwischendurch</p>
                     </div>
-                </a>
+                </div>
 
-                <a href="pages/recipes/abendessen.html" class="bento-item link-card scroll-animate delay-3" style="background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);">
+                <div class="bento-item link-card scroll-animate delay-3 blur-preview" style="background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);">
                     <div class="bento-content">
                         <div class="bento-icon">🍽️</div>
                         <h3>Abendessen</h3>
                         <p>12 leichte Abendgerichte</p>
                     </div>
-                </a>
+                </div>
             </div>
 
-            <div class="bento-grid bento-grid-4" style="margin-top: 20px;">
-                <a href="pages/recipes/brot-gebaeck.html" class="bento-item link-card scroll-animate" style="background: linear-gradient(135deg, #efebe9 0%, #d7ccc8 100%);">
-                    <div class="bento-content" style="padding: 24px;">
-                        <div class="bento-icon" style="font-size: 36px;">🥖</div>
-                        <h3 style="font-size: 21px;">Brot & Gebäck</h3>
-                        <p style="font-size: 14px;">12 Low-Carb Alternativen</p>
-                    </div>
-                </a>
-
-                <a href="pages/recipes/getraenke.html" class="bento-item link-card scroll-animate delay-1" style="background: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 100%);">
-                    <div class="bento-content" style="padding: 24px;">
-                        <div class="bento-icon" style="font-size: 36px;">🥤</div>
-                        <h3 style="font-size: 21px;">Getränke</h3>
-                        <p style="font-size: 14px;">12 Shakes & Smoothies</p>
-                    </div>
-                </a>
-
-                <a href="pages/recipes/mealprep.html" class="bento-item link-card scroll-animate delay-2" style="background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);">
-                    <div class="bento-content" style="padding: 24px;">
-                        <div class="bento-icon" style="font-size: 36px;">🍱</div>
-                        <h3 style="font-size: 21px;">Meal-Prep</h3>
-                        <p style="font-size: 14px;">12 Vorbereitungsrezepte</p>
-                    </div>
-                </a>
-
-                <a href="pages/recipes/feiertage.html" class="bento-item link-card scroll-animate delay-3" style="background: linear-gradient(135deg, #fbe9e7 0%, #ffccbc 100%);">
-                    <div class="bento-content" style="padding: 24px;">
-                        <div class="bento-icon" style="font-size: 36px;">🎄</div>
-                        <h3 style="font-size: 21px;">Feiertage</h3>
-                        <p style="font-size: 14px;">12 festliche Gerichte</p>
-                    </div>
-                </a>
+            <div class="lock-overlay scroll-animate">
+                <div class="lock-icon">🔒</div>
+                <h3>Premium Inhalt</h3>
+                <p>Registriere dich jetzt für Zugang zu allen 120+ Rezepten</p>
+                <a href="pages/auth/register.html" class="btn btn-primary">Jetzt Premium starten</a>
             </div>
         </div>
     </section>
 
-    <!-- Guides Section -->
+    <!-- Guides Teaser Section -->
     <section id="guides" class="section">
         <div class="container">
             <div class="section-headline scroll-animate">
-                <h2>Dein Wegweiser.</h2>
-                <p>Schritt-für-Schritt zum Erfolg mit Keto.</p>
+                <h2>Dein Wegweiser zum Erfolg.</h2>
+                <p>Schritt-für-Schritt Anleitungen für deine Keto-Reise.</p>
             </div>
 
-            <div class="bento-grid bento-grid-2">
-                <a href="pages/guides/starten.html" class="bento-item link-card scroll-animate" style="background: var(--apple-black); color: white;">
+            <div class="bento-grid bento-grid-2 locked-content">
+                <div class="bento-item link-card scroll-animate blur-preview" style="background: var(--apple-black); color: white;">
                     <div class="bento-content">
                         <div>
                             <div class="bento-icon" style="font-size: 64px;">🚀</div>
                             <h3 style="color: white; font-size: 32px;">Für Anfänger</h3>
                             <p style="color: var(--apple-gray-300);">Der perfekte Einstieg in die ketogene Ernährung. Alles was du wissen musst.</p>
                         </div>
-                        <span class="btn btn-primary" style="background: white; color: black;">Jetzt starten</span>
                     </div>
-                </a>
+                </div>
 
-                <a href="pages/guides/tracking.html" class="bento-item link-card scroll-animate delay-1">
+                <div class="bento-item link-card scroll-animate delay-1 blur-preview">
                     <div class="bento-content">
                         <div class="bento-icon">📊</div>
                         <h3>Tracking & Messung</h3>
                         <p>So misst du deine Ketose und verfolgst deinen Fortschritt.</p>
                     </div>
-                </a>
+                </div>
 
-                <a href="pages/guides/mealprep.html" class="bento-item link-card scroll-animate delay-2">
+                <div class="bento-item link-card scroll-animate delay-2 blur-preview">
                     <div class="bento-content">
                         <div class="bento-icon">🍱</div>
                         <h3>Meal Prep</h3>
                         <p>Effiziente Vorbereitung für den Alltag.</p>
                     </div>
-                </a>
+                </div>
 
-                <a href="pages/guides/sport.html" class="bento-item link-card scroll-animate delay-3">
+                <div class="bento-item link-card scroll-animate delay-3 blur-preview">
                     <div class="bento-content">
                         <div class="bento-icon">💪</div>
                         <h3>Sport & Training</h3>
                         <p>Leistungsfähigkeit auf Keto optimieren.</p>
                     </div>
-                </a>
+                </div>
+            </div>
+
+            <div class="lock-overlay scroll-animate">
+                <div class="lock-icon">🔒</div>
+                <h3>Premium Guides</h3>
+                <p>Schalte alle Guides und Anleitungen frei</p>
+                <a href="pages/auth/register.html" class="btn btn-primary">Zugang jetzt freischalten</a>
             </div>
         </div>
     </section>
 
-    <!-- Health Section -->
-    <section id="gesundheit" class="section" style="background: linear-gradient(180deg, var(--apple-gray-100) 0%, var(--apple-white) 100%);">
+    <!-- Pricing Section -->
+    <section id="preise" class="section pricing-section">
         <div class="container">
             <div class="section-headline scroll-animate">
-                <h2>Wissenschaft & Gesundheit.</h2>
-                <p>Was die Forschung über Keto sagt.</p>
+                <h2>Einfache, transparente Preise.</h2>
+                <p>Wähle den Plan, der zu dir passt. Jederzeit kündbar.</p>
             </div>
 
-            <div class="grid grid-3">
-                <a href="pages/health/gehirn.html" class="card link-card scroll-animate">
-                    <div class="card-body" style="text-align: center;">
-                        <div style="font-size: 48px; margin-bottom: 16px;">🧠</div>
-                        <h3>Gehirn & Kognition</h3>
-                        <p>Klares Denken, bessere Fokussierung und neuroprotektive Effekte.</p>
-                    </div>
-                </a>
+            <div class="bento-grid bento-grid-3" style="max-width: 1200px; margin: 0 auto;">
+                <!-- Free Plan -->
+                <div class="pricing-card scroll-animate">
+                    <div class="pricing-icon">🆓</div>
+                    <h3>Free</h3>
+                    <div class="pricing-price">€0 <span>/ Monat</span></div>
+                    <ul class="pricing-features">
+                        <li>Zugang zu ausgewählten Rezepten</li>
+                        <li>Basis-Informationen zu Keto</li>
+                        <li>Community-Zugang</li>
+                        <li class="unavailable">Wissenschaftliche Guides</li>
+                        <li class="unavailable">Persönlicher Support</li>
+                        <li class="unavailable">Exklusive Inhalte</li>
+                    </ul>
+                    <a href="pages/auth/register.html" class="btn btn-secondary" style="width: 100%; background: rgba(255,255,255,0.1); color: white;">Kostenlos registrieren</a>
+                </div>
 
-                <a href="pages/health/herz.html" class="card link-card scroll-animate delay-1">
-                    <div class="card-body" style="text-align: center;">
-                        <div style="font-size: 48px; margin-bottom: 16px;">❤️</div>
-                        <h3>Herz-Kreislauf</h3>
-                        <p>Auswirkungen auf Cholesterin, Blutdruck und Herzgesundheit.</p>
-                    </div>
-                </a>
+                <!-- Premium Plan -->
+                <div class="pricing-card featured scroll-animate delay-1">
+                    <div class="pricing-icon">⭐</div>
+                    <h3>Premium</h3>
+                    <div class="pricing-price">€9,99 <span>/ Monat</span></div>
+                    <ul class="pricing-features">
+                        <li>120+ Premium Rezepte</li>
+                        <li>Alle wissenschaftlichen Guides</li>
+                        <li>Persönlicher E-Mail Support</li>
+                        <li>Exklusive Video-Tutorials</li>
+                        <li>Meal-Planner & Einkaufslisten</li>
+                        <li>Früher Zugang zu neuen Inhalten</li>
+                    </ul>
+                    <a href="pages/auth/register.html" class="btn btn-primary" style="width: 100%;">Jetzt Premium starten</a>
+                </div>
 
-                <a href="pages/health/diabetes.html" class="card link-card scroll-animate delay-2">
-                    <div class="card-body" style="text-align: center;">
-                        <div style="font-size: 48px; margin-bottom: 16px;">📉</div>
-                        <h3>Blutzucker & Diabetes</h3>
-                        <p>Stabile Blutzuckerwerte und verbesserte Insulinsensitivität.</p>
-                    </div>
-                </a>
-
-                <a href="pages/health/entzuendung.html" class="card link-card scroll-animate delay-1">
-                    <div class="card-body" style="text-align: center;">
-                        <div style="font-size: 48px; margin-bottom: 16px;">🔥</div>
-                        <h3>Entzündungen</h3>
-                        <p>Reduktion systemischer Entzündungsmarker.</p>
-                    </div>
-                </a>
-
-                <a href="pages/health/hormone.html" class="card link-card scroll-animate delay-2">
-                    <div class="card-body" style="text-align: center;">
-                        <div style="font-size: 48px; margin-bottom: 16px;">⚖️</div>
-                        <h3>Hormonelle Balance</h3>
-                        <p>Einfluss auf Schilddrüse, Geschlechtshormone und Stoffwechsel.</p>
-                    </div>
-                </a>
-
-                <a href="pages/health/schlaf.html" class="card link-card scroll-animate delay-3">
-                    <div class="card-body" style="text-align: center;">
-                        <div style="font-size: 48px; margin-bottom: 16px;">😴</div>
-                        <h3>Schlafqualität</h3>
-                        <p>Besserer Schlaf durch stabile Energielevels.</p>
-                    </div>
-                </a>
+                <!-- Annual Plan -->
+                <div class="pricing-card scroll-animate delay-2">
+                    <div class="pricing-icon">💎</div>
+                    <h3>Annual</h3>
+                    <div class="pricing-price">€99 <span>/ Jahr</span></div>
+                    <p style="color: var(--apple-green); font-size: 14px; margin-top: -10px;">2 Monate sparen!</p>
+                    <ul class="pricing-features">
+                        <li>Alle Premium Features</li>
+                        <li>1:1 Beratung (30 Min/Monat)</li>
+                        <li>Exklusive Rezept-Datenbank</li>
+                        <li>Priority Support</li>
+                        <li>Bonus: E-Book Download</li>
+                        <li>VIP Community Zugang</li>
+                    </ul>
+                    <a href="pages/auth/register.html" class="btn btn-secondary" style="width: 100%; background: var(--apple-blue); color: white;">Annual wählen</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Topics Section -->
+    <!-- Testimonials Section -->
     <section class="section">
         <div class="container">
             <div class="section-headline scroll-animate">
-                <h2>Spezialthemen.</h2>
-                <p>Tiefgehende Guides zu wichtigen Keto-Themen.</p>
+                <h2>Das sagen unsere Mitglieder.</h2>
+                <p>Echte Erfahrungen von echten Menschen.</p>
             </div>
 
-            <div class="bento-grid bento-grid-4">
-                <a href="pages/topics/alkohol.html" class="bento-item link-card scroll-animate">
-                    <div class="bento-content" style="padding: 24px;">
-                        <div class="bento-icon" style="font-size: 36px;">🍷</div>
-                        <h3 style="font-size: 21px;">Alkohol & Keto</h3>
+            <div class="bento-grid bento-grid-3">
+                <div class="testimonial scroll-animate">
+                    <p class="testimonial-text">"KetoGuide hat mein Leben verändert. Die Rezepte sind einfach zuzubereiten und schmecken fantastisch. Ich habe 15kg in 3 Monaten verloren!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">👩</div>
+                        <div class="testimonial-info">
+                            <h4>Sarah M.</h4>
+                            <p>Premium Mitglied seit 6 Monaten</p>
+                        </div>
                     </div>
-                </a>
+                </div>
 
-                <a href="pages/topics/kaffee.html" class="bento-item link-card scroll-animate delay-1">
-                    <div class="bento-content" style="padding: 24px;">
-                        <div class="bento-icon" style="font-size: 36px;">☕</div>
-                        <h3 style="font-size: 21px;">Kaffee & Keto</h3>
+                <div class="testimonial scroll-animate delay-1">
+                    <p class="testimonial-text">"Endlich wissenschaftlich fundierte Informationen auf Deutsch! Die Guides haben mir geholfen, Keto richtig zu verstehen und umzusetzen."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">👨</div>
+                        <div class="testimonial-info">
+                            <h4>Michael K.</h4>
+                            <p>Premium Mitglied seit 1 Jahr</p>
+                        </div>
                     </div>
-                </a>
+                </div>
 
-                <a href="pages/topics/suesstoffer.html" class="bento-item link-card scroll-animate delay-2">
-                    <div class="bento-content" style="padding: 24px;">
-                        <div class="bento-icon" style="font-size: 36px;">🍬</div>
-                        <h3 style="font-size: 21px;">Süßstoffe</h3>
+                <div class="testimonial scroll-animate delay-2">
+                    <p class="testimonial-text">"Die Meal-Prep Guides sind ein Gamechanger für mich als berufstätige Mutter. Alles ist so gut organisiert!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">👩‍🦱</div>
+                        <div class="testimonial-info">
+                            <h4>Anna B.</h4>
+                            <p>Annual Mitglied</p>
+                        </div>
                     </div>
-                </a>
-
-                <a href="pages/topics/darm.html" class="bento-item link-card scroll-animate delay-3">
-                    <div class="bento-content" style="padding: 24px;">
-                        <div class="bento-icon" style="font-size: 36px;">🦠</div>
-                        <h3 style="font-size: 21px;">Darmgesundheit</h3>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Ketopedia Section -->
-    <section class="section" style="background: var(--apple-gray-100);">
-        <div class="container">
-            <div class="section-headline scroll-animate">
-                <h2>Ketopedia.</h2>
-                <p>Dein Nachschlagewerk für alle Keto-Begriffe.</p>
-            </div>
-
-            <div class="grid grid-2">
-                <a href="pages/ketopedia/001-was-ist-keto.html" class="card link-card scroll-animate">
-                    <div class="card-body">
-                        <h3>Was ist Keto?</h3>
-                        <p>Die Grundlagen der ketogenen Ernährung verständlich erklärt.</p>
-                        <span style="color: var(--apple-blue);">Mehr erfahren</span>
-                    </div>
-                </a>
-
-                <a href="pages/ketopedia/002-keto-flu.html" class="card link-card scroll-animate delay-1">
-                    <div class="card-body">
-                        <h3>Die Keto-Grippe</h3>
-                        <p>Was du über die Anfangsphase wissen musst.</p>
-                        <span style="color: var(--apple-blue);">Mehr erfahren</span>
-                    </div>
-                </a>
+                </div>
             </div>
         </div>
     </section>
@@ -482,63 +617,56 @@
             <div class="faq-container">
                 <div class="faq-item scroll-animate">
                     <div class="faq-question">
-                        <h3>Wie lange dauert es, bis ich in Ketose bin?</h3>
+                        <h3>Was bekomme ich mit Premium?</h3>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Die meisten Menschen erreichen eine leichte Ketose nach 2-4 Tagen strikter Kohlenhydratreduktion (&lt;20g Netto-KH/Tag). Für eine optimale ketogene State mit höheren Ketonkörperspiegeln (0,5-3,0 mmol/L) benötigen viele 5-7 Tage.</p>
+                        <p>Premium-Mitglieder erhalten Zugang zu allen 120+ Rezepten, wissenschaftlichen Guides, exklusiven Video-Tutorials, dem Meal-Planner und persönlichem Support.</p>
                     </div>
                 </div>
 
                 <div class="faq-item scroll-animate delay-1">
                     <div class="faq-question">
-                        <h3>Was ist die Keto-Grippe?</h3>
+                        <h3>Kann ich jederzeit kündigen?</h3>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Die Keto-Grippe beschreibt symptomatische Beschwerden wie Kopfschmerzen, Müdigkeit und Reizbarkeit in den ersten Tagen. Sie entsteht durch Elektrolytverlust und kann durch ausreichende Salz-, Kalium- und Magnesiumzufuhr verhindert werden.</p>
+                        <p>Ja, du kannst deine Premium-Mitgliedschaft jederzeit mit einem Klick kündigen. Es gibt keine versteckten Gebühren oder Verpflichtungen.</p>
                     </div>
                 </div>
 
                 <div class="faq-item scroll-animate delay-2">
                     <div class="faq-question">
-                        <h3>Kann ich Alkohol trinken?</h3>
+                        <h3>Gibt es eine Geld-zurück-Garantie?</h3>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Reine Spirituosen wie Wodka, Gin, Whisky und Tequila enthalten null Kohlenhydrate. Trockener Wein enthält etwa 2-4g KH pro Glas. Bier und süße Cocktails sollten vermieden werden.</p>
+                        <p>Wir bieten eine 14-tägige Geld-zurück-Garantie. Wenn du nicht zufrieden bist, erhältst du dein Geld zurück – ohne Fragen.</p>
                     </div>
                 </div>
 
                 <div class="faq-item scroll-animate delay-3">
                     <div class="faq-question">
-                        <h3>Wie viel Protein sollte ich essen?</h3>
+                        <h3>Sind die Rezepte für Anfänger geeignet?</h3>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Die optimale Proteinzufuhr liegt zwischen 1,2-2,0 Gramm pro Kilogramm Körpergewicht, abhängig von Aktivitätslevel und Zielen. Für Muskelerhalt beim Abnehmen empfiehlt sich 1,6-2,2g/kg.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item scroll-animate delay-4">
-                    <div class="faq-question">
-                        <h3>Ist Keto langfristig gesund?</h3>
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Langzeitstudien zeigen positive Effekte bei metabolischem Syndrom und Typ-2-Diabetes. Wichtig ist die Lebensmittelqualität – Fokus auf vollwertige, nährstoffreiche Lebensmittel statt verarbeiteter Produkte.</p>
+                        <p>Absolut! Alle Rezepte sind detailliert erklärt und für jedes Könnensniveau geeignet. Unsere Guides führen dich Schritt für Schritt an die ketogene Ernährung heran.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
+    <!-- Final CTA Section -->
     <section class="section" style="background: var(--apple-black); color: white; text-align: center;">
         <div class="container">
             <h2 style="color: white; font-size: 56px; margin-bottom: 0.5em;">Bereit für den Start?</h2>
-            <p style="color: var(--apple-gray-300); font-size: 21px; margin-bottom: 2em;">Beginne deine Keto-Reise mit unserem umfassenden Einsteiger-Guide.</p>
-            <a href="pages/guides/starten.html" class="btn btn-primary btn-large" style="background: white; color: black;">Jetzt loslegen</a>
+            <p style="color: var(--apple-gray-300); font-size: 21px; margin-bottom: 2em;">Beginne deine Keto-Reise mit unserem umfassenden Premium-Angebot.</p>
+            <div class="hero-cta-buttons" style="justify-content: center;">
+                <a href="pages/auth/register.html" class="btn btn-primary btn-large" style="background: white; color: black;">Jetzt Premium starten</a>
+                <a href="pages/auth/login.html" class="btn btn-secondary btn-large" style="color: white; border-color: rgba(255,255,255,0.3);">Einloggen</a>
+            </div>
         </div>
     </section>
 
@@ -551,17 +679,17 @@
                 </div>
 
                 <nav class="footer-nav">
-                    <a href="pages/guides/starten.html" class="footer-link">Anfangen</a>
-                    <a href="pages/recipes/fruehstueck.html" class="footer-link">Rezepte</a>
-                    <a href="pages/health/gewicht.html" class="footer-link">Gesundheit</a>
-                    <a href="pages/supplements/elektrolyte.html" class="footer-link">Supplements</a>
-                    <a href="pages/lifestyle/reisen.html" class="footer-link">Lifestyle</a>
+                    <a href="#vorteile" class="footer-link">Vorteile</a>
+                    <a href="#rezepte" class="footer-link">Rezepte</a>
+                    <a href="#preise" class="footer-link">Preise</a>
+                    <a href="pages/auth/login.html" class="footer-link">Login</a>
+                    <a href="pages/auth/register.html" class="footer-link">Premium</a>
                 </nav>
 
                 <nav class="footer-nav" style="margin-bottom: 20px;">
-                    <a href="index.html" class="footer-link">Startseite</a>
                     <a href="pages/legal/impressum.html" class="footer-link">Impressum</a>
                     <a href="pages/legal/datenschutz.html" class="footer-link">Datenschutz</a>
+                    <a href="pages/legal/agb.html" class="footer-link">AGB</a>
                 </nav>
                 <div class="footer-bottom">
                     <p>&copy; 2025 KetoGuide. Alle Rechte vorbehalten.</p>
@@ -571,8 +699,15 @@
         </div>
     </footer>
 
-    <button class="back-to-top" id="backToTop" aria-label="Nach oben">↑</button>
+    <button class="back-to-top" id="backToTop">↑</button>
 
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script>
+        // Update auth UI on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            KetoAuth.updateAuthUI();
+        });
+    </script>
 </body>
 </html>

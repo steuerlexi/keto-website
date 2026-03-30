@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription - KetoGuide Premium</title>
+    <meta name="description" content="Verwalte deine KetoGuide Premium-Mitgliedschaft.">
+    <link rel="stylesheet" href="../../assets/css/base.css">
+    <style>
+        .members-header {
+            background: linear-gradient(135deg, var(--apple-black) 0%, #1a1a1a 100%);
+            color: white;
+            padding: 60px 0;
+            margin-top: 52px;
+        }
+
+        .members-header h1 {
+            color: white;
+            font-size: 48px;
+            margin-bottom: 8px;
+        }
+
+        .members-header p {
+            color: var(--apple-gray-300);
+            font-size: 18px;
+        }
+
+        .subscription-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .current-plan {
+            background: linear-gradient(135deg, var(--apple-blue) 0%, #0077ed 100%);
+            color: white;
+            border-radius: var(--radius-xl);
+            padding: 40px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .current-plan h3 {
+            color: white;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .current-plan .plan-name {
+            font-size: 48px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .premium-badge-large {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #ffd700 0%, #ffb700 100%);
+            color: black;
+            padding: 12px 24px;
+            border-radius: 980px;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .current-plan .features {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+            text-align: left;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .current-plan .features li {
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 15px;
+        }
+
+        .current-plan .features li::before {
+            content: '✓';
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .pricing-section {
+            margin-top: 40px;
+        }
+
+        .pricing-section h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .pricing-card {
+            background: white;
+            border: 2px solid var(--apple-gray-200);
+            border-radius: var(--radius-xl);
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s var(--transition-smooth);
+        }
+
+        .pricing-card:hover {
+            border-color: var(--apple-blue);
+            transform: translateY(-4px);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--apple-blue);
+            background: linear-gradient(135deg, rgba(0,113,227,0.05) 0%, rgba(0,113,227,0.02) 100%);
+        }
+
+        .pricing-card .icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .pricing-card .price {
+            font-size: 40px;
+            font-weight: 600;
+            color: var(--apple-blue);
+            margin-bottom: 8px;
+        }
+
+        .pricing-card .period {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        .pricing-card .savings {
+            background: var(--apple-green);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 980px;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 16px;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        .pricing-card ul li {
+            padding: 8px 0;
+            font-size: 14px;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .pricing-card ul li::before {
+            content: '✓';
+            color: var(--apple-green);
+            font-weight: bold;
+        }
+
+        .btn {
+            padding: 14px 24px;
+            border-radius: var(--radius-md);
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s var(--transition-smooth);
+            width: 100%;
+        }
+
+        .btn-primary {
+            background: var(--apple-blue);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--apple-blue-hover);
+        }
+
+        .btn-secondary {
+            background: var(--apple-gray-100);
+            color: var(--text-primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--apple-gray-200);
+        }
+
+        .alert {
+            padding: 14px 16px;
+            border-radius: var(--radius-md);
+            font-size: 14px;
+            display: none;
+            margin-bottom: 20px;
+        }
+
+        .alert-error {
+            background: #fef2f2;
+            color: #dc2626;
+            border: 1px solid #fecaca;
+        }
+
+        .alert-success {
+            background: #f0fdf4;
+            color: #16a34a;
+            border: 1px solid #bbf7d0;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--apple-blue);
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container nav-container">
+            <a href="../../index.html" class="logo">KetoGuide</a>
+            <nav class="nav-menu" id="navMenu">
+                <div class="nav-item">
+                    <a href="dashboard.html" class="nav-link">Dashboard</a>
+                </div>
+                <div class="nav-item">
+                    <a href="../recipes/fruehstueck.html" class="nav-link">Rezepte</a>
+                </div>
+                <div class="nav-item">
+                    <a href="../guides/starten.html" class="nav-link">Guides</a>
+                </div>
+                <div class="nav-item">
+                    <a href="settings.html" class="nav-link">Einstellungen</a>
+                </div>
+                <div class="nav-item auth-links">
+                    <button onclick="KetoAuth.logout()" class="btn btn-secondary" style="padding: 8px 16px; font-size: 14px;">Logout</button>
+                </div>
+            </nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menü">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Members Header -->
+    <section class="members-header">
+        <div class="container">
+            <h1>Subscription</h1>
+            <p>Verwalte deine Premium-Mitgliedschaft</p>
+        </div>
+    </section>
+
+    <!-- Subscription Content -->
+    <div class="subscription-container">
+        <a href="dashboard.html" class="back-link">← Zurück zum Dashboard</a>
+
+        <div id="alertContainer"></div>
+
+        <!-- Current Plan -->
+        <div class="current-plan" id="currentPlanSection">
+            <div class="premium-badge-large" id="premiumBadge" style="display: none;">
+                <span>★</span> PREMIUM MEMBER
+            </div>
+            <h3>Dein aktueller Plan</h3>
+            <div class="plan-name" id="planName">Free</div>
+            <p id="planDescription">Upgrade auf Premium für Zugang zu allen Inhalten</p>
+            <ul class="features" id="currentFeatures">
+                <li>Zugang zu ausgewählten Rezepten</li>
+                <li>Basis-Informationen zu Keto</li>
+            </ul>
+        </div>
+
+        <!-- Upgrade Options -->
+        <div class="pricing-section">
+            <h3>Upgrade-Optionen</h3>
+            <div class="pricing-grid">
+                <!-- Monthly Premium -->
+                <div class="pricing-card featured">
+                    <div class="icon">⭐</div>
+                    <div class="price">€9,99</div>
+                    <div class="period">pro Monat</div>
+                    <ul>
+                        <li>120+ Premium Rezepte</li>
+                        <li>Alle wissenschaftlichen Guides</li>
+                        <li>Persönlicher E-Mail Support</li>
+                        <li>Exklusive Video-Tutorials</li>
+                        <li>Meal-Planner & Einkaufslisten</li>
+                        <li>Jederzeit kündbar</li>
+                    </ul>
+                    <button onclick="subscribe('monthly')" class="btn btn-primary" id="monthlyBtn">
+                        Premium starten
+                    </button>
+                </div>
+
+                <!-- Annual Premium -->
+                <div class="pricing-card">
+                    <div class="icon">💎</div>
+                    <div class="price">€99</div>
+                    <div class="period">pro Jahr</div>
+                    <div class="savings">2 Monate sparen!</div>
+                    <ul>
+                        <li>Alle Premium Features</li>
+                        <li>1:1 Beratung (30 Min/Monat)</li>
+                        <li>Exklusive Rezept-Datenbank</li>
+                        <li>Priority Support</li>
+                        <li>Bonus: E-Book Download</li>
+                        <li>VIP Community Zugang</li>
+                    </ul>
+                    <button onclick="subscribe('annual')" class="btn btn-secondary" id="annualBtn">
+                        Annual wählen
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cancel Section (only for premium users) -->
+        <div class="settings-section" id="cancelSection" style="display: none; margin-top: 40px; background: white; border: 1px solid var(--apple-gray-200); border-radius: var(--radius-lg); padding: 30px;">
+            <h3 style="color: var(--text-primary);">Mitgliedschaft kündigen</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 16px;">
+                Du kannst deine Premium-Mitgliedschaft jederzeit kündigen. Der Zugang bleibt bis zum Ende des Abrechnungszeitraums erhalten.
+            </p>
+            <button onclick="cancelSubscription()" class="btn btn-secondary" style="width: auto;">
+                Kündigung einreichen
+            </button>
+        </div>
+    </div>
+
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/auth.js"></script>
+    <script>
+        // Require authentication
+        if (!KetoAuth.requireAuth('../../index.html')) {
+            // Redirect handled by requireAuth
+        }
+
+        // Update UI based on subscription status
+        document.addEventListener('DOMContentLoaded', function() {
+            const user = KetoAuth.getCurrentUser();
+            if (user) {
+                if (user.isPremium) {
+                    document.getElementById('premiumBadge').style.display = 'inline-flex';
+                    document.getElementById('planName').textContent = 'Premium';
+                    document.getElementById('planDescription').textContent = 'Danke für deine Unterstützung!';
+                    document.getElementById('currentFeatures').innerHTML = `
+                        <li>120+ Premium Rezepte</li>
+                        <li>Alle wissenschaftlichen Guides</li>
+                        <li>Persönlicher Support</li>
+                        <li>Exklusive Video-Tutorials</li>
+                        <li>Meal-Planner & Einkaufslisten</li>
+                    `;
+                    document.getElementById('cancelSection').style.display = 'block';
+                    document.getElementById('monthlyBtn').textContent = 'Bereits Premium';
+                    document.getElementById('monthlyBtn').disabled = true;
+                    document.getElementById('annualBtn').textContent = 'Bereits Premium';
+                    document.getElementById('annualBtn').disabled = true;
+                }
+            }
+
+            KetoAuth.updateAuthUI();
+        });
+
+        function subscribe(plan) {
+            const result = KetoAuth.subscribe();
+
+            if (result.success) {
+                showAlert('success', 'Willkommen bei Premium! Dein Upgrade war erfolgreich.');
+                setTimeout(() => {
+                    window.location.reload();
+                }, 2000);
+            } else {
+                showAlert('error', result.message);
+            }
+        }
+
+        function cancelSubscription() {
+            if (confirm('Bist du sicher, dass du kündigen möchtest? Du verlierst den Zugang zu Premium-Inhalten am Ende des Abrechnungszeitraums.')) {
+                const result = KetoAuth.cancelSubscription();
+                showAlert(result.success ? 'success' : 'error', result.message);
+                setTimeout(() => {
+                    window.location.reload();
+                }, 2000);
+            }
+        }
+
+        function showAlert(type, message) {
+            const alertContainer = document.getElementById('alertContainer');
+            alertContainer.innerHTML = `
+                <div class="alert alert-${type}" style="display: block;">
+                    ${message}
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>

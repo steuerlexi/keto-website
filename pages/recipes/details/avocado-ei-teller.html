@@ -177,6 +177,12 @@
                     <a href="../../../index.html#faq" class="nav-link">FAQ</a>
                 </div>
             </nav>
+            <div class="nav-item auth-links auth-login-link" style="display: none; margin-left: 16px;">
+                <a href="../auth/login.html" class="btn btn-secondary" style="padding: 8px 16px; font-size: 14px;">Login</a>
+            </div>
+            <div class="nav-item auth-links auth-logout-link" style="display: none; margin-left: 16px;">
+                <a href="../../members/dashboard.html" class="btn btn-primary" style="padding: 8px 16px; font-size: 14px;">Dashboard</a>
+            </div>
             <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menü">
                 <span></span>
                 <span></span>
@@ -311,5 +317,13 @@
 
     <button class="back-to-top" id="backToTop">↑</button>
     <script src="../../../assets/js/main.js"></script>
+    <script src="../../../assets/js/auth.js"></script>
+    <script src="../../../assets/js/content-gate.js"></script>
+    <script>
+        // Check auth on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            KetoAuth.updateAuthUI();
+        });
+    </script>
 </body>
 </html>

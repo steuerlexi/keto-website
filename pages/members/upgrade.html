@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Upgrade - KetoGuide</title>
+    <meta name="description" content="Upgrade auf KetoGuide Premium für Zugang zu allen Inhalten.">
+    <link rel="stylesheet" href="../../assets/css/base.css">
+    <style>
+        .upgrade-page {
+            min-height: 100vh;
+            background: linear-gradient(180deg, var(--apple-gray-100) 0%, var(--apple-white) 100%);
+            padding: 100px 20px 60px;
+        }
+
+        .upgrade-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .upgrade-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .upgrade-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+        }
+
+        .upgrade-header h1 {
+            font-size: 40px;
+            margin-bottom: 12px;
+        }
+
+        .upgrade-header p {
+            font-size: 18px;
+            color: var(--text-secondary);
+        }
+
+        .locked-content-preview {
+            background: white;
+            border: 1px solid var(--apple-gray-200);
+            border-radius: var(--radius-xl);
+            padding: 40px;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .locked-content-preview::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent 40%, rgba(255,255,255,0.98) 100%);
+        }
+
+        .preview-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            filter: blur(6px);
+            user-select: none;
+        }
+
+        .preview-item {
+            background: var(--apple-gray-100);
+            border-radius: var(--radius-lg);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .preview-item .icon {
+            font-size: 40px;
+            margin-bottom: 12px;
+        }
+
+        .lock-banner {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.9);
+            backdrop-filter: blur(10px);
+            padding: 30px 50px;
+            border-radius: var(--radius-xl);
+            text-align: center;
+            z-index: 10;
+        }
+
+        .lock-banner .lock-icon {
+            font-size: 40px;
+            margin-bottom: 12px;
+        }
+
+        .lock-banner h3 {
+            color: white;
+            font-size: 21px;
+            margin-bottom: 8px;
+        }
+
+        .lock-banner p {
+            color: var(--apple-gray-300);
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+
+        .pricing-comparison {
+            background: white;
+            border: 1px solid var(--apple-gray-200);
+            border-radius: var(--radius-xl);
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .comparison-table th {
+            padding: 16px;
+            text-align: left;
+            font-size: 14px;
+            color: var(--text-secondary);
+            border-bottom: 2px solid var(--apple-gray-200);
+        }
+
+        .comparison-table th.feature {
+            width: 50%;
+        }
+
+        .comparison-table td {
+            padding: 16px;
+            border-bottom: 1px solid var(--apple-gray-200);
+            font-size: 15px;
+        }
+
+        .comparison-table td.feature {
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .comparison-table td.check {
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .check-yes { color: var(--apple-green); }
+        .check-no { color: var(--apple-gray-300); }
+
+        .cta-section {
+            text-align: center;
+            background: linear-gradient(135deg, var(--apple-black) 0%, #1a1a1a 100%);
+            color: white;
+            border-radius: var(--radius-xl);
+            padding: 50px 40px;
+        }
+
+        .cta-section h2 {
+            color: white;
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .cta-section p {
+            color: var(--apple-gray-300);
+            font-size: 16px;
+            margin-bottom: 24px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 16px 32px;
+            border-radius: var(--radius-md);
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s var(--transition-smooth);
+        }
+
+        .btn-primary {
+            background: var(--apple-blue);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--apple-blue-hover);
+            transform: scale(1.02);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        .guarantee {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 20px;
+            font-size: 14px;
+            color: var(--apple-gray-400);
+        }
+
+        .guarantee-icon {
+            font-size: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .preview-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 12px 8px;
+                font-size: 13px;
+            }
+
+            .lock-banner {
+                left: 0;
+                right: 0;
+                transform: none;
+                border-radius: 0;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container nav-container">
+            <a href="../../index.html" class="logo">KetoGuide</a>
+            <nav class="nav-menu" id="navMenu">
+                <div class="nav-item">
+                    <a href="../../index.html#vorteile" class="nav-link">Vorteile</a>
+                </div>
+                <div class="nav-item">
+                    <a href="../../index.html#preise" class="nav-link">Preise</a>
+                </div>
+                <div class="nav-item">
+                    <a href="../auth/login.html" class="nav-link">Login</a>
+                </div>
+            </nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menü">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="upgrade-page">
+        <div class="upgrade-container">
+            <!-- Header -->
+            <div class="upgrade-header scroll-animate">
+                <div class="upgrade-icon">⭐</div>
+                <h1>Upgrade auf Premium</h1>
+                <p>Schalte alle Inhalte und Features frei</p>
+            </div>
+
+            <!-- Locked Content Preview -->
+            <div class="locked-content-preview scroll-animate">
+                <div class="preview-grid">
+                    <div class="preview-item">
+                        <div class="icon">🍳</div>
+                        <h4>120+ Rezepte</h4>
+                    </div>
+                    <div class="preview-item">
+                        <div class="icon">📚</div>
+                        <h4>Guides</h4>
+                    </div>
+                    <div class="preview-item">
+                        <div class="icon">🎥</div>
+                        <h4>Videos</h4>
+                    </div>
+                    <div class="preview-item">
+                        <div class="icon">📊</div>
+                        <h4>Tracker</h4>
+                    </div>
+                    <div class="preview-item">
+                        <div class="icon">📅</div>
+                        <h4>Meal Plans</h4>
+                    </div>
+                    <div class="preview-item">
+                        <div class="icon">💬</div>
+                        <h4>Support</h4>
+                    </div>
+                </div>
+                <div class="lock-banner">
+                    <div class="lock-icon">🔒</div>
+                    <h3>Nur für Mitglieder</h3>
+                    <p>Registriere dich jetzt für vollen Zugang</p>
+                    <a href="../auth/register.html" class="btn btn-primary">Jetzt starten</a>
+                </div>
+            </div>
+
+            <!-- Comparison Table -->
+            <div class="pricing-comparison scroll-animate">
+                <h3 style="text-align: center; margin-bottom: 24px;">Was ist enthalten?</h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th class="feature">Feature</th>
+                            <th>Free</th>
+                            <th>Premium</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="feature">Ausgewählte Rezepte</td>
+                            <td class="check check-yes">✓</td>
+                            <td class="check check-yes">✓</td>
+                        </tr>
+                        <tr>
+                            <td class="feature">120+ Premium Rezepte</td>
+                            <td class="check check-no">✕</td>
+                            <td class="check check-yes">✓</td>
+                        </tr>
+                        <tr>
+                            <td class="feature">Wissenschaftliche Guides</td>
+                            <td class="check check-no">✕</td>
+                            <td class="check check-yes">✓</td>
+                        </tr>
+                        <tr>
+                            <td class="feature">Meal-Planner & Einkaufslisten</td>
+                            <td class="check check-no">✕</td>
+                            <td class="check check-yes">✓</td>
+                        </tr>
+                        <tr>
+                            <td class="feature">Exklusive Video-Tutorials</td>
+                            <td class="check check-no">✕</td>
+                            <td class="check check-yes">✓</td>
+                        </tr>
+                        <tr>
+                            <td class="feature">Persönlicher Support</td>
+                            <td class="check check-no">✕</td>
+                            <td class="check check-yes">✓</td>
+                        </tr>
+                        <tr>
+                            <td class="feature">1:1 Beratung</td>
+                            <td class="check check-no">✕</td>
+                            <td class="check check-yes">✓*</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="font-size: 12px; color: var(--text-secondary); margin-top: 16px;">* Nur im Annual Plan enthalten</p>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="cta-section scroll-animate">
+                <h2>Bereit für den Start?</h2>
+                <p>14 Tage Geld-zurück-Garantie. Jederzeit kündbar.</p>
+                <div class="cta-buttons">
+                    <a href="../auth/register.html" class="btn btn-primary">Premium starten - €9,99/Monat</a>
+                    <a href="../auth/login.html" class="btn btn-secondary">Einloggen</a>
+                </div>
+                <div class="guarantee">
+                    <span class="guarantee-icon">🛡️</span>
+                    <span>Sichere Zahlung • SSL-verschlüsselt • 14 Tage Rückgaberecht</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-bottom">
+                    <p>&copy; 2025 KetoGuide. Alle Rechte vorbehalten.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/auth.js"></script>
+    <script>
+        // Redirect if already premium
+        if (KetoAuth.isPremium()) {
+            window.location.href = 'dashboard.html';
+        }
+    </script>
+</body>
+</html>

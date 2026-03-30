@@ -10,40 +10,62 @@ This is **KetoGuide**, a static HTML website about the ketogenic diet (ketogene 
 
 This is a **static HTML website** with no build process, no package manager, and no framework.
 
+### Authentication System
+
+The site includes a **localStorage-based authentication system** for the premium members area:
+
+- **Free users**: Can view landing page and limited content
+- **Premium members**: Full access to recipes, guides, and members dashboard
+- **Demo credentials**: `admin@ketoguide.com` / `admin123`
+
+The auth system (`assets/js/auth.js`) provides:
+- User registration and login
+- Password reset functionality
+- Premium subscription management
+- Content gating for protected pages (`assets/js/content-gate.js`)
+
 ### Directory Structure
 
 ```
 /
-├── index.html              # Homepage (German) - Apple-style design
+├── index.html              # Homepage (German) - Landing page with premium teaser
 ├── assets/
 │   ├── css/
 │   │   └── base.css        # All styles - Apple-inspired design system
 │   └── js/
-│       └── main.js         # Mobile menu, smooth scroll, FAQ accordion, back-to-top, scroll animations
+│       ├── main.js         # Mobile menu, smooth scroll, FAQ accordion, back-to-top, scroll animations
+│       ├── auth.js         # Authentication system (login, register, subscription)
+│       └── content-gate.js # Content gating for premium content
 └── pages/
-    ├── guides/             # How-to guides (starten.html, tracking.html, sport.html)
+    ├── auth/               # Authentication pages (login.html, register.html, forgot-password.html, redirect.html)
+    ├── members/            # Members area (dashboard.html, settings.html, subscription.html, upgrade.html)
+    ├── guides/             # How-to guides (starten.html, tracking.html, sport.html, mealprep.html)
     ├── recipes/            # Recipe categories and individual recipes
     │   ├── *.html          # Category pages (fruehstueck.html, mittagessen.html, desserts.html, vegetarisch.html, snacks.html, abendessen.html, brot-gebaeck.html, feiertage.html, getraenke.html, mealprep.html)
-    │   └── details/        # Individual recipe pages (avocado-ei-teller.html, keto-cheesecake.html, zoodle-lachs.html)
+    │   └── details/        # Individual recipe pages (avocado-ei-teller.html, etc.)
     ├── health/             # Health topics (gewicht.html, gehirn.html, herz.html, diabetes.html, entzuendung.html, hormone.html, schlaf.html)
     ├── supplements/        # Supplement guides (mct-oil.html, elektrolyte.html)
     ├── lifestyle/          # Lifestyle content (reisen.html)
     ├── topics/             # Various topics (alkohol.html, kaffee.html, suesstoffer.html, darm.html, alter.html, athletic-performance.html, psychische-gesundheit.html, schilddruese.html, sporternaehrung.html)
-    └── ketopedia/          # Educational articles (001-was-ist-keto.html, 002-keto-flu.html)
+    ├── ketopedia/          # Educational articles (001-was-ist-keto.html, 002-keto-flu.html)
+    └── legal/              # Legal pages (impressum.html, datenschutz.html, agb.html)
 ```
 
 ### Asset Path Conventions
 
 The most common error when adding pages is incorrect asset paths:
 
-| Page Location | CSS Path | Root Index Link |
-|--------------|----------|-----------------|
-| `/index.html` | `assets/css/base.css` | `index.html` |
-| `/pages/recipes/*.html` | `../../assets/css/base.css` | `../../index.html` |
-| `/pages/recipes/details/*.html` | `../../../assets/css/base.css` | `../../../index.html` |
-| `/pages/health/*.html` | `../../assets/css/base.css` | `../../index.html` |
-| `/pages/guides/*.html` | `../../assets/css/base.css` | `../../index.html` |
-| `/pages/topics/*.html` | `../../assets/css/base.css` | `../../index.html` |
+| Page Location | CSS Path | JS Path | Root Index Link |
+|--------------|----------|---------|-----------------|
+| `/index.html` | `assets/css/base.css` | `assets/js/*.js` | `index.html` |
+| `/pages/auth/*.html` | `../../assets/css/base.css` | `../../assets/js/*.js` | `../../index.html` |
+| `/pages/members/*.html` | `../../assets/css/base.css` | `../../assets/js/*.js` | `../../index.html` |
+| `/pages/recipes/*.html` | `../../assets/css/base.css` | `../../assets/js/*.js` | `../../index.html` |
+| `/pages/recipes/details/*.html` | `../../../assets/css/base.css` | `../../../assets/js/*.js` | `../../../index.html` |
+| `/pages/health/*.html` | `../../assets/css/base.css` | `../../assets/js/*.js` | `../../index.html` |
+| `/pages/guides/*.html` | `../../assets/css/base.css` | `../../assets/js/*.js` | `../../index.html` |
+| `/pages/topics/*.html` | `../../assets/css/base.css` | `../../assets/js/*.js` | `../../index.html` |
+| `/pages/legal/*.html` | `../../assets/css/base.css` | (none) | `../../index.html` |
 
 ### Design System - Apple Style
 
@@ -92,6 +114,28 @@ All pages have consistent navigation:
 - Dynamic back-to-top button (`.back-to-top`)
 - Scroll-triggered animations (IntersectionObserver for `.scroll-animate`)
 - Header scroll effect (`.header-scrolled`)
+
+`assets/js/auth.js` provides (KetoAuth API):
+
+- `KetoAuth.login(email, password)` - User login
+- `KetoAuth.register(name, email, password)` - User registration
+- `KetoAuth.logout()` - User logout
+- `KetoAuth.isLoggedIn()` - Check if user is logged in
+- `KetoAuth.isPremium()` - Check if user has premium subscription
+- `KetoAuth.getCurrentUser()` - Get current user object
+- `KetoAuth.subscribe()` - Upgrade to premium
+- `KetoAuth.cancelSubscription()` - Cancel premium
+- `KetoAuth.updateProfile(data)` - Update user profile
+- `KetoAuth.changePassword(current, new)` - Change password
+- `KetoAuth.resetPassword(email)` - Reset password
+- `KetoAuth.updateAuthUI()` - Update UI based on auth state
+- `KetoAuth.requireAuth(redirectUrl)` - Require authentication
+- `KetoAuth.requirePremium(redirectUrl)` - Require premium subscription
+
+`assets/js/content-gate.js` provides:
+
+- Automatic content gating for premium pages
+- Blurs content and shows login/registration overlay
 
 ## Development Workflow
 
@@ -142,16 +186,19 @@ Then open `http://localhost:8000` in a browser.
 
 | File | Purpose |
 |------|---------|
-| `index.html` | Homepage with bento grid layout |
+| `index.html` | Landing page with premium teaser (public) |
 | `assets/css/base.css` | Complete Apple-style design system |
-| `assets/js/main.js` | All interactive functionality |
+| `assets/js/main.js` | Interactive functionality (menu, scroll, animations) |
+| `assets/js/auth.js` | Authentication system (KetoAuth API) |
+| `assets/js/content-gate.js` | Content gating for premium pages |
+| `pages/auth/login.html` | Login page |
+| `pages/auth/register.html` | Registration page |
+| `pages/members/dashboard.html` | Members dashboard (premium only) |
+| `pages/members/subscription.html` | Subscription management |
 | `pages/guides/starten.html` | Primary beginner guide |
-| `pages/recipes/*.html` | Recipe category pages with recipe cards |
-| `pages/recipes/details/*.html` | Individual recipe detail pages |
-| `pages/health/*.html` | Health benefit articles |
-| `pages/supplements/*.html` | Supplement guides |
-| `pages/topics/*.html` | Special topics (alkohol, kaffee, etc.) |
-| `pages/ketopedia/*.html` | Educational articles |
+| `pages/recipes/details/*.html` | Individual recipe detail pages (gated) |
+| `pages/health/*.html` | Health benefit articles (gated) |
+| `pages/legal/agb.html` | Terms of service |
 
 ## Design Patterns
 

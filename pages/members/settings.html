@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Einstellungen - KetoGuide Premium</title>
+    <meta name="description" content="Verwalte deine KetoGuide Account-Einstellungen.">
+    <link rel="stylesheet" href="../../assets/css/base.css">
+    <style>
+        .members-header {
+            background: linear-gradient(135deg, var(--apple-black) 0%, #1a1a1a 100%);
+            color: white;
+            padding: 60px 0;
+            margin-top: 52px;
+        }
+
+        .members-header h1 {
+            color: white;
+            font-size: 48px;
+            margin-bottom: 8px;
+        }
+
+        .members-header p {
+            color: var(--apple-gray-300);
+            font-size: 18px;
+        }
+
+        .settings-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .settings-section {
+            background: white;
+            border: 1px solid var(--apple-gray-200);
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            margin-bottom: 24px;
+        }
+
+        .settings-section h3 {
+            font-size: 21px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .form-group input {
+            padding: 14px 16px;
+            border: 1px solid var(--apple-gray-300);
+            border-radius: var(--radius-md);
+            font-size: 16px;
+            font-family: var(--font-system);
+            transition: all 0.3s var(--transition-smooth);
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--apple-blue);
+            box-shadow: 0 0 0 3px rgba(0,113,227,0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 14px 24px;
+            border-radius: var(--radius-md);
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s var(--transition-smooth);
+        }
+
+        .btn-primary {
+            background: var(--apple-blue);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--apple-blue-hover);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--apple-blue);
+        }
+
+        .btn-danger {
+            background: #fef2f2;
+            color: #dc2626;
+            border: 1px solid #fecaca;
+        }
+
+        .btn-danger:hover {
+            background: #dc2626;
+            color: white;
+        }
+
+        .alert {
+            padding: 14px 16px;
+            border-radius: var(--radius-md);
+            font-size: 14px;
+            display: none;
+            margin-bottom: 20px;
+        }
+
+        .alert-error {
+            background: #fef2f2;
+            color: #dc2626;
+            border: 1px solid #fecaca;
+        }
+
+        .alert-success {
+            background: #f0fdf4;
+            color: #16a34a;
+            border: 1px solid #bbf7d0;
+        }
+
+        .premium-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #ffd700 0%, #ffb700 100%);
+            color: black;
+            padding: 8px 16px;
+            border-radius: 980px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--apple-blue);
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container nav-container">
+            <a href="../../index.html" class="logo">KetoGuide</a>
+            <nav class="nav-menu" id="navMenu">
+                <div class="nav-item">
+                    <a href="dashboard.html" class="nav-link">Dashboard</a>
+                </div>
+                <div class="nav-item">
+                    <a href="../recipes/fruehstueck.html" class="nav-link">Rezepte</a>
+                </div>
+                <div class="nav-item">
+                    <a href="../guides/starten.html" class="nav-link">Guides</a>
+                </div>
+                <div class="nav-item">
+                    <a href="settings.html" class="nav-link active">Einstellungen</a>
+                </div>
+                <div class="nav-item auth-links">
+                    <button onclick="KetoAuth.logout()" class="btn btn-secondary" style="padding: 8px 16px; font-size: 14px;">Logout</button>
+                </div>
+            </nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menü">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Members Header -->
+    <section class="members-header">
+        <div class="container">
+            <h1>Einstellungen</h1>
+            <p>Verwalte dein Konto und deine Präferenzen</p>
+        </div>
+    </section>
+
+    <!-- Settings Content -->
+    <div class="settings-container">
+        <a href="dashboard.html" class="back-link">← Zurück zum Dashboard</a>
+
+        <div id="alertContainer"></div>
+
+        <!-- Profile Section -->
+        <div class="settings-section">
+            <h3>👤 Profil</h3>
+            <form id="profileForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-Mail</label>
+                        <input type="email" id="email" required disabled style="background: var(--apple-gray-100);">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Profil speichern</button>
+            </form>
+        </div>
+
+        <!-- Password Section -->
+        <div class="settings-section">
+            <h3>🔒 Passwort ändern</h3>
+            <form id="passwordForm">
+                <div class="form-group">
+                    <label for="currentPassword">Aktuelles Passwort</label>
+                    <input type="password" id="currentPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="newPassword">Neues Passwort</label>
+                    <input type="password" id="newPassword" required minlength="6">
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Neues Passwort bestätigen</label>
+                    <input type="password" id="confirmPassword" required minlength="6">
+                </div>
+                <button type="submit" class="btn btn-primary">Passwort ändern</button>
+            </form>
+        </div>
+
+        <!-- Subscription Section -->
+        <div class="settings-section">
+            <h3>⭐ Subscription</h3>
+            <div id="subscriptionStatus">
+                <p style="margin-bottom: 16px;">Dein aktueller Status:</p>
+                <div class="premium-badge" id="premiumBadge" style="display: none;">
+                    <span>★</span> PREMIUM MEMBER
+                </div>
+                <p id="freeStatus" style="display: none; color: var(--text-secondary);">Du hast aktuell kein Premium-Abo.</p>
+            </div>
+            <div style="margin-top: 20px;">
+                <a href="subscription.html" class="btn btn-secondary">Subscription verwalten</a>
+            </div>
+        </div>
+
+        <!-- Danger Zone -->
+        <div class="settings-section" style="border-color: #fecaca;">
+            <h3 style="color: #dc2626;">⚠️ Danger Zone</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 16px;">
+                Diese Aktionen können nicht rückgängig gemacht werden.
+            </p>
+            <button onclick="confirmDeleteAccount()" class="btn btn-danger">Account löschen</button>
+        </div>
+    </div>
+
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/auth.js"></script>
+    <script>
+        // Require authentication
+        if (!KetoAuth.requireAuth('../../index.html')) {
+            // Redirect handled by requireAuth
+        }
+
+        // Load user data
+        document.addEventListener('DOMContentLoaded', function() {
+            const user = KetoAuth.getCurrentUser();
+            if (user) {
+                document.getElementById('name').value = user.name;
+                document.getElementById('email').value = user.email;
+
+                if (user.isPremium) {
+                    document.getElementById('premiumBadge').style.display = 'inline-flex';
+                } else {
+                    document.getElementById('freeStatus').style.display = 'block';
+                }
+            }
+
+            KetoAuth.updateAuthUI();
+        });
+
+        // Profile form
+        document.getElementById('profileForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value.trim();
+
+            const result = KetoAuth.updateProfile({ name });
+
+            showAlert(result.success ? 'success' : 'error', result.message);
+        });
+
+        // Password form
+        document.getElementById('passwordForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const currentPassword = document.getElementById('currentPassword').value;
+            const newPassword = document.getElementById('newPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            if (newPassword !== confirmPassword) {
+                showAlert('error', 'Die neuen Passwörter stimmen nicht überein.');
+                return;
+            }
+
+            const result = KetoAuth.changePassword(currentPassword, newPassword);
+            showAlert(result.success ? 'success' : 'error', result.message);
+
+            if (result.success) {
+                this.reset();
+            }
+        });
+
+        function showAlert(type, message) {
+            const alertContainer = document.getElementById('alertContainer');
+            alertContainer.innerHTML = `
+                <div class="alert alert-${type}" style="display: block;">
+                    ${message}
+                </div>
+            `;
+            setTimeout(() => {
+                alertContainer.innerHTML = '';
+            }, 5000);
+        }
+
+        function confirmDeleteAccount() {
+            if (confirm('Bist du sicher? Dieser Vorgang kann nicht rückgängig gemacht werden.')) {
+                if (confirm('Wirklich sicher? Alle deine Daten werden gelöscht.')) {
+                    alert('Account-Löschung ist in der Demo-Version deaktiviert.');
+                }
+            }
+        }
+    </script>
+</body>
+</html>

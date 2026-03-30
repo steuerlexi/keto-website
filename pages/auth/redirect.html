@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weiterleitung - KetoGuide</title>
+    <link rel="stylesheet" href="../../assets/css/base.css">
+    <style>
+        .redirect-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(180deg, var(--apple-gray-100) 0%, var(--apple-white) 100%);
+        }
+
+        .redirect-container {
+            text-align: center;
+        }
+
+        .redirect-spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid var(--apple-gray-200);
+            border-top-color: var(--apple-blue);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 24px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .redirect-text {
+            font-size: 18px;
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+    <div class="redirect-page">
+        <div class="redirect-container">
+            <div class="redirect-spinner"></div>
+            <p class="redirect-text">Wird weitergeleitet...</p>
+        </div>
+    </div>
+
+    <script src="../../assets/js/auth.js"></script>
+    <script>
+        // Redirect based on auth state
+        if (KetoAuth.isLoggedIn()) {
+            if (KetoAuth.isPremium()) {
+                window.location.href = '../members/dashboard.html';
+            } else {
+                window.location.href = '../members/upgrade.html';
+            }
+        } else {
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+</html>
