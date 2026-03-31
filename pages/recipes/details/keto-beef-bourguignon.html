@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keto Beef Bourguignon - KetoGuide</title>
+    <meta name="description" content="Keto Beef Bourguignon – Französischer Low Carb Schmortopf mit nur 6g Kohlenhydraten.">
+    <link rel="stylesheet" href="../../../assets/css/base.css">
+    <script src="../../../assets/js/auth-check.js"></script>
+    <style>
+        .recipe-detail { max-width: 800px; margin: 0 auto; }
+        .recipe-section { margin-bottom: 40px; }
+        .recipe-section h3 { font-size: 28px; margin-bottom: 20px; color: var(--text-primary); }
+        .ingredients-list { list-style: none; padding: 0; }
+        .ingredients-list li { padding: 12px 0; border-bottom: 1px solid var(--apple-gray-200); display: flex; align-items: center; }
+        .ingredients-list li::before { content: "✓"; color: var(--apple-green); font-weight: bold; margin-right: 12px; }
+        .instructions-list { counter-reset: step; list-style: none; padding: 0; }
+        .instructions-list li { counter-increment: step; padding: 20px 0 20px 60px; position: relative; border-bottom: 1px solid var(--apple-gray-200); }
+        .instructions-list li::before { content: counter(step); position: absolute; left: 0; top: 20px; width: 40px; height: 40px; background: var(--apple-blue); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; }
+        .nutrition-table { width: 100%; border-collapse: collapse; }
+        .nutrition-table td { padding: 16px; border-bottom: 1px solid var(--apple-gray-200); }
+        .nutrition-table td:last-child { text-align: right; font-weight: 600; }
+        .recipe-meta-large { display: flex; gap: 40px; margin: 30px 0; padding: 24px; background: var(--apple-gray-100); border-radius: var(--radius-lg); }
+        .meta-item { text-align: center; }
+        .meta-value { font-size: 32px; font-weight: 600; color: var(--apple-blue); }
+        .meta-label { font-size: 14px; color: var(--text-secondary); }
+    </style>
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="container nav-container">
+            <a href="../../../index.html" class="logo">KetoGuide</a>
+            <nav class="nav-menu" id="navMenu">
+                <div class="nav-item"><a href="../../../index.html#gruende" class="nav-link">Warum Keto</a></div>
+                <div class="nav-item nav-item-dropdown">
+                    <a href="../../../index.html#rezepte" class="nav-link active">Rezepte ▾</a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-header">Kategorien</div>
+                        <a href="../fruehstueck.html" class="dropdown-item"><span class="dropdown-item-icon">🍳</span> Frühstück</a>
+                        <a href="../mittagessen.html" class="dropdown-item"><span class="dropdown-item-icon">🥗</span> Mittagessen</a>
+                        <a href="../abendessen.html" class="dropdown-item"><span class="dropdown-item-icon">🍽️</span> Abendessen</a>
+                        <a href="../snacks.html" class="dropdown-item"><span class="dropdown-item-icon">🥜</span> Snacks</a>
+                        <a href="../desserts.html" class="dropdown-item"><span class="dropdown-item-icon">🍰</span> Desserts</a>
+                    </div>
+                </div>
+                <div class="nav-item nav-item-dropdown">
+                    <a href="../../../index.html#guides" class="nav-link">Guides ▾</a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-header">Anleitungen</div>
+                        <a href="../../guides/starten.html" class="dropdown-item"><span class="dropdown-item-icon">🚀</span> Einstieg</a>
+                        <a href="../../guides/tracking.html" class="dropdown-item"><span class="dropdown-item-icon">📊</span> Makros tracken</a>
+                        <a href="../../guides/mealprep.html" class="dropdown-item"><span class="dropdown-item-icon">🍱</span> Meal Prep</a>
+                        <a href="../../guides/sport.html" class="dropdown-item"><span class="dropdown-item-icon">💪</span> Sport & Keto</a>
+                    </div>
+                </div>
+                <div class="nav-item nav-item-dropdown">
+                    <a href="../../../index.html#gesundheit" class="nav-link">Gesundheit ▾</a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-header">Themen</div>
+                        <a href="../../health/gewicht.html" class="dropdown-item"><span class="dropdown-item-icon">⚖️</span> Gewichtsmanagement</a>
+                        <a href="../../health/gehirn.html" class="dropdown-item"><span class="dropdown-item-icon">🧠</span> Mentale Klarheit</a>
+                        <a href="../../health/herz.html" class="dropdown-item"><span class="dropdown-item-icon">❤️</span> Herzgesundheit</a>
+                        <a href="../../health/diabetes.html" class="dropdown-item"><span class="dropdown-item-icon">🩺</span> Diabetes & Keto</a>
+                    </div>
+                </div>
+                <div class="nav-item"><a href="../../../index.html#faq" class="nav-link">FAQ</a></div>
+            </nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menü">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1 class="animate-fade-in-up">Keto Beef Bourguignon</h1>
+            <p class="animate-fade-in-up delay-1">Französischer Schmortopf keto – nur 6g Netto-KH pro Portion</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container recipe-detail">
+            <div class="recipe-meta-large scroll-animate">
+                <div class="meta-item">
+                    <div class="meta-value">⏱️ 150</div>
+                    <div class="meta-label">Minuten</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-value">🔥 425</div>
+                    <div class="meta-label">kcal</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-value">🥑 6g</div>
+                    <div class="meta-label">Netto-KH</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-value">⭐ 4.8</div>
+                    <div class="meta-label">Bewertung</div>
+                </div>
+            </div>
+
+            <div class="recipe-section scroll-animate">
+                <h3>Zutaten (für 6 Portionen)</h3>
+                <ul class="ingredients-list">
+                    <li>800g Rindfleisch (Schulter, in Würfeln)</li>
+                    <li>150g Bacon (in Streifen)</li>
+                    <li>200g Champignons (in Scheiben)</li>
+                    <li>12 Perlzwiebeln (geschält)</li>
+                    <li>3 Knoblauchzehen (gehackt)</li>
+                    <li>500ml trockener Rotwein</li>
+                    <li>300ml Rinderbrühe</li>
+                    <li>2 EL Tomatenmark</li>
+                    <li>2 Lorbeerblätter</li>
+                    <li>2 Zweige frischer Thymian</li>
+                    <li>2 EL Olivenöl</li>
+                    <li>Salz und schwarzer Pfeffer</li>
+                    <li>Optional: 1 EL Butter</li>
+                    <li>Optional: Frische Petersilie</li>
+                </ul>
+            </div>
+
+            <div class="recipe-section scroll-animate">
+                <h3>Zubereitung</h3>
+                <ol class="instructions-list">
+                    <li>Ofen auf 160°C Ober-/Unterhitze vorheizen.</li>
+                    <li>Rindfleisch trocken tupfen und mit Salz und Pfeffer würzen.</li>
+                    <li>Bacon in einem großen Schmortopf knusprig braten, herausnehmen.</li>
+                    <li>Fleisch im Baconfett portionsweise scharf anbraten.</li>
+                    <li>Herausnehmen und beiseite stellen.</li>
+                    <li>Perlzwiebeln im Topf anbraten, herausnehmen.</li>
+                    <li>Knoblauch kurz anbraten, Tomatenmark hinzufügen.</li>
+                    <li>Mit Rotwein ablöschen, 5 Minuten einkochen lassen.</li>
+                    <li>Brühe, Lorbeer und Thymian hinzufügen.</li>
+                    <li>Fleisch und Bacon zurück in den Topf geben.</li>
+                    <li>Zugedeckt 2 Stunden im Ofen schmoren.</li>
+                    <li>Pilze und Zwiebeln hinzufügen, 30 Minuten weiter schmoren.</li>
+                    <li>Mit Petersilie garniert servieren.</li>
+                </ol>
+            </div>
+
+            <div class="recipe-section scroll-animate">
+                <h3>Nährwerte pro Portion (bei 6 Portionen)</h3>
+                <table class="nutrition-table">
+                    <tr><td>Kalorien</td><td>425 kcal</td></tr>
+                    <tr><td>Fett</td><td>28g</td></tr>
+                    <tr><td>Protein</td><td>38g</td></tr>
+                    <tr><td>Kohlenhydrate (gesamt)</td><td>8g</td></tr>
+                    <tr><td>Ballaststoffe</td><td>2g</td></tr>
+                    <tr><td><strong>Netto-Kohlenhydrate</strong></td><td><strong>6g</strong></td></tr>
+                </table>
+            </div>
+
+            <div class="recipe-section scroll-animate">
+                <h3>Tipps & Variationen</h3>
+                <ul style="list-style: disc; padding-left: 20px;">
+                    <li><strong>Wein:</strong> Burgunder ist traditionell</li>
+                    <li><strong>Alkoholfrei:</strong> Mehr Brühe + 1 EL Weinessig</li>
+                    <li><strong>Gemüse:</strong> Sellerie oder Karotten (in Maßen)</li>
+                    <li><strong>Zeit:</strong> Längeres Schmoren macht zarter</li>
+                    <li><strong>Vorbereitung:</strong> Am nächsten Tag schmeckt es besser</li>
+                    <li><strong>Beilage:</strong> Blumenkohlstampf oder Konjak-Nudeln</li>
+                    <li><strong>Kräuter:</strong> Rosmarin für zusätzliche Note</li>
+                </ul>
+            </div>
+
+            <div style="background: var(--apple-gray-100); padding: 32px; border-radius: var(--radius-lg); margin-top: 60px;">
+                <h3>💡 Warum dieses Rezept funktioniert</h3>
+                <p>Der französische Klassiker ist von Natur aus keto-freundlich! Rindfleisch wird durch langes Schmoren butterzart, Rotwein und Brühe geben Tiefe, und Bacon bringt Raucharoma. Comfort-Food auf höchstem Niveau – und perfekt für Keto!</p>
+            </div>
+
+            <div style="margin-top: 40px; text-align: center;">
+                <a href="../abendessen.html" class="btn btn-secondary">← Zurück zu allen Abendessen-Rezepten</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo">KetoGuide</span>
+                </div>
+                <nav class="footer-nav" style="margin-bottom: 20px;">
+                    <a href="../../../index.html" class="footer-link">Startseite</a>
+                    <a href="../../legal/impressum.html" class="footer-link">Impressum</a>
+                    <a href="../../legal/datenschutz.html" class="footer-link">Datenschutz</a>
+                </nav>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 KetoGuide. Alle Rechte vorbehalten.</p>
+                    <p>Diese Website dient ausschließlich Informationszwecken und ersetzt keine medizinische Beratung.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop">↑</button>
+    <script src="../../../assets/js/main.js"></script>
+    <script src="../../../assets/js/auth.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            KetoAuth.updateAuthUI();
+        });
+    </script>
+</body>
+</html>
